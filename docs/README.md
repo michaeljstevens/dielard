@@ -65,12 +65,12 @@ StravaClone is a web application inspired by Strava. It will be built using Ruby
 
 **Objective** User profiles can be read and updated.
 
--[ ] Update API for Users (`UsersController`)
--[ ] jBuilder view for Profile
--[ ] User components and respective redux loops
-  -[ ] `ProfileIndexItem`
-  -[ ] `ProfileForm`
--[ ] Style User components
+- [ ] Update API for Users (`UsersController`)
+- [ ] jBuilder view for Profile
+- [ ] User components and respective redux loops
+  - [ ] `ProfileIndexItem`
+  - [ ] `ProfileForm`
+- [ ] Style User components
 
 ### Phase 3: Routes Model, API, and components (2 days)
 
@@ -80,48 +80,48 @@ StravaClone is a web application inspired by Strava. It will be built using Ruby
 - [ ] CRUD API for Routes (`RoutesController`)
 - [ ] jBuilder views for Routes
 - Route components and respective redux loops
--[ ] `RouteIndex`
--[ ] `RouteIndexItem`
--[ ] `RouteForm`
--[ ] `RouteMap`
--[ ] Style route components
--[ ] Seed routes
+- [ ] `RouteIndex`
+- [ ] `RouteIndexItem`
+- [ ] `RouteForm`
+- [ ] `RouteMap`
+- [ ] Style route components
+- [ ] Seed routes
 
 ### Phase 4: TravelWorkout and StaticWorkout Models, API, and components(3 days)
 
 **Objective:** TravelWorkout and StaticWorkout can be created, read, updated and destroyed through the API.
 
--[ ] `TravelWorkout` model
--[ ] `StaticWorkout` model
--[ ] CRUD API for TravelWorkouts (`TravelWorkoutsController`)
--[ ] CRUD API for StaticWorkouts (`StaticWorkoutsController`)
--[ ] jBuilder views for TravelWorkouts
-  -[ ] Show
-  -[ ] Index
--[ ] jBuilder views for StaticWorkouts
-  -[ ] Show
-  -[ ] Index
--[ ] TravelWorkout components and respective redux loops
-  -[ ] `TravelWorkoutIndexItem`
-  -[ ] `TravelWorkoutForm`
--[ ] StaticWorkout components and respective redux loops
-  -[ ] `StaticWorkoutIndexItem`
-  -[ ] `StaticWorkoutForm`
--[ ] Style TravelWorkout components
--[ ] Style StaticWorkout components
--[ ] Seed TravelWorkouts
--[ ] Seed StaticWorkouts
+- [ ] `TravelWorkout` model
+- [ ] `StaticWorkout` model
+- [ ] CRUD API for TravelWorkouts (`TravelWorkoutsController`)
+- [ ] CRUD API for StaticWorkouts (`StaticWorkoutsController`)
+- [ ] jBuilder views for TravelWorkouts
+  - [ ] Show
+  - [ ] Index
+- [ ] jBuilder views for StaticWorkouts
+  - [ ] Show
+  - [ ] Index
+- [ ] TravelWorkout components and respective redux loops
+  - [ ] `TravelWorkoutIndexItem`
+  - [ ] `TravelWorkoutForm`
+- [ ] StaticWorkout components and respective redux loops
+  - [ ] `StaticWorkoutIndexItem`
+  - [ ] `StaticWorkoutForm`
+- [ ] Style TravelWorkout components
+- [ ] Style StaticWorkout components
+-  [ ] Seed TravelWorkouts
+- [ ] Seed StaticWorkouts
 
 ### Phase 5: WorkoutFeed and Stats(1 day)
 
 **Objective:** WorkoutFeed displays a user's travel and static workouts sorted by date. It should also display stats.
 
--[ ] WorkoutFeed components and respective redux loops
-  -[ ] `WorkoutFeedIndex`
-    -[ ] This will combine data from TravelWorkout and StaticWorkout tables, sorting by date.
--[ ] Stats components and respective redux loops
-  -[ ] `TravelStats`
-  -[ ] `StaticStats`
+- [ ] WorkoutFeed components and respective redux loops
+  - [ ] `WorkoutFeedIndex`
+    - [ ] This will combine data from TravelWorkout and StaticWorkout tables, sorting by date.
+- [ ] Stats components and respective redux loops
+  - [ ] `TravelStats`
+  - [ ] `StaticStats`
 
 ## Bonus Features(TBD)
 
@@ -129,40 +129,40 @@ StravaClone is a web application inspired by Strava. It will be built using Ruby
 
 **Objective:** Calculate a User's daily macronutrient requirements based on caloric expenditure.
 
--[ ] Update `User` model to include remaining protein, carbs, and fat
--[ ] Change workout form submission so that after each workout remaining macros are updated based on that workout's caloric footprint
--[ ] Macro components and respective redux loops
-  -[ ] `MacroForm`
--[ ] Add remaining macros to Stats in WorkoutFeed
--[ ] Style macro components
+- [ ] Update `User` model to include remaining protein, carbs, and fat
+- [ ] Change workout form submission so that after each workout remaining macros are updated based on that workout's caloric footprint
+- [ ] Macro components and respective redux loops
+  - [ ] `MacroForm`
+- [ ] Add remaining macros to Stats in WorkoutFeed
+- [ ] Style macro components
 
 ### Friends/Social Feed
 
 **Objective:** Users can subscribe to other Users. Users have a feed of other User's Workouts.
 
--[ ] `Friends` model to join Users to other Users
--[ ] FriendsFeed components and respective redux loops
-  -[ ] `FriendsFeedIndex`
-    -[ ] This will combine data from TravelWorkout and StaticWorkout tables of all the current user's friends, sorting by date.
--[ ] Seed Friends table
--[ ] Style FriendsFeed components
+- [ ] `Friends` model to join Users to other Users
+- [ ] FriendsFeed components and respective redux loops
+  - [ ] `FriendsFeedIndex`
+    - [ ] This will combine data from TravelWorkout and StaticWorkout tables of all the current user's friends, sorting by date.
+- [ ] Seed Friends table
+- [ ] Style FriendsFeed components
 
 ### Workout Comments
 
 **Objective:** Users can comment on their own and friends workouts
 
--[ ] `Comment` model
-  -[ ] `User` has many Comments
-  -[ ] `TravelWorkout` has many Comments
-  -[ ] `StaticWorkout` has many Comments
--[ ] CRUD API for Comments (`CommentsController`)
--[ ] Comments components and respective redux loops
-  -[ ] `Comments`
--[ ] Seed Comments Table
--[ ] Style Comments components
+- [ ] `Comment` model
+  - [ ] `User` has many Comments
+  - [ ] `TravelWorkout` has many Comments
+  - [ ] `StaticWorkout` has many Comments
+- [ ] CRUD API for Comments (`CommentsController`)
+- [ ] Comments components and respective redux loops
+  - [ ] `Comments`
+- [ ] Seed Comments Table
+- [ ] Style Comments components
 
 ### Better Stats
 
 **Objective:** Users can see their stats for fixed and custom time ranges
 
--[ ] Rejigger Stats component
+- [ ] Rejigger Stats component
