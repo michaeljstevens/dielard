@@ -79,7 +79,7 @@ StravaClone is a web application inspired by Strava. It will be built using Ruby
 - [ ] `Route` model
 - [ ] CRUD API for Routes (`RoutesController`)
 - [ ] jBuilder views for Routes
-- Route components and respective redux loops
+- [ ] Route components and respective redux loops
 - [ ] `RouteIndex`
 - [ ] `RouteIndexItem`
 - [ ] `RouteForm`
