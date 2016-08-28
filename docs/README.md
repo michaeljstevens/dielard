@@ -18,6 +18,7 @@ StravaClone is a web application inspired by Strava. It will be built using Ruby
 
 - [ ] User Profile
 - [ ] Create Routes
+- [ ] Create Exercises
 - [ ] Create Workouts
 - [ ] Workout Feed and Stats
 - [ ] Bonus
@@ -89,28 +90,36 @@ StravaClone is a web application inspired by Strava. It will be built using Ruby
 
 ### Phase 4: TravelWorkout and StaticWorkout Models, API, and components(3 days)
 
-**Objective:** TravelWorkout and StaticWorkout can be created, read, updated and destroyed through the API.
+**Objective:** TravelWorkout, StaticWorkout, and Exercises can be created, read, updated and destroyed through the API.
 
 - [ ] `TravelWorkout` model
 - [ ] `StaticWorkout` model
+- [ ] `Exercises` model
+- [ ] `WorkoutExercise` model (join table)
 - [ ] CRUD API for TravelWorkouts (`TravelWorkoutsController`)
 - [ ] CRUD API for StaticWorkouts (`StaticWorkoutsController`)
+- [ ] CRUD API for Exercises (`ExercisesController`)
 - [ ] jBuilder views for TravelWorkouts
   - [ ] Show
   - [ ] Index
 - [ ] jBuilder views for StaticWorkouts
   - [ ] Show
   - [ ] Index
+- [ ] jBuilder views for Exercises
 - [ ] TravelWorkout components and respective redux loops
   - [ ] `TravelWorkoutIndexItem`
   - [ ] `TravelWorkoutForm`
 - [ ] StaticWorkout components and respective redux loops
   - [ ] `StaticWorkoutIndexItem`
   - [ ] `StaticWorkoutForm`
+- [ ] Exercises components and respective redux loops
+  - [ ] `ExerciseForm`
 - [ ] Style TravelWorkout components
 - [ ] Style StaticWorkout components
--  [ ] Seed TravelWorkouts
+- [ ] Seed TravelWorkouts
 - [ ] Seed StaticWorkouts
+- [ ] Seed Exercises
+- [ ] Seed WorkoutExercises
 
 ### Phase 5: WorkoutFeed and Stats(1 day)
 
