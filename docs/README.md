@@ -1,4 +1,4 @@
-# StravaClone
+# Die Lard
 
 [Heroku link][heroku]
 
@@ -92,26 +92,20 @@ StravaClone is a web application inspired by Strava. It will be built using Ruby
 - [ ] Style route components
 - [ ] Seed routes
 
-### Phase 4: TravelWorkout, StaticWorkout, Exercises and WorkoutExercise Models, API, and components(3 days)
+### Phase 4: TravelWorkout, StaticWorkout Models, API, and components(2 days)
 
 **Objective:** TravelWorkout, StaticWorkout, and Exercises can be created, read, updated and destroyed through the API.
 
 - [ ] `TravelWorkout` model
 - [ ] `StaticWorkout` model
-- [ ] `Exercises` model
-- [ ] `WorkoutExercise` model (join table)
 - [ ] CRUD API for TravelWorkouts (`TravelWorkoutsController`)
 - [ ] CRUD API for StaticWorkouts (`StaticWorkoutsController`)
-- [ ] CRUD API for Exercises (`ExercisesController`)
 - [ ] jBuilder views for TravelWorkouts
   - [ ] Show
   - [ ] Index
 - [ ] jBuilder views for StaticWorkouts
   - [ ] Show
   - [ ] Index
-- [ ] jBuilder views for Exercises
- - [ ] Show
- - [ ] Index
 - [ ] TravelWorkout components and respective redux loops`
   - [ ] `TravelWorkoutForm`
   - [ ] `TravelWorkoutFormContainer`
@@ -124,6 +118,20 @@ StravaClone is a web application inspired by Strava. It will be built using Ruby
   - [ ] `StaticWorkoutIndex`
   - [ ] `StaticWorkoutIndexItem`
   - [ ] `StaticWorkoutContainer`
+- [ ] Style TravelWorkout components
+- [ ] Style StaticWorkout components
+- [ ] Seed TravelWorkouts
+- [ ] Seed StaticWorkouts
+
+
+### Phase 5: Exercises and WorkoutExercise Models, API, and components(1 day)
+
+- [ ] `Exercises` model
+- [ ] `WorkoutExercise` model (join table)
+- [ ] CRUD API for Exercises (`ExercisesController`)
+- [ ] jBuilder views for Exercises
+  - [ ] Show
+  - [ ] Index
 - [ ] Exercises components and respective redux loops
   - [ ] `ExerciseForm`
   - [ ] `ExerciseFormContainer`
@@ -135,16 +143,12 @@ StravaClone is a web application inspired by Strava. It will be built using Ruby
   - [ ] `WorkoutExerciseIndexItem`
   - [ ] `WorkoutExerciseStats`
   - [ ] `WorkoutExerciseContainer`
-- [ ] Style TravelWorkout components
-- [ ] Style StaticWorkout components
 - [ ] Style Exercise components
 - [ ] Style WorkoutExercise components
-- [ ] Seed TravelWorkouts
-- [ ] Seed StaticWorkouts
 - [ ] Seed Exercises
 - [ ] Seed WorkoutExercises
 
-### Phase 5: WorkoutFeed and Stats(1 day)
+### Phase 6: WorkoutFeed and Stats(1 day)
 
 **Objective:** WorkoutFeed displays a user's travel and static workouts sorted by date. It should also display stats.
 
