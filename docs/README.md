@@ -106,11 +106,9 @@ StravaClone is a web application inspired by Strava. It will be built using Ruby
   - [ ] Show
   - [ ] Index
 - [ ] jBuilder views for Exercises
-- [ ] TravelWorkout components and respective redux loops
-  - [ ] `TravelWorkoutIndexItem`
+- [ ] TravelWorkout components and respective redux loops`
   - [ ] `TravelWorkoutForm`
 - [ ] StaticWorkout components and respective redux loops
-  - [ ] `StaticWorkoutIndexItem`
   - [ ] `StaticWorkoutForm`
 - [ ] Exercises components and respective redux loops
   - [ ] `ExerciseForm`

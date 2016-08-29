@@ -58,7 +58,7 @@ muscle_group    | string    | not null
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-workout_id      | integer   | not null, indexed, foreign_key
+static_workout_id      | integer   | not null, indexed, foreign_key
 exercise_id     | integer   | not null, indexed, foreign_key
 sets            | integer   | not null
 reps            | integer   | not null
