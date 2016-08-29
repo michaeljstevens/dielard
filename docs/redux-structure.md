@@ -55,6 +55,8 @@
   0. invoked from RoutesIndex componentDidMount and new travelworkout combo box
   0. GET api/routes
   0. receiveAllRoutes is the success callback
+* `fetchSingleRoute`
+  0. invoked from 
 * `createRoute`
   0. invoked from RouteForm create button onClick
   0. POST api/routes

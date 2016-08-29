@@ -37,7 +37,7 @@ StravaClone is a web application inspired by Strava. It will be built using Ruby
 * [DB schema][schema]
 
 [wireframes]: wireframes
-[components]: components.md
+[components]: component-heirarchy.md
 [sample-state]: sample-state.md
 [redux-structure]: redux-structure.md
 [api-endpoints]: api-endpoints.md
