@@ -26,7 +26,6 @@
 * `POST /api/routes`
 * `DELETE /api/routes/:id`
 * `GET /api/routes`
-* `GET /api/routes/:id`
 
 
 ### TravelWorkouts
