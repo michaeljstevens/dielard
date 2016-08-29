@@ -40,6 +40,14 @@
   0. invoked from API callbacks on success for actions that generate POST requests
   0. the `ErrorReducer` removes `errors` for a given `form` in the application's state.
 
+## User Cycles
+
+### User API Request Actions
+  * `updateUser`
+    0. invoked from ProfileIndexItem edit button onClick
+    0. PATCH api/users/:id
+    0. receiveCurrentUser is success callback
+
 ## Route Cycles
 
 ### Route API Request Actions
@@ -74,6 +82,10 @@
   0. invoked from WorkoutFeedIndex componentDidMount
   0. GET api/travel_workouts
   0. receiveAllTravelWorkouts is the success callback
+* `fetchSingleTravelWorkout`
+  0. invoked from WorkoutFeedIndex TravelWorkoutIndexItem onClick
+  0. GET api/travel_workouts/:id
+  0. receiveSingleTravelWorkouts is the success callback
 * `createTravelWorkout`
   0. invoked from TravelWorkoutForm save button onClick
   0. POST api/travel_workouts
@@ -101,6 +113,10 @@
   0. invoked from WorkoutFeedIndex componentDidMount
   0. GET api/static_workouts
   0. receiveAllStaticWorkouts is the success callback
+* `fetchSingleStaticWorkout`
+  0. invoked from WorkoutFeedIndex StaticWorkoutIndexItem onClick
+  0. GET api/static_workouts/:id
+  0. receiveSingleStaticWorkout is the success callback
 * `createStaticWorkout`
   0. invoked from StaticWorkoutForm save button onClick
   0. POST api/static_workouts
@@ -173,4 +189,4 @@
   0. the Route reducer updates `workout_exercises[id]` in the application's state
 * `receiveSingleWorkoutExercise`
   0. invoked from an API callback
-  0. the WorkoutExercise reducer removes `workout_exercise[id] from the application's state`
+  0. the WorkoutExercise reducer removes `workout_exercise[id]` from the application's state

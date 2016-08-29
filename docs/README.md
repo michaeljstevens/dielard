@@ -70,7 +70,9 @@ StravaClone is a web application inspired by Strava. It will be built using Ruby
 - [ ] jBuilder view for Profile
 - [ ] User components and respective redux loops
   - [ ] `ProfileIndexItem`
+  - [ ] `ProfileContainer`
   - [ ] `ProfileForm`
+  - [ ] `ProfileFormContainer`
 - [ ] Style User components
 
 ### Phase 3: Routes Model, API, and components (2 days)
@@ -81,10 +83,12 @@ StravaClone is a web application inspired by Strava. It will be built using Ruby
 - [ ] CRUD API for Routes (`RoutesController`)
 - [ ] jBuilder views for Routes
 - [ ] Route components and respective redux loops
-- [ ] `RouteIndex`
-- [ ] `RouteIndexItem`
-- [ ] `RouteForm`
-- [ ] `RouteMap`
+  - [ ] `RouteIndex`
+  - [ ] `RouteIndexItem`
+  - [ ] `RouteContainer`
+  - [ ] `RouteForm`
+  - [ ] `RouteMap`
+  - [ ] `RouteFormContainer`
 - [ ] Style route components
 - [ ] Seed routes
 
@@ -106,14 +110,35 @@ StravaClone is a web application inspired by Strava. It will be built using Ruby
   - [ ] Show
   - [ ] Index
 - [ ] jBuilder views for Exercises
+ - [ ] Show
+ - [ ] Index
 - [ ] TravelWorkout components and respective redux loops`
   - [ ] `TravelWorkoutForm`
+  - [ ] `TravelWorkoutFormContainer`
+  - [ ] `TravelWorkoutIndex`
+  - [ ] `TravelWorkoutIndexItem`
+  - [ ] `TravelWorkoutContainer`
 - [ ] StaticWorkout components and respective redux loops
   - [ ] `StaticWorkoutForm`
+  - [ ] `StaticWorkoutFormContainer`
+  - [ ] `StaticWorkoutIndex`
+  - [ ] `StaticWorkoutIndexItem`
+  - [ ] `StaticWorkoutContainer`
 - [ ] Exercises components and respective redux loops
   - [ ] `ExerciseForm`
+  - [ ] `ExerciseFormContainer`
+  - [ ] `ExerciseIndex`
+  - [ ] `ExerciseIndexItem`
+  - [ ] `ExerciseContainer`
+- [ ] WorkoutExercise components and respective redux loops
+  - [ ] `WorkoutExerciseIndex`
+  - [ ] `WorkoutExerciseIndexItem`
+  - [ ] `WorkoutExerciseStats`
+  - [ ] `WorkoutExerciseContainer`
 - [ ] Style TravelWorkout components
 - [ ] Style StaticWorkout components
+- [ ] Style Exercise components
+- [ ] Style WorkoutExercise components
 - [ ] Seed TravelWorkouts
 - [ ] Seed StaticWorkouts
 - [ ] Seed Exercises
@@ -124,7 +149,7 @@ StravaClone is a web application inspired by Strava. It will be built using Ruby
 **Objective:** WorkoutFeed displays a user's travel and static workouts sorted by date. It should also display stats.
 
 - [ ] WorkoutFeed components and respective redux loops
-  - [ ] `WorkoutFeedIndex`
+  - [ ] `WorkoutFeedContainer`
     - [ ] This will combine data from TravelWorkout and StaticWorkout tables, sorting by date.
 - [ ] Stats components and respective redux loops
   - [ ] `TravelStats`

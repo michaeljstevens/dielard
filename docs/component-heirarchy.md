@@ -1,29 +1,71 @@
 ## Component Hierarchy
 
-**WorkoutFeedContainer**
-  - WorkoutFeedIndex
 
 **AuthFormContainer**
   - AuthForm
+  - LoginButton
+  - SignUpButton
 
 **ProfileContainer**
   - ProfileIndexItem
+  - EditProfileButton
+
+**ProfileFormContainer**
   - ProfileForm
+  - SaveChangesButton
 
 **RouteContainer**
   - RouteIndex
-  - RouteIndexItem
-  - RouteForm
-  - RouteMap
+    - RouteIndexItem
+      - DeleteRouteButton
+      - RouteMap
 
-**TravelWorkoutContainer**
+**RouteFormContainer**
+  - RouteMap
+  - CreateButton
+
+**ExerciseContainer**
+  - ExerciseIndex
+    - ExerciseIndexItem
+    - DeleteExerciseButton
+
+**ExerciseFormContainer**
+  - ExerciseForm
+  - CreateExerciseButton
+
+**WorkoutFeedContainer**
+  - WorkoutFeedIndex
+    - StaticWorkoutIndex
+      - StaticWorkoutIndexItem
+      - DeleteButton
+    - TravelWorkoutIndex
+      - TravelWorkoutIndexItem
+      - DeleteButton
+    - TravelStats
+    - StaticStats
 
 **StaticWorkoutContainer**
+  - StaticWorkoutIndexItem
+  - WorkoutExerciseContainer
+    - WorkoutExerciseIndex
+      - WorkoutExerciseIndexItem
+      - WorkoutExerciseStats
+  - BacktoFeedButton
 
-**ExercisesContainer**
+**TravelWorkoutContainer**
+  - TravelWorkoutIndexItem
+  - TravelItemStats
+  - BacktoFeedButton
 
+**StaticWorkoutFormContainer**
+  - StaticWorkoutForm
+  - CreateExerciseButton
+  - SaveButton
 
-
+**TravelWorkoutFormContainer**
+  - TravelWorkoutForm
+  - CreateRouteButton
+  - SaveButton
 
 
 ## Routes
@@ -34,7 +76,12 @@
 | "/sign-up" | "AuthFormContainer" |
 | "/sign-in" | "AuthFormContainer" |
 | "/users/:id" | "ProfileIndexItem" |
-| "/users/:id/edit" | "ProfileForm" |
-| "/routes" | "RouteIndex" |
-| "/routes/:id" | "RouteIndexItem" |
-| "/routes/:id/edit" | "RouteForm" |
+| "/users/:id/edit" | "ProfileFormContainer" |
+| "/routes" | "RouteContainer" |
+| "/routes/new" | "RouteFormContainer" |
+| "/exercises" | "ExercisesContainer" |
+| "/exercises/new" | "ExercisesFormContainer" |
+| "/static_workouts/:id" | "StaticWorkoutContainer" |
+| "/travel_workouts/:id" | "TravelWorkoutContainer" |
+| "/static_workouts/new" | "StaticWorkoutFormContainer" |
+| "/travel_workouts/new" | "TravelWorkoutFormContainer" |
