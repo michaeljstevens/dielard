@@ -1,0 +1,30 @@
+.nav-header {
+
+}
+.login-signup {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.login-signup li {
+  padding: 20px;
+  list-style: none;
+}
+
+.nav-header {
+  background: lightblue;
+}
+
+.header-profile-picture {
+  height: 40px;
+  width: 50px;
+}
+
+.logout-profile {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header-link {
+  display: inline;
+}
