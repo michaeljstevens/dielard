@@ -1,0 +1,20 @@
+.login-form-box {
+  border: 1px solid black;
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: 150px;
+  left: 525px;
+  background: rgba(0, 0, 0, .75);
+  color: white;
+}
+
+.login-form {
+  margin: 0 auto;
+  position: absolute;
+}
+
+.splash-image {
+  position:absolute;
+  z-index: -1;
+}

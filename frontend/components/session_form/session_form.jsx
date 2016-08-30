@@ -46,11 +46,12 @@ class SessionForm extends React.Component {
 	render() {
 		return (
 			<div className="login-form-container">
-				<form onSubmit={this.handleSubmit} className="login-form-box">
-					<br/>
-					{ this.props.formType === "login" ? "Login" : "Sign Up" }
-					{ this.renderErrors() }
-					<div className="login-form">
+				<img className="splash-image" src="https://hd.unsplash.com/photo-1447185891480-252d7554aa8b" alt=""/>
+				<div className="login-form">
+						<form onSubmit={this.handleSubmit} className="login-form-box">
+							<br/>
+							{ this.props.formType === "login" ? "Login" : "Sign Up" }
+							{ this.renderErrors() }
 						<br />
 						<label> Username:
 							<input type="text"
@@ -67,8 +68,8 @@ class SessionForm extends React.Component {
 
 						<br />
 						<input type="submit" value="Submit" />
+					</form>
 					</div>
-				</form>
 			</div>
 		);
 	}

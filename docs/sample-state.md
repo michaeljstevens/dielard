@@ -51,7 +51,7 @@
       muscle_group: "legs"
     }
   },
-  workout_exercises (used to get exercises for a selected workout): {
+  static_workout_exercises (used to get exercises for a selected workout): {
     1: {
       static_workout_id: 3,
       exercise_id: 1,

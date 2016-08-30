@@ -173,20 +173,20 @@
   0. receiveAllExercises is the success callback
 * `createWorkoutExercise`
   0. invoked from StaticWorkoutForm save button onClick
-  0. POST api/workout_exercises
+  0. POST api/static_workout_exercises
   0. receiveSingleWorkoutExercise is the success callback
 * `destroyWorkoutExercise`
   0. invoked from WorkoutFeedIndex delete button onClick
-  0. DELETE api/workout_exercises/:id
+  0. DELETE api/static_workout_exercises/:id
   0. removeWorkoutExercise is the success callback
 
 ### WorkoutExercise API Response Actions
 * `receiveAllWorkoutExercises`
   0. invoked from an API callback
-  0. the Route reducer updates `workout_exercises` in the application's state
+  0. the Route reducer updates `static_workout_exercises` in the application's state
 * `removeWorkoutExercise`
   0. invoked from an API callback
-  0. the Route reducer updates `workout_exercises[id]` in the application's state
+  0. the Route reducer updates `static_workout_exercises[id]` in the application's state
 * `receiveSingleWorkoutExercise`
   0. invoked from an API callback
   0. the WorkoutExercise reducer removes `workout_exercise[id]` from the application's state

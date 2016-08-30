@@ -10,9 +10,10 @@ class Navbar extends React.Component {
       sessionButton = (
         <div className="logout-profile">
           <button className="logout-button" onClick={this.props.logout}>Log Out</button>
-          <img className = "header-profile-picture"
+          <img className="header-profile-picture"
             src="https://www.picsofcelebrities.com/celebrity/jeff-goldblum/pictures/large/jeff-goldblum-2016.jpg"
             alt="" />
+          <img className="plus" src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1472582322/plus_spuhvk.png" />
         </div>
       );
     } else {

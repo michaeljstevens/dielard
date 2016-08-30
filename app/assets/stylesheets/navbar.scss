@@ -1,18 +1,18 @@
-.nav-header {
 
-}
 .login-signup {
   display: flex;
-  justify-content: flex-end;
+  color: white;
 }
 
 .login-signup li {
   padding: 20px;
-  list-style: none;
 }
 
 .nav-header {
-  background: lightblue;
+  background: black;
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
 }
 
 .header-profile-picture {
@@ -20,11 +20,31 @@
   width: 50px;
 }
 
-.logout-profile {
-  display: flex;
-  justify-content: flex-end;
-}
 
 .header-link {
-  display: inline;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  font-size: 35px;
+  color: white;
+}
+
+.logout-profile {
+  display: flex;
+  padding-top: 10px;
+}
+
+.logout-button {
+  padding-right: 20px;
+  color: white;
+}
+
+.header-profile-picture {
+  padding-right: 20px;
+}
+
+.plus {
+  height: 40px;
+  width: 40px;
+  padding-right: 20px;
 }

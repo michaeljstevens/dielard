@@ -51,6 +51,6 @@
 
 ### WorkoutExercises
 
-* `POST /api/workout_exercises`
-* `DELETE /api/workout_exercises/:id`
-* `GET /api/workout_exercises`
+* `POST /api/static_workout_exercises`
+* `DELETE /api/static_workout_exercises/:id`
+* `GET /api/static_workout_exercises`
