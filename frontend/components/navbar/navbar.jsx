@@ -1,8 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 
 
 class Navbar extends React.Component {
+
+  componentDidUpdate(){
+    this.redirectIfLoggedOut();
+  }
+
+  redirectIfLoggedOut() {
+    if (!this.props.loggedIn){
+      hashHistory.push("/login");
+    }
+  }
 
   render () {
     let sessionButton;
@@ -11,7 +21,7 @@ class Navbar extends React.Component {
         <div className="logout-profile">
           <button className="logout-button" onClick={this.props.logout}>Log Out</button>
           <img className="header-profile-picture"
-            src="https://www.picsofcelebrities.com/celebrity/jeff-goldblum/pictures/large/jeff-goldblum-2016.jpg"
+            src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1472591120/jeff-goldblum-2016_eedzlh.jpg"
             alt="" />
           <img className="plus" src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1472582322/plus_spuhvk.png" />
         </div>

@@ -9,6 +9,7 @@ class SessionForm extends React.Component {
 			password: ""
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.loginForm = this.loginForm.bind(this);
 	}
 
 	componentDidUpdate(){
@@ -20,6 +21,8 @@ class SessionForm extends React.Component {
 			hashHistory.push("/");
 		}
 	}
+
+
 
 	updateState(field){
 		return e => { this.setState({[field]: e.currentTarget.value }); };
@@ -43,33 +46,37 @@ class SessionForm extends React.Component {
 		);
 	}
 
+	loginForm() {
+		return(<div className="login-form">
+			<form onSubmit={this.handleSubmit} className="login-form-box">
+				<br/>
+				<label className="session-type">
+					{ this.props.formType === "login" ? "Login" : "Sign Up" }
+				</label>
+				{ this.renderErrors() }
+				<br />
+				<div className="user-inputs">
+					<br/>
+					<input type="text"
+						onChange={this.updateState("username")}
+						className="login-input" placeholder="Username"/>
+					<br />
+					<br />
+					<input type="password"
+						onChange={this.updateState("password")}
+						className="login-input" placeholder="Password" />
+				</div>
+				<br />
+				<input type="submit" className="session-submit" value="Submit" />
+			</form>
+		</div>);
+	}
+
 	render() {
 		return (
-			<div className="login-form-container">
-				<img className="splash-image" src="https://hd.unsplash.com/photo-1447185891480-252d7554aa8b" alt=""/>
-				<div className="login-form">
-						<form onSubmit={this.handleSubmit} className="login-form-box">
-							<br/>
-							{ this.props.formType === "login" ? "Login" : "Sign Up" }
-							{ this.renderErrors() }
-						<br />
-						<label> Username:
-							<input type="text"
-								onChange={this.updateState("username")}
-								className="login-input" />
-						</label>
-
-						<br />
-						<label> Password:
-							<input type="password"
-								onChange={this.updateState("password")}
-								className="login-input" />
-						</label>
-
-						<br />
-						<input type="submit" value="Submit" />
-					</form>
-					</div>
+			<div>
+				<img className="splash-image" src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1472591133/photo-1447185891480-252d7554aa8b_fv2kkk.jpg" alt=""/>
+				{this.loginForm()}
 			</div>
 		);
 	}
