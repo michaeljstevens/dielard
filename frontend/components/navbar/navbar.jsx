@@ -18,13 +18,13 @@ class Navbar extends React.Component {
     let sessionButton;
     if (this.props.currentUser) {
       sessionButton = (
-        <div className="logout-profile">
-          <button className="logout-button" onClick={this.props.logout}>Log Out</button>
-          <img className="header-profile-picture"
+        <ul className="logout-profile">
+          <li><button className="logout-button" onClick={this.props.logout}>Log Out</button></li>
+          <li><img className="header-profile-picture"
             src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1472591120/jeff-goldblum-2016_eedzlh.jpg"
-            alt="" />
-          <img className="plus" src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1472582322/plus_spuhvk.png" />
-        </div>
+            alt="" /></li>
+          <li><img className="plus" src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1472582322/plus_spuhvk.png" /></li>
+        </ul>
       );
     } else {
       sessionButton = (<ul className="login-signup">
