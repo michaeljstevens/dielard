@@ -2,6 +2,7 @@ import React from 'react';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './App';
 import SessionFormContainer from './session_form/session_form_container';
+import UserProfileFormContainer from './user_profile/user_profile_form_container.js';
 import WorkoutFeed from './workout_feed/workout_feed.jsx';
 
 class AppRouter extends React.Component{
@@ -27,6 +28,14 @@ class AppRouter extends React.Component{
     }
   }
 
+  _getUserID () {
+    const currentState = this.context.store.getState();
+    const currentUser = currentState.session.currentUser;
+    if (currentUser) {
+      return currentUser.id;
+    }
+  }
+
   render(){
     return(
       <Router history={ hashHistory }>
@@ -34,6 +43,7 @@ class AppRouter extends React.Component{
           <IndexRoute component={ WorkoutFeed } onEnter={this._ensureLoggedIn} />
           <Route path="/login" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn}/>
           <Route path="/signup" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn}/>
+          <Route path="/users/:id" component={ UserProfileFormContainer }/>
         </Route>
       </Router>
     );
