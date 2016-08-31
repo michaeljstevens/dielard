@@ -27,7 +27,6 @@ class AppRouter extends React.Component{
     }
   }
 
-
   render(){
     return(
       <Router history={ hashHistory }>

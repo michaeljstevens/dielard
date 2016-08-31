@@ -28,8 +28,8 @@ class Navbar extends React.Component {
       );
     } else {
       sessionButton = (<ul className="login-signup">
-        <li><Link to="/login" className="current">Login</Link></li>
-        <li><Link to="/signup" className="current">Sign up</Link></li>
+        <li><Link to="/login" onClick = {this.props.clearErrors} className="current">Login</Link></li>
+        <li><Link to="/signup" onClick = {this.props.clearErrors} className="current">Sign up</Link></li>
       </ul>);
     }
     return(

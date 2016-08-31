@@ -8,6 +8,6 @@ export const receiveErrors = errors => ({
   errors
 });
 
-// export const clearErrors = () => ({
-//   type: ErrorConstants.CLEAR_ERRORS
-// });
+export const clearErrors = () => ({
+  type: ErrorConstants.CLEAR_ERRORS
+});
