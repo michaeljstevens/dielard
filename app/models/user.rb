@@ -4,9 +4,17 @@ class User < ActiveRecord::Base
   validates :username, :session_token, uniqueness: true
   validates :password, length: {minimum: 6}, allow_nil: :true
 
-  after_initialize :ensure_session_token
+  after_initialize :ensure_session_token, :calculate_tdee
 
   attr_reader :password
+
+  ACTIVITY_CONSTANTS = {
+    "None" => 1.2,
+    "Light" => 1.375,
+    "Moderate" => 1.55,
+    "High" => 1.725,
+    "Extreme" => 1.9
+  }
 
 
 	def password=(password)
@@ -34,5 +42,24 @@ class User < ActiveRecord::Base
 	def ensure_session_token
 		self.session_token ||= SecureRandom.urlsafe_base64(16)
 	end
+
+  def calculate_tdee
+    if self.activity_level.nil? || self.sex.nil? || self.weight.nil? || self.height.nil? || self.birthdate.nil?
+      return nil
+    end
+    self.daily_calories = (calculate_bmr * ACTIVITY_CONSTANTS[self.activity_level]).round
+  end
+
+  def calculate_bmr
+    if self.sex == "Male"
+      66 + (6.23 * self.weight) + (12.7 * self.height) - (6.8 * years)
+    elsif self.sex == "Female"
+      655 + ( 4.35 * self.weight ) + ( 4.7 * self.height ) - ( 4.7 * years)
+    end
+  end
+
+  def years
+    Time.now.year - self.birthdate.year
+  end
 
 end

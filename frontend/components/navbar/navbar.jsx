@@ -21,7 +21,7 @@ class Navbar extends React.Component {
         <ul className="logout-profile">
           <li><button className="logout-button" onClick={this.props.logout}>Log Out</button></li>
           <li><img className="header-profile-picture"
-            src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1472591120/jeff-goldblum-2016_eedzlh.jpg"
+            src={this.props.currentUser.profile_picture}
             alt="" /></li>
           <li><img className="plus" src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1472582322/plus_spuhvk.png" /></li>
         </ul>
