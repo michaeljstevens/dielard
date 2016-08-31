@@ -6,7 +6,7 @@ import configureStore from './store/store';
 document.addEventListener('DOMContentLoaded', () => {
   let store;
   if (window.currentUser) {
-    const initialState = {session: {currentUser: window.currentUser}};
+    const initialState = {session: {currentUser: window.currentUser}, errors: {}};
     store = configureStore(initialState);
   } else {
     store = configureStore();
@@ -14,4 +14,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store}/>, root);
+  window.store=store;
 });

@@ -1,4 +1,5 @@
-import { SessionConstants, receiveCurrentUser, receiveErrors } from '../actions/session_actions';
+import { SessionConstants, receiveCurrentUser } from '../actions/session_actions';
+import { receiveErrors } from '../actions/error_actions.js';
 import { login, signup, logout } from '../util/session_api_util';
 
 export default ({getState, dispatch}) => next => action => {

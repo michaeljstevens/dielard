@@ -4,11 +4,15 @@
   color: white;
 }
 
-.login-signup li {
+.login-signup li a {
   padding: 20px;
 }
 
-.login-signup li:hover {
+.login-signup li {
+  padding-top: 20px;
+}
+
+.login-signup li a:hover {
   background: lightgrey;
   color: black;
 }

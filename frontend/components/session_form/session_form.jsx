@@ -22,8 +22,6 @@ class SessionForm extends React.Component {
 		}
 	}
 
-
-
 	updateState(field){
 		return e => { this.setState({[field]: e.currentTarget.value }); };
 	}
@@ -45,7 +43,6 @@ class SessionForm extends React.Component {
 			</ul>
 		);
 	}
-
 	loginForm() {
 		return(<div className="login-form">
 			<form onSubmit={this.handleSubmit} className="login-form-box">
@@ -53,7 +50,7 @@ class SessionForm extends React.Component {
 				<label className="session-type">
 					{ this.props.formType === "login" ? "Login" : "Sign Up" }
 				</label>
-				{ this.renderErrors() }
+				<label className="login-errors">{ this.renderErrors() }</label>
 				<br />
 				<div className="user-inputs">
 					<br/>

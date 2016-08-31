@@ -50,11 +50,17 @@
   font-size: 16px;
   border: 1px solid white;
   padding: 7px;
-  top: 250px;
+  top: 267px;
   border-radius: 2px;
 }
 
 .session-submit:hover {
   background: lightgrey;
   color: black;
+  cursor: pointer;
+}
+
+.login-errors li {
+  padding-left: 20px;
+  padding-top: 10px;
 }
