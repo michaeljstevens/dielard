@@ -25,8 +25,10 @@
 }
 
 .header-profile-picture {
-  height: 40px;
-  width: 50px;
+  height: 45px;
+  width: 45px;
+  border: 1px solid white;
+  border-radius: 100px;
 }
 
 
@@ -54,12 +56,9 @@
   color: black;
 }
 
-.header-profile-picture {
-  padding-right: 20px;
-}
-
 .plus {
   height: 40px;
   width: 40px;
   padding-right: 20px;
+  padding-left: 20px;
 }

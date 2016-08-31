@@ -1,4 +1,4 @@
-import { UserConstants } from '../actions/session_actions.js';
+import { UserConstants } from '../actions/user_actions.js';
 import { merge } from 'lodash';
 
 const _defaultUser = Object.freeze({

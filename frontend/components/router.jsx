@@ -43,7 +43,9 @@ class AppRouter extends React.Component{
           <IndexRoute component={ WorkoutFeed } onEnter={this._ensureLoggedIn} />
           <Route path="/login" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn}/>
           <Route path="/signup" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn}/>
-          <Route path="/users/:id" component={ UserProfileFormContainer }/>
+          <Route path="/users/:id">
+            <Route path="/users/:id/edit" component={ UserProfileFormContainer } onEnter={this._ensureLoggedIn} />
+          </Route>
         </Route>
       </Router>
     );
