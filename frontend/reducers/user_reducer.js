@@ -8,7 +8,7 @@ const _defaultUser = Object.freeze({
 const UserReducer = function(state = _defaultUser, action) {
   switch (action.type) {
     case UserConstants.RECEIVE_UPDATED_USER:
-      const currentUser = action.currentUser;
+      const currentUser = action.user;
       return merge({}, _defaultUser, {currentUser});
     default:
       return state;

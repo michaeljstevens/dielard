@@ -6,7 +6,6 @@ class Navbar extends React.Component {
 
   constructor(props) {
     super(props);
-    this.gotoProfile = this.gotoProfile.bind(this);
   }
 
   componentDidUpdate(){
@@ -19,20 +18,16 @@ class Navbar extends React.Component {
     }
   }
 
-  gotoProfile() {
-    hashHistory.push(`/users/${this.props.currentUser.id}`);
-  }
-
   render () {
     let sessionButton;
     if (this.props.currentUser) {
+      let profileUrl = `/users/${this.props.currentUser.id}`;
       sessionButton = (
         <ul className="logout-profile">
           <li><button className="logout-button" onClick={this.props.logout}>Log Out</button></li>
-          <li><img className="header-profile-picture"
+          <li><Link to={profileUrl}><img className="header-profile-picture"
             src={this.props.currentUser.profile_picture}
-            onClick={this.gotoProfile}
-            alt="" /></li>
+            alt="" /></Link></li>
           <li><img className="plus" src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1472582322/plus_spuhvk.png" /></li>
         </ul>
       );

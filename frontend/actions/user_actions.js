@@ -11,6 +11,6 @@ export const updateUser = user => {
 };
 
 export const receiveUpdatedUser = user => ({
-  type: UserConstants.RECEIVE_CURRENT_USER,
+  type: UserConstants.RECEIVE_UPDATED_USER,
   user
 });

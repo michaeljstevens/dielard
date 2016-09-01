@@ -1,5 +1,5 @@
 import React from 'react';
-import {hashHistory} from 'react-router';
+import {hashHistory, Link} from 'react-router';
 
 const ACTIVITY_CONSTANTS = {
   "None": 1.2,
@@ -82,10 +82,10 @@ class UserProfileForm extends React.Component {
     this.setCalories();
     const user = this.state;
     this.props.updateUser({user});
-    hashHistory.push(`/users/${this.currentUser.id}`);
   }
 
   render() {
+    let linkUrl = `/users/${this.currentUser.id}`;
     return (
       <div className="profile-form">
         <h1 className="user-edit-header">Edit Profile</h1>
@@ -156,10 +156,7 @@ class UserProfileForm extends React.Component {
               </select>
             </div>
             <br />
-            <input type="submit"
-              onChange={this.handleSubmit}
-              className="update-submit"
-              value="Update" />
+            <input type="submit" className="update-submit" value="Update" />
           </div>
         </form>
       </div>

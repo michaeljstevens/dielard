@@ -6,7 +6,6 @@ import UserReducer from '../reducers/user_reducer.js';
 const RootReducer = combineReducers({
   session: SessionReducer,
   errors: ErrorReducer,
-  user: UserReducer
 });
 
 export default RootReducer;
