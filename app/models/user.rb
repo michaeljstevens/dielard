@@ -1,8 +1,30 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  username        :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  profile_picture :string
+#  description     :text
+#  birthdate       :date
+#  sex             :string
+#  height          :integer
+#  weight          :integer
+#  activity_level  :string
+#  daily_calories  :integer
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 class User < ActiveRecord::Base
 
   validates :username, :password_digest, :session_token, presence: true
   validates :username, :session_token, uniqueness: true
   validates :password, length: {minimum: 6}, allow_nil: :true
+
+  has_many :routes
 
   after_initialize :ensure_session_token, :calculate_tdee
 
