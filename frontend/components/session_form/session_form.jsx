@@ -72,7 +72,7 @@ class SessionForm extends React.Component {
 						className="login-input" placeholder="Password" />
 				</div>
 				<br />
-				<input type={this.props.formType === "login" ? "submit" : "hidden"}
+				<input type={this.props.formType === "login" ? "button" : "hidden"}
 					onClick={this.demoLogin} className="demo-button" value="Demo" />
 				<input type="submit" className="session-submit" value="Submit" />
 			</form>

@@ -94,7 +94,7 @@ class UserProfileForm extends React.Component {
           <br />
 
           <div className="profile-picture-parts">
-            <img src={this.state.profile_picture} className="profile-picture" />
+            <img src={this.state.profile_picture} className="edit-profile-picture" />
             <img className="plus-profile-picture" onClick={this.upload} src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1472582322/plus_spuhvk.png" />
           </div>
           <br />

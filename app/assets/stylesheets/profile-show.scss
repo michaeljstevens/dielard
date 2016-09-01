@@ -1,13 +1,20 @@
+.profile-show {
+  display: flex;
+  justify-content: center;
+}
+
 .content {
   width: 66%;
-  margin: 0px auto;
   display: flex;
   flex-direction: row;
   background: white;
+  position: fixed;
+  margin-top: 168px;
+  background: rgba(0, 0, 0, .85);
+  max-width: 714px;
 }
 
 .left-content {
-  padding-top: 50px;
   display: flex;
   flex-direction: column;
   width: 40%;
@@ -25,6 +32,10 @@
 .usershow-header {
   font-size: 40px;
   padding-top: 20px;
+  padding-left: 20px;
+  position: absolute;
+  top: 254px;
+  color: white;
 }
 
 .user-display-info {
@@ -33,12 +44,30 @@
 }
 
 .user-display-info li {
-  border: 1px solid black;
   padding: 10px;
+  color: white;
 }
 
 .goto-edit-button {
-  border: 1px black solid;
+  border: 1px white solid;
   height: 20px;
   padding: 10px;
+  position: absolute;
+  right: 22px;
+  top: 20px;
+  color: white;
+}
+
+.goto-edit-button:hover {
+  background: lightgrey;
+  color: black;
+  cursor: pointer;
+}
+
+.profile-picture {
+  border: 1px solid white;
+  border-radius: 100px;
+  position: absolute;
+  top: 39px;
+  left: 40px;
 }
