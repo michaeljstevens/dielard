@@ -48,6 +48,7 @@
 .update-submit:hover {
   background: black;
   color: white;
+  cursor: pointer;
 }
 
 .h-line {
@@ -59,23 +60,6 @@
 
 .currents {
   color: grey;
-}
-
-.profile-picture-parts {
-  position: relative;
-  height: 200px;
-  width: 200px;
-  border-radius: 100px;
-  border: 3px black solid;
-  background: black;
-  margin-right: 100px;
-}
-
-.profile-picture {
-  width: 200px;
-  margin: 0 auto;
-  position: absolute;
-  border-radius: 100px;
 }
 
 .plus-profile-picture {
@@ -95,4 +79,8 @@
   width: 100px;
   padding: 20px;
   font-size: 18px;
+}
+
+.plus-profile-picture:hover {
+  cursor: pointer;
 }

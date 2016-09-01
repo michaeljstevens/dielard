@@ -40,7 +40,6 @@
    font-family: sans-serif;
    font-size: 16px;
    line-height: 1.1666666666;
-   background: #eee;
    color: #000;
  }
 
@@ -60,4 +59,19 @@
    content: "";
    clear: both;
    display: block;
+ }
+
+ .profile-picture {
+   width: 200px;
+   border-radius: 100px;
+ }
+
+ .profile-picture-parts {
+   position: relative;
+   height: 200px;
+   width: 200px;
+   border-radius: 100px;
+   border: 3px black solid;
+   background: black;
+   margin-right: 100px;
  }

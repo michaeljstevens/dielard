@@ -1,4 +1,5 @@
 import React from 'react';
+import {hashHistory} from 'react-router';
 
 const ACTIVITY_CONSTANTS = {
   "None": 1.2,
@@ -81,6 +82,7 @@ class UserProfileForm extends React.Component {
     this.setCalories();
     const user = this.state;
     this.props.updateUser({user});
+    hashHistory.push(`/users/${this.currentUser.id}`);
   }
 
   render() {

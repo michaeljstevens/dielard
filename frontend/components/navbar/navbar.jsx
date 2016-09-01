@@ -4,6 +4,11 @@ import { Link, hashHistory } from 'react-router';
 
 class Navbar extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.gotoProfile = this.gotoProfile.bind(this);
+  }
+
   componentDidUpdate(){
     this.redirectIfLoggedOut();
   }
@@ -14,6 +19,10 @@ class Navbar extends React.Component {
     }
   }
 
+  gotoProfile() {
+    hashHistory.push(`/users/${this.props.currentUser.id}`);
+  }
+
   render () {
     let sessionButton;
     if (this.props.currentUser) {
@@ -22,6 +31,7 @@ class Navbar extends React.Component {
           <li><button className="logout-button" onClick={this.props.logout}>Log Out</button></li>
           <li><img className="header-profile-picture"
             src={this.props.currentUser.profile_picture}
+            onClick={this.gotoProfile}
             alt="" /></li>
           <li><img className="plus" src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1472582322/plus_spuhvk.png" /></li>
         </ul>
