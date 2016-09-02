@@ -31,7 +31,11 @@ class RouteFormModal extends React.Component {
   }
 
   openModal (){
-    this.setState({ modalOpen: true });
+    if (this.props.state.distance === "") {
+      window.alert("Please specify a start and end point")
+    } else {
+      this.setState({ modalOpen: true });
+    }
   }
 
   render (){

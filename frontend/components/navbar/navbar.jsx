@@ -19,9 +19,9 @@ class Navbar extends React.Component {
   }
 
   render () {
-    const routeBuildUrl = `/users/${this.props.currentUser.id}/routes/new`;
     let sessionButton;
     if (this.props.currentUser) {
+      const routeBuildUrl = `/users/${this.props.currentUser.id}/routes/new`;
       let profileUrl = `/users/${this.props.currentUser.id}`;
       sessionButton = (
         <ul className="logout-profile">
