@@ -19,6 +19,7 @@ class Navbar extends React.Component {
   }
 
   render () {
+    const routeBuildUrl = `/users/${this.props.currentUser.id}/routes/new`;
     let sessionButton;
     if (this.props.currentUser) {
       let profileUrl = `/users/${this.props.currentUser.id}`;
@@ -28,7 +29,7 @@ class Navbar extends React.Component {
           <li><Link to={profileUrl}><img className="header-profile-picture"
             src={this.props.currentUser.profile_picture}
             alt="" /></Link></li>
-          <li><img className="plus" src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1472582322/plus_spuhvk.png" /></li>
+          <Link to={routeBuildUrl}><li><img className="plus" src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1472582322/plus_spuhvk.png" /></li></Link>
         </ul>
       );
     } else {
