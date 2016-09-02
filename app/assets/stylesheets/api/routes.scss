@@ -40,6 +40,45 @@
   padding: 10px;
 }
 
+.route-modal {
+  width: 250px;
+  height: 250px;
+  background: white;
+  position: relative;
+}
+
+.route-modal-submit {
+  border: 1px solid black;
+  position: absolute;
+  bottom: 14px;
+  right: 15px;
+  padding: 6px;
+  background: white;
+  color: black;
+}
+
+.route-modal-submit:hover {
+  color: white;
+  background: black;
+}
+
+.route-modal-input {
+  border: 1px black solid;
+}
+
+.route-modal-description {
+  border: 1px solid black;
+}
+
+.activity-type {
+  z-index: 15;
+  position: absolute;
+  top: 44px;
+  left: 445px;
+  font-size: 51px;
+  width: 100px;
+}
+
 .controls {
   margin-top: 10px;
   border: 1px solid transparent;

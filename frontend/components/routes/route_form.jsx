@@ -15,13 +15,23 @@ class RouteForm extends React.Component {
       end_lat: null,
       end_lng: null,
       distance: "",
-      duration: ""
+      duration: "",
+      activity_type: "WALKING"
     };
 
     this.markers = [];
     this.setDirections = this.setDirections.bind(this);
     this.calculateAndDisplayRoute = this.calculateAndDisplayRoute.bind(this);
+    this.updateState = this.updateState.bind(this);
+    this.calculateDuration = this.calculateDuration.bind(this);
   }
+
+  updateState (field){
+		return e => {
+      this.state[field] = e.currentTarget.value;
+      this.setState({duration: this.calculateDuration()});
+    };
+	}
 
   componentDidMount() {
     const mapDOMNode = this.refs.map;
@@ -135,7 +145,8 @@ class RouteForm extends React.Component {
     }, function(response, status) {
       if(status === 'OK') {
         const distance = response.routes[0].legs[0].distance.text;
-        const duration = response.routes[0].legs[0].duration.text;
+        that.walk_duration = response.routes[0].legs[0].duration.value;
+        const duration = that.calculateDuration();
         that.setState({distance: distance, duration: duration});
         directionsDisplay.setDirections(response);
       } else {
@@ -154,10 +165,28 @@ class RouteForm extends React.Component {
     this.markers = [];
   }
 
+  calculateDuration() {
+    let duration = this.walk_duration;
+    if (this.state.activity_type === "WALKING") {
+      duration = duration;
+    } else if (this.state.activity_type === "RUNNING") {
+      duration = (duration / 1.8);
+    } else if (this.state.activity_type === "BICYCLING"){
+      duration = (duration / 4.84);
+    }
+    return `${Math.round(duration/60)} mins`;
+  }
+
   render () {
     return(
       <div className="map-container">
         <div className="map-items-container">
+          <select onChange={this.updateState("activity_type")} className="activity-type"
+            value={this.state.activity_type}>
+            <option value="WALKING">Walk</option>
+            <option value="RUNNING">Run</option>
+            <option value="BICYCLING">Bike</option>
+          </select>
           <div className="map" ref="map"></div>
           <RouteFormModal state={this.state} currentUser={this.props.currentUser} dispatch={this.props.createRoute}/>
           <input id="pac-input" className="controls" type="text" placeholder="Search Box"/>

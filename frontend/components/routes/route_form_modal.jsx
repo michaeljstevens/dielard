@@ -50,15 +50,24 @@ class RouteFormModal extends React.Component {
         <Modal
           isOpen={this.state.modalOpen}
           style={RouteFormModalStyle}
-          onRequestClose={this.closeModal}>
+          onRequestClose={this.closeModal}
+          className="route-modal">
           <form onSubmit={this.handleSubmit} className="route-modal-form">
-            <label>Route Name</label>
-            <input type="text" onChange={this.updateState("title")} />
-            <label>Description</label>
-            <input type="text" onChange={this.updateState("description")}/>
-            <p>Distance: {this.props.state.distance}</p>
-            <p>Estimated Duration: {this.props.state.duration}</p>
-            <input type="submit" value="Go"/>
+            <ul>
+              <li><label>Route Name:</label></li>
+              <li><input type="text" className="route-modal-input" onChange={this.updateState("title")} /></li>
+              <br />
+              <li><label>Description:</label></li>
+              <li><textarea className="route-modal-description" onChange={this.updateState("description")}/></li>
+              <br />
+              <li>Distance:</li>
+              <li>{this.props.state.distance}</li>
+              <br />
+              <li>Estimated Duration:</li>
+              <li>{this.props.state.duration}</li>
+              <br />
+            </ul>
+            <input type="submit" className="route-modal-submit" value="Submit"/>
           </form>
         </Modal>
       </div>
