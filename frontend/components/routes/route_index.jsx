@@ -1,4 +1,5 @@
 import React from 'react';
+import RouteIndexItem from './route_index_item.jsx';
 
 class RouteIndex extends React.Component {
 
@@ -10,8 +11,8 @@ class RouteIndex extends React.Component {
     let routes = this.props.routes;
     let routeLis = [];
     if (!!routes) {
-      Object.keys(this.props.routes).forEach (key => {
-        routeLis.push(<li>{this.props.routes[key].user_id}</li>);
+      Object.keys(routes).forEach (key => {
+        routeLis.push(<RouteIndexItem route={routes[key]} />);
       });
     }
     return(

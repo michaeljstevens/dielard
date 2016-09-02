@@ -16,3 +16,12 @@ export const fetchRoutes = function(success, error) {
     error
   });
 };
+
+export const fetchSingleRoute = function(id, success, error) {
+  $.ajax({
+    method: 'GET',
+    url: `/api/routes/${id}`,
+    success,
+    error
+  });
+};
