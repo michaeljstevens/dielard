@@ -41,9 +41,11 @@ class RouteFormModal extends React.Component {
   render (){
     return(
       <div>
-        <button onClick={this.openModal}>
-          <label>Create Route</label>
-          <label>{this.props.state.distance}</label>
+        <button className="route-modal-button" onClick={this.openModal}>
+          <ul>
+            <li>Create Route</li>
+            <li>{this.props.state.distance}</li>
+          </ul>
         </button>
         <Modal
           isOpen={this.state.modalOpen}

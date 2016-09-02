@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   min-height: 369px;
+  overflow: hidden;
 }
 
 .v-line {
@@ -78,7 +79,7 @@
 
 .user-display-info-head li {
   padding: 10px;
-  color: black;
+  color: grey;
   text-align: right;
 }
 

@@ -31,6 +31,63 @@ class RouteForm extends React.Component {
     };
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
 
+    if (this.markers.length > 1) {
+      for (let i = 0; i < 2; i++) {
+        this.markers[i].setMap(null);
+        this.markers = [];
+      }
+    }
+
+        // Create the search box and link it to the UI element.
+    const input = document.getElementById('pac-input');
+    const searchBox = new google.maps.places.SearchBox(input);
+    this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+    let that = this;
+    // Bias the SearchBox results towards current this.map's viewport.
+    that.map.addListener('bounds_changed', function() {
+      searchBox.setBounds(that.map.getBounds());
+    });
+
+    searchBox.addListener('places_changed', function() {
+
+        const places = searchBox.getPlaces();
+
+        if (places.length == 0) {
+          return;
+        }
+
+        // For each place, get the icon, name and location.
+        const bounds = new google.maps.LatLngBounds();
+        places.forEach(function(place) {
+          if (!place.geometry) {
+            console.log("Returned place contains no geometry");
+            return;
+          }
+
+          // Create a marker for each place.
+          that.markers.push(new google.maps.Marker({
+            map: that.map,
+            title: place.name,
+            position: place.geometry.location
+          }));
+
+          if (that.markers.length === 2) {
+            that.setDirections();
+          }
+
+          if (place.geometry.viewport) {
+            // Only geocodes have viewport.
+            bounds.union(place.geometry.viewport);
+          } else {
+            bounds.extend(place.geometry.location);
+          }
+        });
+        that.map.fitBounds(bounds);
+      });
+
+
+
     google.maps.event.addListener(this.map, 'click', (event) => {
 
       if (this.markers.length !== 1) {
@@ -99,9 +156,13 @@ class RouteForm extends React.Component {
 
   render () {
     return(
-      <div>
-        <RouteFormModal state={this.state} currentUser={this.props.currentUser} dispatch={this.props.createRoute}/>
-        <div className="map" ref="map"></div>
+      <div className="map-container">
+        <div className="map-items-container">
+          <div className="map" ref="map"></div>
+          <RouteFormModal state={this.state} currentUser={this.props.currentUser} dispatch={this.props.createRoute}/>
+          <input id="pac-input" className="controls" type="text" placeholder="Search Box"/>
+        </div>
+        <img className="splash-image" src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1472799503/photo-1470299067034-07c696e9ef07_bdkprd.jpg" alt=""/>
       </div>
     );
   }

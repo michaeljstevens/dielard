@@ -104,26 +104,27 @@ class UserProfileForm extends React.Component {
             <label className="field-label">Username</label>
             <input type="text"
               onChange={this.updateState("username")}
-              className="update-input" placeholder={this.state.username} />
+              className="update-input" value={this.state.username} />
             </div>
             <br />
             <div className="update-field">
-              <label className="field-label">Description</label>
-              <input type="text"
+              <label className="field-label">Description:</label>
+              <textarea
                 onChange={this.updateState("description")}
-                className="update-input" placeholder={this.state.description} />
+                className="update-input description" value={this.state.description} />
             </div>
             <br />
             <div className="update-field">
               <label className="field-label">Birthdate</label>
               <input type="date"
+                value={this.state.birthdate}
                 onChange={this.updateState("birthdate")}
                 className="update-input" />
             </div>
             <br />
             <div className="update-field">
               <label className="field-label">Sex</label>
-              <select onChange={this.updateState("sex")} className="update-select">
+              <select onChange={this.updateState("sex")} className="update-select" value={this.state.sex}>
                 <option value=""></option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
@@ -134,19 +135,20 @@ class UserProfileForm extends React.Component {
               <label className="field-label">Height (inches)</label>
               <input type="text"
                 onChange={this.updateState("height")}
-                className="update-input" placeholder={this.state.height} />
+                className="update-input" value={this.state.height} />
             </div>
             <br />
             <div className="update-field">
               <label className="field-label">Weight (pounds)</label>
               <input type="text"
                 onChange={this.updateState("weight")}
-                className="update-input" placeholder={this.state.weight} />
+                className="update-input" value={this.state.weight} />
             </div>
             <br />
             <div className="update-field">
               <label className="field-label">Activity Level</label>
-              <select onChange={this.updateState("activity_level")} className="update-select">
+              <select onChange={this.updateState("activity_level")}
+                className="update-select" value={this.state.activity_level}>
                 <option value=""></option>
                 <option value="None">None</option>
                 <option value="Light">Light</option>
