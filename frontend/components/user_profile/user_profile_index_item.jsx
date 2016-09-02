@@ -20,20 +20,29 @@ class UserProfileIndexItem extends React.Component {
             <div className="left-content">
               <img src={this.props.currentUser.profile_picture} className="profile-picture" />
               <h1 className="usershow-header">{this.props.currentUser.username}</h1>
-            </div>
-            <div className="right-content">
-              <ul className="user-display-info">
-                <li>{this.props.currentUser.description}</li>
-                <li>{this.props.currentUser.birthdate}</li>
-                <li>{this.props.currentUser.sex}</li>
-                <li>Height(inches): {this.props.currentUser.height}</li>
-                <li>Weight(pounds): {this.props.currentUser.weight}</li>
-                <li>Activity Level: {this.props.currentUser.activity_level}</li>
-                <li>Estimated Daily Caloric Expenditure: {this.props.currentUser.daily_calories}</li>
-              </ul>
+              <h2 className="usershow-description">{this.props.currentUser.description}</h2>
               <button type="button" className="goto-edit-button" onClick={this.gotoEdit}>
                 Update Profile
               </button>
+            </div>
+            <div className="right-content">
+              <ul className="user-display-info-head">
+                <li>DOB</li>
+                <li>Sex</li>
+                <li>Height(inches)</li>
+                <li>Weight(pounds)</li>
+                <li>Activity Level</li>
+                <li>Maintenance Calories</li>
+              </ul>
+              <div className="v-line"></div>
+              <ul className="user-display-info">
+                <li>{this.props.currentUser.birthdate}</li>
+                <li>{this.props.currentUser.sex}</li>
+                <li>{this.props.currentUser.height}</li>
+                <li>{this.props.currentUser.weight}</li>
+                <li>{this.props.currentUser.activity_level}</li>
+                <li>{this.props.currentUser.daily_calories}</li>
+              </ul>
             </div>
           </div>
         </div>
