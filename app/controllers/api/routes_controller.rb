@@ -1,5 +1,10 @@
 class Api::RoutesController < ApplicationController
 
+  def index
+    @routes = Route.where(user_id: current_user.id)
+    render "/api/routes/index"
+  end
+
   def create
     @route = Route.new(route_params)
     if @route.save

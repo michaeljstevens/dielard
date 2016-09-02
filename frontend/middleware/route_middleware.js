@@ -1,6 +1,6 @@
-import { RouteConstants, receiveSingleRoute } from '../actions/route_actions.js';
+import { RouteConstants, receiveSingleRoute, receiveRoutes } from '../actions/route_actions.js';
 import { receiveErrors } from '../actions/error_actions.js';
-import { createRoute } from '../util/route_api_util.js';
+import { createRoute, fetchRoutes } from '../util/route_api_util.js';
 
 export default ({getState, dispatch}) => next => action => {
   const success = route => dispatch(receiveSingleRoute(route));
@@ -9,6 +9,10 @@ export default ({getState, dispatch}) => next => action => {
     dispatch(receiveErrors(errors));
   };
   switch(action.type){
+    case RouteConstants.REQUEST_ROUTES:
+      let requestRoutesSuccess = (data) => dispatch(receiveRoutes(data));
+      fetchRoutes(requestRoutesSuccess, error);
+      return next(action);
     case RouteConstants.CREATE_ROUTE:
       createRoute(action.route, success, error);
       return next(action);

@@ -189,7 +189,8 @@ class RouteForm extends React.Component {
           </select>
           <div className="map" ref="map"></div>
           <RouteFormModal state={this.state} currentUser={this.props.currentUser} dispatch={this.props.createRoute}/>
-          <input id="pac-input" className="controls" type="text" placeholder="Search Box"/>
+          <input id="pac-input" className="controls" type="text"
+            placeholder="Search to Set Markers (or click anywhere)"/>
         </div>
         <img className="splash-image" src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1472799503/photo-1470299067034-07c696e9ef07_bdkprd.jpg" alt=""/>
       </div>

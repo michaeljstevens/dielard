@@ -3,6 +3,9 @@ import { merge } from 'lodash';
 
 const RouteReducer = function(state = {}, action){
   switch(action.type){
+    case RouteConstants.RECEIVE_ROUTES:
+      const allRoutes = action.routes;
+      return merge({}, state, {allRoutes});
     case RouteConstants.RECEIVE_SINGLE_ROUTE:
       const route = action.route;
       return merge({}, state, {route});

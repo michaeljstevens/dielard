@@ -1,6 +1,4 @@
 export const createRoute = function(route, success, error) {
-  route.start_pos = JSON.stringify(route.start_pos);
-  route.end_pos = JSON.stringify(route.end_pos);
   $.ajax({
 		method: 'POST',
 		url: '/api/routes',
@@ -8,4 +6,13 @@ export const createRoute = function(route, success, error) {
 		success,
 		error
 	});
+};
+
+export const fetchRoutes = function(success, error) {
+  $.ajax({
+    method: 'GET',
+    url: '/api/routes',
+    success,
+    error
+  });
 };

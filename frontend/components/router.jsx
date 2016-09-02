@@ -6,6 +6,7 @@ import UserProfileFormContainer from './user_profile/user_profile_form_container
 import WorkoutFeed from './workout_feed/workout_feed.jsx';
 import UserProfileIndexItemContainer from './user_profile/user_profile_index_item_container.js';
 import RouteFormContainer from './routes/route_form_container.js';
+import RouteIndexContainer from './routes/route_index_container.js';
 
 class AppRouter extends React.Component{
   constructor(props){
@@ -47,6 +48,7 @@ class AppRouter extends React.Component{
           <Route path="/signup" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn}/>
           <Route path="/users/:id" component={ UserProfileIndexItemContainer } onEnter={this._ensureLoggedIn} />
           <Route path="/users/:id/edit" component={ UserProfileFormContainer } onEnter={this._ensureLoggedIn} />
+          <Route path="/users/:id/routes" component={ RouteIndexContainer } onEnter={this._ensureLoggedIn} />
           <Route path="/users/:id/routes/new" component={ RouteFormContainer } onEnter={this._ensureLoggedIn} />
         </Route>
       </Router>
