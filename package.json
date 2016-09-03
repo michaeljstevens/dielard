@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "postinstall": "./node_modules/.bin/webpack -p --define processs.env.NODE_ENV='\"production\"'''''''' --progess --colors"
+    "postinstall": "./node_modules/.bin/webpack -p --define process.env.NODE_ENV='\"production\"' --progess --colors"
   },
   "keywords": [],
   "author": "",
