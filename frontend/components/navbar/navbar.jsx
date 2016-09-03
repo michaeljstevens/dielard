@@ -21,6 +21,7 @@ class Navbar extends React.Component {
   render () {
     let sessionButton;
     if (this.props.currentUser) {
+      this.routesUrl = `/users/${this.props.currentUser.id}/routes`
       const routeBuildUrl = `/users/${this.props.currentUser.id}/routes/new`;
       let profileUrl = `/users/${this.props.currentUser.id}`;
       sessionButton = (
@@ -41,6 +42,7 @@ class Navbar extends React.Component {
     return(
       <div className="nav-header">
         <Link to="/" className="header-link"><h1>takeupless</h1></Link>
+        <Link to={this.routesUrl} className="header-options"><h2>my routes</h2></Link>
         <div>{sessionButton}</div>
       </div>
     );

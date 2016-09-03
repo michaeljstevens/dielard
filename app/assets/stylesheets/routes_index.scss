@@ -3,3 +3,29 @@
   height: 25vh;
   margin-top: 30px;
 }
+
+.route-list-div {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.route-list-div ul {
+  padding-top: 60px;
+}
+
+.route-list-outer-div {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.route-list-container {
+  background: transparent;
+}
+
+.route-list-inner-div {
+  background: rgba(255, 255, 255, 0.85);
+  width: 66%
+}

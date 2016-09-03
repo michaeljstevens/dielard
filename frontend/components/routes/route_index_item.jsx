@@ -50,11 +50,29 @@ class RouteIndexItem extends React.Component {
     });
   }
 
-
-
   render() {
+
+    const route = this.props.route;
+    let activity_type = "";
+    if(route.activity_type === "WALKING") {
+      activity_type = "Walk";
+    } else if(route.activity_type === "RUNNING") {
+      activity_type = "Run";
+    } else {
+      activity_type = "Bike";
+    }
+
     return(
-      <div className="small-map" ref="map"></div>
+      <div className="route-list-div">
+        <ul>
+          <li>{route.title}</li>
+          <li>{route.description}</li>
+          <li>{activity_type}</li>
+          <li>{route.distance}</li>
+          <li>{route.duration}</li>
+        </ul>
+        <div className="small-map" ref="map"></div>
+      </div>
     );
   }
 }
