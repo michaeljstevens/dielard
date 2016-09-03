@@ -7,9 +7,10 @@
   display: flex;
   justify-content: space-between;
   border: 1px solid black;
-  background: rgba(255, 255, 255, 0.85);
+  background: white;
   margin: 20px;
   width: 55%;
+  position: relative;
 }
 
 .route-list-div ul {
@@ -60,4 +61,21 @@
   height: 58px;
   width: auto;
   margin-left: 15px;
+}
+
+.route-list-delete-button {
+  height: 25px;
+  border: 1px solid black;
+  padding: 4px;
+  position: absolute;
+  z-index: 500;
+  right: 12px;
+  top: 10px;
+  background: black;
+  color: white;
+}
+
+.route-list-delete-button:hover {
+  color: black;
+  background: lightgrey;
 }
