@@ -4,7 +4,8 @@ export const RouteConstants = {
   REQUEST_ROUTES: "REQUEST_ROUTES",
   RECEIVE_ROUTES: "RECEIVE_ROUTES",
   REQUEST_SINGLE_ROUTE: "REQUEST_SINGLE_ROUTE",
-  RECEIVE_SINGLE_ROUTE: "RECEIVE_SINGLE_ROUTE"
+  RECEIVE_SINGLE_ROUTE: "RECEIVE_SINGLE_ROUTE",
+  REMOVE_ROUTE: "REMOVE_ROUTE"
 };
 
 export const createRoute = route => ({
@@ -31,7 +32,12 @@ export const receiveSingleRoute = route => ({
   route
 });
 
-export const destroyRoute = route => ({
+export const destroyRoute = id => ({
   type: RouteConstants.DESTROY_ROUTE,
+  id
+});
+
+export const removeRoute = route => ({
+  type: RouteConstants.REMOVE_ROUTE,
   route
 });

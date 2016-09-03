@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import RouteIndex from './route_index.jsx';
-import {requestRoutes} from '../../actions/route_actions.js';
+import {requestRoutes, destroyRoute} from '../../actions/route_actions.js';
 
 
 const mapStateToProps = (state) => {
@@ -11,6 +11,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) =>({
   requestRoutes: () => dispatch(requestRoutes()),
+  destroyRoute: id => dispatch(destroyRoute(id))
 });
 
 

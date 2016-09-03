@@ -12,7 +12,7 @@ class RouteIndex extends React.Component {
     let routeItems = [];
     if (!!routes) {
       Object.keys(routes).forEach (key => {
-        routeItems.push(<RouteIndexItem route={routes[key]} />);
+        routeItems.push(<RouteIndexItem route={routes[key]} key={key} destroyRoute={this.props.destroyRoute} />);
       });
     }
 

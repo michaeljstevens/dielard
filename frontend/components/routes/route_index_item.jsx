@@ -6,6 +6,7 @@ class RouteIndexItem extends React.Component {
     super(props);
     this.setDirections = this.setDirections.bind(this);
     this.calculateAndDisplayRoute = this.calculateAndDisplayRoute.bind(this);
+    this.removeRoute = this.removeRoute.bind(this);
   }
 
 
@@ -50,6 +51,11 @@ class RouteIndexItem extends React.Component {
     });
   }
 
+  removeRoute () {
+    this.props.destroyRoute(this.props.route.id);
+    this.setState({route: null});
+  }
+
   render() {
 
     const route = this.props.route;
@@ -64,6 +70,7 @@ class RouteIndexItem extends React.Component {
 
     return(
       <div className="route-list-div">
+        <button className="route-list-delete-button" onClick={this.removeRoute}>Delete</button>
         <ul className="route-list-ul">
           <li><img className="route-activity-img" src={activity_type} /></li>
           <li className="route-list-item-title">{route.title}</li>

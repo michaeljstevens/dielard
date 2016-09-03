@@ -25,3 +25,12 @@ export const fetchSingleRoute = function(id, success, error) {
     error
   });
 };
+
+export const deleteRoute = function(id, success, error) {
+  $.ajax({
+    method: 'DELETE',
+    url: `/api/routes/${id}`,
+    success,
+    error
+  });
+};

@@ -1,7 +1,6 @@
-import { RouteConstants, receiveSingleRoute, receiveRoutes } from '../actions/route_actions.js';
+import { RouteConstants, receiveSingleRoute, receiveRoutes, removeRoute } from '../actions/route_actions.js';
 import { receiveErrors } from '../actions/error_actions.js';
-import { createRoute, fetchRoutes, fetchSingleRoute } from '../util/route_api_util.js';
-
+import { createRoute, fetchRoutes, fetchSingleRoute, deleteRoute } from '../util/route_api_util.js';
 export default ({getState, dispatch}) => next => action => {
   const success = route => dispatch(receiveSingleRoute(route));
   const error = xhr => {
@@ -19,6 +18,14 @@ export default ({getState, dispatch}) => next => action => {
       return next(action);
     case RouteConstants.CREATE_ROUTE:
       createRoute(action.route, success, error);
+      return next(action);
+    case RouteConstants.DESTROY_ROUTE:
+      let destroyRouteSuccess = (data) => {
+        console.log(data);
+        console.log(removeRoute(data));
+        dispatch(removeRoute(data));
+      };
+      deleteRoute(action.id, destroyRouteSuccess, error);
       return next(action);
     default:
       return next(action);
