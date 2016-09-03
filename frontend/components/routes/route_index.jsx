@@ -18,10 +18,7 @@ class RouteIndex extends React.Component {
 
     return(
       <div className="route-list-outer-div">
-        <div className="route-list-inner-div">
-          {routeItems}
-        </div>
-        <img className="splash-image" src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1472860722/photo-1452573992436-6d508f200b30_h43qwh.jpg" alt=""/>
+        {routeItems}
       </div>
     );
   }

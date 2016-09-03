@@ -1,24 +1,28 @@
 .small-map {
-  width: 30vw;
-  height: 25vh;
-  margin-top: 30px;
+  width: 40vw;
 }
 
 .route-list-div {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  border: 1px solid black;
+  background: rgba(255, 255, 255, 0.85);
+  margin: 20px;
+  width: 55%;
 }
 
 .route-list-div ul {
-  padding-top: 60px;
+  padding-top: 20px;
 }
 
 .route-list-outer-div {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   height: 100%;
   width: 100%;
+  background: rgba(0, 0, 0, 0.8);
 }
 
 .route-list-container {
@@ -26,6 +30,25 @@
 }
 
 .route-list-inner-div {
-  background: rgba(255, 255, 255, 0.85);
   width: 66%
+}
+
+.route-list-item {
+  padding: 10px;
+  word-break: break-all;
+  text-align: center;
+  font-size: 20px;
+}
+
+.route-list-item ul li {
+}
+
+.route-list-ul {
+  padding: 10px;
+  width: 214px;
+}
+
+.route-activity-img {
+  height: 58px;
+  width: auto;
 }

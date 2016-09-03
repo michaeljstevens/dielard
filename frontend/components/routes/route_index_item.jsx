@@ -55,21 +55,21 @@ class RouteIndexItem extends React.Component {
     const route = this.props.route;
     let activity_type = "";
     if(route.activity_type === "WALKING") {
-      activity_type = "Walk";
+      activity_type = "http://res.cloudinary.com/dj6gqauyi/image/upload/v1472887023/walking-icon-hi_bvty27.png";
     } else if(route.activity_type === "RUNNING") {
-      activity_type = "Run";
+      activity_type = "http://res.cloudinary.com/dj6gqauyi/image/upload/v1472887028/running-icon-on-transparent-background-md_qqc1go.png";
     } else {
-      activity_type = "Bike";
+      activity_type = "http://res.cloudinary.com/dj6gqauyi/image/upload/v1472887017/Bicycle-icon_wulxp8.svg";
     }
 
     return(
       <div className="route-list-div">
-        <ul>
-          <li>{route.title}</li>
-          <li>{route.description}</li>
-          <li>{activity_type}</li>
-          <li>{route.distance}</li>
-          <li>{route.duration}</li>
+        <ul className="route-list-ul">
+          <li><img className="route-activity-img" src={activity_type} /></li>
+          <li className="route-list-item">{route.title}</li>
+          <li className="route-list-item">{route.description}</li>
+          <li className="route-list-item">{route.distance}</li>
+          <li className="route-list-item">{route.duration}</li>
         </ul>
         <div className="small-map" ref="map"></div>
       </div>
