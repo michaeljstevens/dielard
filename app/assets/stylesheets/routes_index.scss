@@ -40,15 +40,24 @@
   font-size: 20px;
 }
 
-.route-list-item ul li {
+.route-list-item-title {
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 15px;
 }
 
 .route-list-ul {
   padding: 10px;
   width: 214px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .route-activity-img {
   height: 58px;
   width: auto;
+  margin-left: 15px;
 }

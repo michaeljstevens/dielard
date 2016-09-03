@@ -66,7 +66,7 @@ class RouteIndexItem extends React.Component {
       <div className="route-list-div">
         <ul className="route-list-ul">
           <li><img className="route-activity-img" src={activity_type} /></li>
-          <li className="route-list-item">{route.title}</li>
+          <li className="route-list-item-title">{route.title}</li>
           <li className="route-list-item">{route.description}</li>
           <li className="route-list-item">{route.distance}</li>
           <li className="route-list-item">{route.duration}</li>
