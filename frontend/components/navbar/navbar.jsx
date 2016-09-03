@@ -19,9 +19,10 @@ class Navbar extends React.Component {
   }
 
   render () {
+    this.routesUrl = "/";
     let sessionButton;
     if (this.props.currentUser) {
-      this.routesUrl = `/users/${this.props.currentUser.id}/routes`
+      this.routesUrl = `/users/${this.props.currentUser.id}/routes`;
       const routeBuildUrl = `/users/${this.props.currentUser.id}/routes/new`;
       let profileUrl = `/users/${this.props.currentUser.id}`;
       sessionButton = (
