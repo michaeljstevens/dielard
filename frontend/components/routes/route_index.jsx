@@ -15,17 +15,17 @@ class RouteIndex extends React.Component {
   }
 
   increaseOffset() {
-    if (this.state.offset <= this.props.routes.length - 5) {
+    if (this.state.offset <= this.props.routes.length - 10) {
       setTimeout( () => {
-        this.setState({offset: this.state.offset += 5});
+        this.setState({offset: this.state.offset += 10});
       }, 500);
     }
   }
 
   decreaseOffset() {
-    if (this.state.offset >= 5) {
+    if (this.state.offset >= 10) {
       setTimeout( () => {
-        this.setState({offset: this.state.offset -= 5});
+        this.setState({offset: this.state.offset -= 10});
       }, 500);
     }
   }
@@ -34,7 +34,7 @@ class RouteIndex extends React.Component {
     let routes = this.props.routes;
     let routeItems = [];
     if (!!routes) {
-      let keys = Object.keys(routes).slice(this.state.offset, this.state.offset + 5);
+      let keys = Object.keys(routes).slice(this.state.offset, this.state.offset + 10);
       keys.forEach (key => {
         routeItems.push(<RouteIndexItem route={routes[key]} key={key} destroyRoute={this.props.destroyRoute} />);
       });

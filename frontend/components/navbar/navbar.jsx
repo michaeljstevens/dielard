@@ -1,20 +1,28 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
-
+import NavAddModal from './nav_add_modal.jsx';
 
 class Navbar extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      style: {display: 'none'}
+    };
+    this.clickLink = this.clickLink.bind(this);
+    this.displayAddDropdown = this.displayAddDropdown.bind(this);
   }
 
-  componentDidUpdate(){
-    this.redirectIfLoggedOut();
+  clickLink(loc) {
+    this.setState({style: {display: 'none'}});
+    hashHistory.push(loc);
   }
 
-  redirectIfLoggedOut() {
-    if (!this.props.loggedIn){
-      hashHistory.push("/login");
+  displayAddDropdown() {
+    if (this.state.style.display === 'none') {
+      this.setState({style: {display: 'block'}});
+    } else {
+      this.setState({style: {display: 'none'}});
     }
   }
 
@@ -22,8 +30,9 @@ class Navbar extends React.Component {
     this.routesUrl = "/";
     let sessionButton;
     if (this.props.currentUser) {
+      const newRouteUrl = `/users/${this.props.currentUser.id}/routes/new`;
+      const newExerciseUrl = `/users/${this.props.currentUser.id}/exercises/new`;
       this.routesUrl = `/users/${this.props.currentUser.id}/routes`;
-      const routeBuildUrl = `/users/${this.props.currentUser.id}/routes/new`;
       let profileUrl = `/users/${this.props.currentUser.id}`;
       sessionButton = (
         <ul className="logout-profile">
@@ -31,7 +40,16 @@ class Navbar extends React.Component {
           <li><Link to={profileUrl}><img className="header-profile-picture"
             src={this.props.currentUser.profile_picture}
             alt="" /></Link></li>
-          <Link to={routeBuildUrl}><li><img className="plus" src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1472582322/plus_spuhvk.png" /></li></Link>
+          <li>
+            <div>
+              <img className="plus" onClick={this.displayAddDropdown}
+                src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1472582322/plus_spuhvk.png" />
+              <ul style={this.state.style} className="nav-add-ul">
+                <li onClick={this.clickLink.bind(this, newRouteUrl)}>New Route</li>
+                <li onClick={this.clickLink.bind(this, newExerciseUrl)}>New Exercise</li>
+              </ul>
+            </div>
+          </li>
         </ul>
       );
     } else {

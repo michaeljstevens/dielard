@@ -1,12 +1,14 @@
 import { applyMiddleware } from 'redux';
 import SessionMiddleware from '../middleware/session_middleware';
 import UserMiddleware from '../middleware/user_middleware.js';
-import RouteMiddleWare from '../middleware/route_middleware.js';
+import RouteMiddleware from '../middleware/route_middleware.js';
+import ExerciseMiddleware from '../middleware/exercise_middleware.js';
 
 const RootMiddleware = applyMiddleware(
   SessionMiddleware,
   UserMiddleware,
-  RouteMiddleWare
+  RouteMiddleware,
+  ExerciseMiddleware
 );
 
 export default RootMiddleware;

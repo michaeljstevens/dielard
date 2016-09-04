@@ -3,11 +3,13 @@ import SessionReducer from '../reducers/session_reducer';
 import ErrorReducer from '../reducers/error_reducer.js';
 import UserReducer from '../reducers/user_reducer.js';
 import RouteReducer from '../reducers/route_reducer.js';
+import ExerciseReducer from '../reducers/exercise_reducer.js';
 
 const AppReducer = combineReducers({
   session: SessionReducer,
   errors: ErrorReducer,
-  routes: RouteReducer
+  routes: RouteReducer,
+  exercises: ExerciseReducer
 });
 
 const RootReducer = (state, action) => {

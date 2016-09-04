@@ -2,7 +2,7 @@ import React from 'react';
 
 const WorkoutFeed = () => {
   return(
-    <h1>Future Home of Your Workout Feed</h1>
+    <h1 className="place-holder">Future Home of Your Workout Feed</h1>
   );
 };
 

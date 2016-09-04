@@ -6,6 +6,7 @@ root to: 'static_pages#root'
     resources :users, only: [:create, :update]
     resource :session, only: [:create, :destroy, :show]
     resources :routes, only: [:create, :destroy, :show, :index]
+    resources :exercises, only: [:create, :destroy, :show, :index]
   end
 
 end

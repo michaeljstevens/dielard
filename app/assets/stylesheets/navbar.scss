@@ -78,3 +78,34 @@
   padding-right: 20px;
   padding-left: 20px;
 }
+
+.nav-add-ul {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  width: 112px;
+  right: 18px;
+  text-align: right;
+  border: 1px solid black;
+  color: black;
+  background: white;
+  z-index: 15;
+}
+
+.nav-add-ul li {
+  padding-top: 10px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid black;
+  padding-right: 5px;
+  z-index: 100;
+}
+
+.nav-add-ul li:hover {
+  color: white;
+  background: black;
+}
+
+.place-holder {
+  height: 500px;
+}

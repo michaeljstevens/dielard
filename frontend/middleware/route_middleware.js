@@ -21,8 +21,6 @@ export default ({getState, dispatch}) => next => action => {
       return next(action);
     case RouteConstants.DESTROY_ROUTE:
       let destroyRouteSuccess = (data) => {
-        console.log(data);
-        console.log(removeRoute(data));
         dispatch(removeRoute(data));
       };
       deleteRoute(action.id, destroyRouteSuccess, error);
