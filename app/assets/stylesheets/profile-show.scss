@@ -42,7 +42,7 @@
 .usershow-header {
   font-size: 40px;
   position: absolute;
-  left: 58px;
+  right: 16px;
   width: 300px;
   color: white;
   text-align: right;
@@ -56,13 +56,15 @@
   text-align: center;
   line-height: 1.3;
   top: 91px;
-  left: 117px;
+  right: 20px;
   font-style: italic;
 }
 
 .user-display-info {
   padding: 20px;
   margin-top: 15px;
+  position: absolute;
+  right: 86px;
 }
 
 .user-display-info-head{
@@ -88,8 +90,8 @@
   height: 20px;
   padding: 10px;
   position: absolute;
-  right: 238px;
-  top: 261px;
+  left: 20px;
+  bottom: 20px;
   color: white;
 }
 
@@ -105,4 +107,6 @@
   position: absolute;
   top: 27px;
   left: -102px;
+  height: 200px;
+  background: black;
 }

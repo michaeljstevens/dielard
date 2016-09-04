@@ -46,7 +46,9 @@ class RouteIndexItem extends React.Component {
       if(status === 'OK') {
         directionsDisplay.setDirections(response);
       } else {
-        window.alert('Directions request failed due to' + status);
+        setTimeout( () => {
+          that.calculateAndDisplayRoute(directionsService, directionsDisplay);
+        }, 200);
       }
     });
   }
