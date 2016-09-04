@@ -1,11 +1,11 @@
 class Api::ExercisesController < ApplicationController
   def index
-    @exercises = Route.where(user_id: current_user.id)
+    @exercises = Exercise.where(user_id: current_user.id)
     render "/api/exercises/index"
   end
 
   def create
-    @exercise = Route.new(exercise_params)
+    @exercise = Exercise.new(exercise_params)
     if @exercise.save
       render "api/exercises/show"
     else
@@ -14,7 +14,7 @@ class Api::ExercisesController < ApplicationController
   end
 
   def destroy
-    @exercise = Route.find(params[:id])
+    @exercise = Exercise.find(params[:id])
     if @exercise.destroy
       render "/api/exercises/show"
     else

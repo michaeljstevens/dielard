@@ -1,3 +1,167 @@
 // Place all the styles related to the api/exercises controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.exercise-form-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.95);
+  margin-top: 80px;
+  border-radius: 5px;
+}
+
+.exercise-form-header {
+  font-size: 39px;
+  margin-top: 0px;
+  background: black;
+  color: white;
+  padding: 11px 20px;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.exercise-form-title {
+  border: 1px black solid;
+}
+
+.exercise-form-description {
+  border: 1px black solid;
+}
+
+.exercise-form {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-top: 20px;
+}
+
+.exercise-form label {
+  padding: 9px;
+}
+
+.exercise-form-input {
+  margin: 10px;
+}
+
+.exercise-form-submit {
+  border: 1px solid black;
+  padding: 6px;
+  width: 50px;
+  position: absolute;
+  bottom: -58px;
+  right: 12px;
+}
+
+.exercise-form-submit:hover {
+  background: black;
+  color: white;
+}
+
+.exercise-form-outer {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+}
+
+.exercise-form-title {
+  width: 200px;
+}
+
+.exercise-form-description {
+  width: 200px;
+}
+
+.exercise-form-select {
+  width: 200px;
+}
+
+.exercise-index-item-outer-div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  min-height: 720px;
+  position: relative;
+}
+
+.exercise-index-item-container {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  border: 1px solid black;
+  margin: 20px;
+  background: white;
+  position: relative;
+  min-height: 87px;
+  border-radius: 5px;
+}
+
+.exercise-index-item-title {
+  // margin-right: 20px;
+}
+
+.exercise-index-item-values {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.exercise-index-item-values li {
+  text-align: center;
+  padding: 20px;
+}
+
+.exercise-index-item-values li img {
+  display: block;
+  width: 100%;
+  max-width: 115px;
+  height: auto;
+  margin-bottom: 10px;
+  margin-right: 36px;
+}
+
+.exercise-index-title {
+  font-size: 40px;
+  width: 163px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.exercise-index-description {
+  width: 160px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.exercist-index-muscle-group {
+  width: 75px;
+}
+
+.delete-exercise {
+  position: absolute;
+  border: 1px solid black;
+  padding: 5px;
+  right: 5px;
+  bottom: 5px;
+  background: black;
+  color: white;
+}
+
+.delete-exercise:hover {
+  background: lightgrey;
+  color: black;
+}
+
+.exercise-index-v-line {
+  height: 80%;
+  border: 1px solid black;
+  margin-top: 10px;
+}

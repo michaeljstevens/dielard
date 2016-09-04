@@ -82,6 +82,8 @@ class UserProfileForm extends React.Component {
     this.setCalories();
     const user = this.state;
     this.props.updateUser({user});
+    const userURL = `/users/${this.state.id}`;
+    hashHistory.push(userURL);
   }
 
   render() {

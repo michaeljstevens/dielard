@@ -10,7 +10,6 @@ const ExerciseReducer = function(state = {}, action){
       const exercise = action.exercise;
       return merge({}, state, {exercise});
     case ExerciseConstants.REMOVE_EXERCISE:
-      console.log(action.exercise);
       const badExercise = action.exercise;
       const nextState = merge({}, state);
       nextState.allExercises = nextState.allExercises.filter(r => {

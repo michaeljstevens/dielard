@@ -1,6 +1,7 @@
 import { SessionConstants, receiveCurrentUser } from '../actions/session_actions';
 import { receiveErrors } from '../actions/error_actions.js';
 import { login, signup, logout } from '../util/session_api_util';
+import { hashHistory } from 'react-router';
 
 export default ({getState, dispatch}) => next => action => {
   const success = user => dispatch(receiveCurrentUser(user));
@@ -13,8 +14,9 @@ export default ({getState, dispatch}) => next => action => {
       login(action.user, success, error);
       return next(action);
     case SessionConstants.LOGOUT:
-      logout(() => next(action));
-      break;
+      const logoutSuccess = () => hashHistory.push("/login");
+      logout(logoutSuccess);
+      return next(action);
     case SessionConstants.SIGNUP:
       signup(action.user, success, error);
       return next(action);

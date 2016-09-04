@@ -11,6 +11,7 @@ class Navbar extends React.Component {
     };
     this.clickLink = this.clickLink.bind(this);
     this.displayAddDropdown = this.displayAddDropdown.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
   }
 
   clickLink(loc) {
@@ -26,17 +27,23 @@ class Navbar extends React.Component {
     }
   }
 
+  handleLogout() {
+    this.props.logout();
+  }
+
   render () {
     this.routesUrl = "/";
+    this.exercisesUrl = "/";
     let sessionButton;
     if (this.props.currentUser) {
       const newRouteUrl = `/users/${this.props.currentUser.id}/routes/new`;
       const newExerciseUrl = `/users/${this.props.currentUser.id}/exercises/new`;
       this.routesUrl = `/users/${this.props.currentUser.id}/routes`;
+      this.exercisesUrl = `/users/${this.props.currentUser.id}/exercises`;
       let profileUrl = `/users/${this.props.currentUser.id}`;
       sessionButton = (
         <ul className="logout-profile">
-          <li><button className="logout-button" onClick={this.props.logout}>Log Out</button></li>
+          <li><button className="logout-button" onClick={this.handleLogout}>Log Out</button></li>
           <li><Link to={profileUrl}><img className="header-profile-picture"
             src={this.props.currentUser.profile_picture}
             alt="" /></Link></li>
@@ -62,6 +69,7 @@ class Navbar extends React.Component {
       <div className="nav-header">
         <Link to="/" className="header-link"><h1>takeupless</h1></Link>
         <Link to={this.routesUrl} className="header-options"><h2>my routes</h2></Link>
+        <Link to={this.exercisesUrl} className="header-options-exercises"><h2>my exercises</h2></Link>
         <div>{sessionButton}</div>
       </div>
     );
