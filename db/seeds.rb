@@ -159,7 +159,6 @@ Route.create(
 )
 
 Route.create(
-  id: 11,
   user_id: 1,
   title: "Rural run",
   description: "Run through rural California and get away from the big city.",
