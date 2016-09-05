@@ -61,7 +61,7 @@ class RouteIndexItem extends React.Component {
   }
 
   render() {
-  
+
     const route = this.props.route;
     let activity_type = "";
     if(route.activity_type === "WALKING") {
@@ -72,9 +72,11 @@ class RouteIndexItem extends React.Component {
       activity_type = "http://res.cloudinary.com/dj6gqauyi/image/upload/v1472887017/Bicycle-icon_wulxp8.svg";
     }
 
+    const deleteButton = <button className="route-list-delete-button" onClick={this.removeRoute}>Delete</button>;
+
     return(
       <div className="route-list-div">
-        <button className="route-list-delete-button" onClick={this.removeRoute}>Delete</button>
+        {this.props.destroyRoute ? deleteButton : null}
         <ul className="route-list-ul">
           <li><img className="route-activity-img" src={activity_type} /></li>
           <li className="route-list-item-title">{route.title}</li>

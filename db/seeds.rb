@@ -8,6 +8,7 @@
 
 User.create(
   username: "Jeff Goldblum",
+  description: "Life uh... finds a way"
   password: "password",
   profile_picture: "http://res.cloudinary.com/dj6gqauyi/image/upload/w_1200,h_1200,c_crop,g_face,r_max/w_200/v1472591120/jeff-goldblum-2016_eedzlh.jpg",
   birthdate: "1952-10-22",

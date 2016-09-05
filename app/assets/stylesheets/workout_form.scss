@@ -11,12 +11,10 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  border-top: 1px solid black;
-  border-right: 1px solid black;
-  border-bottom: 1px solid black;
+  border: 1px black solid;
   margin-top: 50px;
-  color: white;
-  background: black;
+  color: black;
+  background: white;
   height: 50px;
   font-size: 22px;
 }
@@ -24,7 +22,7 @@
 .workout-form-selection-bar li {
   width: 100%;
   text-align: center;
-  border-left: 1px solid white;
+  border-left: 1px solid black;
   height: 100%;
   line-height: 2.3;
 }
@@ -33,4 +31,8 @@
   background: lightgrey;
   color: black;
   cursor: pointer;
+}
+
+.WALKING {
+
 }

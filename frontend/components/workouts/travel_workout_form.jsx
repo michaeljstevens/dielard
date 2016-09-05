@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import RouteIndexItem from '../routes/route_index_item.jsx';
+import {Link, hashHistory} from 'react-router';
 
 class TravelWorkoutForm extends React.Component {
 
@@ -11,14 +12,19 @@ class TravelWorkoutForm extends React.Component {
       route_id: null,
       date: moment().format("YYYY-MM-DD"),
       notes: "",
-      calories: 300
+      calories: null,
     };
     this.updateState = this.updateState.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.getCalories = this.getCalories.bind(this);
   }
 
   componentDidMount () {
     this.props.requestRoutes();
+  }
+
+  componentWillReceiveProps () {
+    this.setState({route_id: null});
   }
 
   updateState (field) {
@@ -32,9 +38,36 @@ class TravelWorkoutForm extends React.Component {
     };
   }
 
+  getCalories() {
+    let calories = null;
+    const hrDuration = parseInt(this.currentRoute.duration) / 60;
+    const minDuration = parseInt(this.currentRoute.duration);
+    const distance = parseInt(this.currentRoute.distance);
+    const lbWeight = this.props.currentUser.weight;
+    const kgWeight = this.props.currentUser.weight * .45359237;
+
+    if (this.currentRoute.activity_type === "BICYCLING") {
+      calories = Math.round(hrDuration * kgWeight * 10);
+    } else if (this.currentRoute.activity_type === "WALKING") {
+      calories = Math.round(lbWeight * minDuration * 0.039);
+    } else {
+      calories = Math.round(hrDuration * kgWeight * 5);
+    }
+    this.state.calories = calories;
+  }
+
   handleSubmit (e) {
+    this.getCalories();
     e.preventDefault();
     this.props.createTravelWorkout(this.state);
+    this.state = {
+      user_id: this.props.currentUser.id,
+      route_id: null,
+      date: moment().format("YYYY-MM-DD"),
+      notes: "",
+      calories: null
+    };
+    hashHistory.push("/");
   }
 
   render () {
@@ -58,22 +91,28 @@ class TravelWorkoutForm extends React.Component {
       <div className="travel-workout-form-outer">
         <div className="travel-workout-form-container">
           <form className="travel-workout-form" onSubmit={this.handleSubmit}>
-            <label>Date</label>
-            <input className="travel-workout-date" type="date" value={this.state.date}
-              onChange={this.updateState("date")} />
-            <label>Notes</label>
-            <textarea className="travel-workout-form-notes" value={this.state.notes}
-              onChange={this.updateState("notes")} />
-            <label>Route</label>
-            <select className="travel-workout-form-select" value={this.state.route}
-              onChange={this.updateState("route_id")}>
-              {allRoutes}
-            </select>
+            <label>
+              <h2>Date:</h2>
+              <input className="travel-workout-date" type="date" value={this.state.date}
+                onChange={this.updateState("date")} />
+            </label>
+            <label><h2>Notes:</h2>
+              <textarea className="travel-workout-form-notes" value={this.state.notes}
+                onChange={this.updateState("notes")} />
+            </label>
+            <label><h2>Route:</h2>
+              <select className="travel-workout-form-select" value={this.state.route}
+                onChange={this.updateState("route_id")}>
+                <option>Select Route</option>
+                {allRoutes}
+              </select>
+            </label>
             <input type="submit" className="travel-workout-form-submit" value="Create" />
           </form>
         </div>
-        {this.state.route_id ? <RouteIndexItem route={this.currentRoute} /> : null}
-        <img className="splash-image" src="" alt=""/>
+        <div className="travel-workout-route">
+          {this.state.route_id ? <RouteIndexItem route={this.currentRoute} /> : null}
+        </div>
       </div>
     );
   }

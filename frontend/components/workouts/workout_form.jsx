@@ -2,6 +2,7 @@ import React from 'react';
 import TravelWorkoutFormContainer from './travel_workout_form_container.js';
 import TravelWorkoutForm from './travel_workout_form.jsx';
 
+
 class WorkoutForm extends React.Component {
 
   constructor(props) {
@@ -11,17 +12,20 @@ class WorkoutForm extends React.Component {
       selectedButton: {className: 'WALKING'}};
     }
 
+  componentDidMount () {
+    this.origStyle = {background: "black", color: "white"};
+  }
 
   setButtonStyle(e) {
-
+    this.origStyle = {background: "white", color: "black"};
     if (this.state.selectedButton.style) {
-      this.state.selectedButton.style.background = "black";
-      this.state.selectedButton.style.color = "white";
+      this.state.selectedButton.style.background = "white";
+      this.state.selectedButton.style.color = "black";
       this.forceUpdate();
     }
 
-    e.target.style.background="lightgrey";
-    e.target.style.color="black";
+    e.target.style.background="black";
+    e.target.style.color="white";
     this.setState({selectedButton: e.target});
   }
 
@@ -30,12 +34,13 @@ class WorkoutForm extends React.Component {
     return(
       <div className="workout-form-outer-container">
         <ul className="workout-form-selection-bar">
-          <li className="WALKING" onClick={this.setButtonStyle}>Walk</li>
+          <li className="WALKING" style={this.origStyle} onClick={this.setButtonStyle}>Walk</li>
           <li className="RUNNING" onClick={this.setButtonStyle}>Run</li>
           <li className="BICYCLING" onClick={this.setButtonStyle}>Bike</li>
           <li onClick={this.setButtonStyle}>Lift</li>
         </ul>
         <TravelWorkoutFormContainer activityType={this.state.selectedButton.className} />
+        <img className="splash-image" src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1473099316/photo-1452626038306-9aae5e071dd3_z8afs7.jpg" alt=""/>
       </div>
     );
   }

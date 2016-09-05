@@ -1,6 +1,7 @@
 .travel-workout-form-outer {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
 }
 .travel-workout-form-container {
@@ -9,7 +10,39 @@
 
 .travel-workout-form {
   border: 1px solid black;
-  min-height: 400px;
+  min-height: 150px;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.travel-workout-form label {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.travel-workout-form label input {
+  margin: 20px;
+  border: 1px solid black;
+}
+
+.travel-workout-form textarea {
+  border: 1px solid black;
+  margin: 20px;
+}
+
+.travel-workout-form select {
+  margin: 20px;
+}
+
+.travel-workout-route {
+  display: flex;
+  justify-content: center;
+  width: 91%;
 }
 .travel-workout-date {
 
@@ -21,5 +54,20 @@
 
 }
 .travel-workout-form-submit {
+  background: black;
+  padding: 5px;
+  color: white;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.travel-workout-form-submit:hover {
+  cursor: pointer;
+  background: lightgrey;
+  color: black;
+}
+
+.workout-route-index-item {
 
 }
