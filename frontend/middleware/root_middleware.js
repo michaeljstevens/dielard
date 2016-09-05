@@ -4,13 +4,15 @@ import UserMiddleware from '../middleware/user_middleware.js';
 import RouteMiddleware from '../middleware/route_middleware.js';
 import ExerciseMiddleware from '../middleware/exercise_middleware.js';
 import TravelWorkoutMiddleware from '../middleware/travel_workout_middleware.js';
+import StaticWorkoutMiddleware from '../middleware/static_workout_middleware.js';
 
 const RootMiddleware = applyMiddleware(
   SessionMiddleware,
   UserMiddleware,
   RouteMiddleware,
   ExerciseMiddleware,
-  TravelWorkoutMiddleware
+  TravelWorkoutMiddleware,
+  StaticWorkoutMiddleware
 );
 
 export default RootMiddleware;

@@ -5,13 +5,15 @@ import UserReducer from '../reducers/user_reducer.js';
 import RouteReducer from '../reducers/route_reducer.js';
 import ExerciseReducer from '../reducers/exercise_reducer.js';
 import TravelWorkoutReducer from '../reducers/travel_workout_reducer.js';
+import StaticWorkoutReducer from '../reducers/static_workout_reducer.js';
 
 const AppReducer = combineReducers({
   session: SessionReducer,
   errors: ErrorReducer,
   routes: RouteReducer,
   exercises: ExerciseReducer,
-  travelWorkouts: TravelWorkoutReducer
+  travelWorkouts: TravelWorkoutReducer,
+  staticWorkouts: StaticWorkoutReducer
 });
 
 const RootReducer = (state, action) => {

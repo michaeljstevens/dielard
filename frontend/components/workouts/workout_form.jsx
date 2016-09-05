@@ -1,6 +1,6 @@
 import React from 'react';
 import TravelWorkoutFormContainer from './travel_workout_form_container.js';
-import TravelWorkoutForm from './travel_workout_form.jsx';
+import StaticWorkoutFormContainer from './static_workout_form_container.js';
 
 
 class WorkoutForm extends React.Component {
@@ -31,15 +31,18 @@ class WorkoutForm extends React.Component {
 
 
   render() {
+
     return(
       <div className="workout-form-outer-container">
         <ul className="workout-form-selection-bar">
           <li className="WALKING" style={this.origStyle} onClick={this.setButtonStyle}>Walk</li>
           <li className="RUNNING" onClick={this.setButtonStyle}>Run</li>
           <li className="BICYCLING" onClick={this.setButtonStyle}>Bike</li>
-          <li onClick={this.setButtonStyle}>Lift</li>
+          <li className="LIFTING" onClick={this.setButtonStyle}>Lift</li>
         </ul>
-        <TravelWorkoutFormContainer activityType={this.state.selectedButton.className} />
+        {this.state.selectedButton.className !== "LIFTING" ?
+          <TravelWorkoutFormContainer activityType={this.state.selectedButton.className} /> :
+        <StaticWorkoutFormContainer />}
         <img className="splash-image" src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1473099316/photo-1452626038306-9aae5e071dd3_z8afs7.jpg" alt=""/>
       </div>
     );

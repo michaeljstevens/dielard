@@ -1,0 +1,21 @@
+.static-workout-form-outer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.static-workout-form-container {
+  width: 50%;
+}
+
+.static-workout-form {
+  border: 1px solid black;
+  min-height: 150px;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}

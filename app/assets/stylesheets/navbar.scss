@@ -76,6 +76,7 @@
   margin-right: 20px;
   color: white;
   padding: 11px;
+  cursor: pointer;
 }
 
 .logout-button:hover {
@@ -88,6 +89,10 @@
   width: 40px;
   padding-right: 20px;
   padding-left: 20px;
+}
+
+.plus:hover {
+  cursor: pointer;
 }
 
 .nav-add-ul {
@@ -115,6 +120,7 @@
 .nav-add-ul li:hover {
   color: white;
   background: black;
+  cursor: pointer;
 }
 
 .place-holder {

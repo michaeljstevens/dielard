@@ -38,6 +38,7 @@ class Navbar extends React.Component {
     if (this.props.currentUser) {
       const newRouteUrl = `/users/${this.props.currentUser.id}/routes/new`;
       const newExerciseUrl = `/users/${this.props.currentUser.id}/exercises/new`;
+      const newWorkoutUrl = `/users/${this.props.currentUser.id}/workouts/new`;
       this.routesUrl = `/users/${this.props.currentUser.id}/routes`;
       this.exercisesUrl = `/users/${this.props.currentUser.id}/exercises`;
       let profileUrl = `/users/${this.props.currentUser.id}`;
@@ -52,6 +53,7 @@ class Navbar extends React.Component {
               <img className="plus" onClick={this.displayAddDropdown}
                 src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1472582322/plus_spuhvk.png" />
               <ul style={this.state.style} className="nav-add-ul">
+                <li onClick={this.clickLink.bind(this, newWorkoutUrl)}>New Workout</li>
                 <li onClick={this.clickLink.bind(this, newRouteUrl)}>New Route</li>
                 <li onClick={this.clickLink.bind(this, newExerciseUrl)}>New Exercise</li>
               </ul>
