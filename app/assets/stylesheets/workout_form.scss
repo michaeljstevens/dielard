@@ -1,0 +1,36 @@
+.workout-form-outer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.workout-form-selection-bar {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  margin-top: 50px;
+  color: white;
+  background: black;
+  height: 50px;
+  font-size: 22px;
+}
+
+.workout-form-selection-bar li {
+  width: 100%;
+  text-align: center;
+  border-left: 1px solid white;
+  height: 100%;
+  line-height: 2.3;
+}
+
+.workout-form-selection-bar li:hover {
+  background: lightgrey;
+  color: black;
+  cursor: pointer;
+}

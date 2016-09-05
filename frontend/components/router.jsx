@@ -3,7 +3,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './App';
 import SessionFormContainer from './session_form/session_form_container';
 import UserProfileFormContainer from './user_profile/user_profile_form_container.js';
-import WorkoutFeed from './workout_feed/workout_feed.jsx';
+import WorkoutFeed from './workouts/workout_feed.jsx';
 import UserProfileIndexItemContainer from './user_profile/user_profile_index_item_container.js';
 import RouteFormContainer from './routes/route_form_container.js';
 import RouteIndexContainer from './routes/route_index_container.js';

@@ -54,12 +54,14 @@ class RouteIndexItem extends React.Component {
   }
 
   removeRoute () {
-    this.props.destroyRoute(this.props.route.id);
-    this.setState({route: null});
+    if (this.props.destroyRoute) {
+      this.props.destroyRoute(this.props.route.id);
+      this.setState({route: null});
+    }
   }
 
   render() {
-
+  
     const route = this.props.route;
     let activity_type = "";
     if(route.activity_type === "WALKING") {
