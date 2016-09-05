@@ -9,6 +9,7 @@ import RouteFormContainer from './routes/route_form_container.js';
 import RouteIndexContainer from './routes/route_index_container.js';
 import ExerciseFormContainer from './exercises/exercise_form_container.js';
 import ExerciseIndexContainer from './exercises/exercise_index_container.js';
+import WorkoutFormContainer from './workouts/workout_form_container.js';
 
 class AppRouter extends React.Component{
   constructor(props){
@@ -52,6 +53,7 @@ class AppRouter extends React.Component{
           <Route path="users/:id/routes/new" component={ RouteFormContainer } onEnter={this._ensureLoggedIn} />
           <Route path="users/:id/exercises" component={ExerciseIndexContainer} onEnter={this._ensureLoggedIn} />
           <Route path="users/:id/exercises/new" component={ ExerciseFormContainer } onEnter={this._ensureLoggedIn} />
+          <Route path="users/:id/workouts/new" component={ WorkoutFormContainer } onEnter={this._ensureLoggedIn} />
           <Route path="login" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn}/>
           <Route path="signup" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn}/>
         </Route>
