@@ -12,11 +12,20 @@
 }
 
 .travel-workout-index-list {
-  // position: absolute;
+  padding: 20px;
 }
+
+.travel-workout-index-list h2 {
+  font-weight: bold;
+}
+
+.travel-workout-index-list li {
+  padding: 10px;
+}
+
 
 .feed-index-map {
   width: 30vw;
-  height: 15vw;
+  
   border-radius: 10px;
 }

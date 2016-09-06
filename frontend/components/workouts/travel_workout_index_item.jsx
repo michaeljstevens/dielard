@@ -53,12 +53,33 @@ class TravelWorkoutIndexItem extends React.Component {
 
   render() {
 
+    const route = this.travelWorkout.route;
+    let activity_type = "";
+
+    if(route.activity_type === "WALKING") {
+      activity_type = "http://res.cloudinary.com/dj6gqauyi/image/upload/v1472887023/walking-icon-hi_bvty27.png";
+    } else if(route.activity_type === "RUNNING") {
+      activity_type = "http://res.cloudinary.com/dj6gqauyi/image/upload/v1472887028/running-icon-on-transparent-background-md_qqc1go.png";
+    } else {
+      activity_type = "http://res.cloudinary.com/dj6gqauyi/image/upload/v1472887017/Bicycle-icon_wulxp8.svg";
+    }
+
     return(
       <div className="travelWorkout-index-item">
         <ul className="travel-workout-index-list">
-          <li>{this.travelWorkout.date}</li>
-          <li>{this.travelWorkout.notes}</li>
-          <li>{this.travelWorkout.calories}</li>
+          <li><img className="route-activity-img" src={activity_type} /></li>
+          <label>
+            <h2>Date:</h2>
+            <li>{this.travelWorkout.date}</li>
+          </label>
+          <label>
+            <h2>Notes:</h2>
+            <li>{this.travelWorkout.notes}</li>
+          </label>
+          <label>
+            <h2>Calories Burned:</h2>
+            <li>{this.travelWorkout.calories}</li>
+          </label>
         </ul>
         <div className="feed-index-map" ref="map"></div>
       </div>
