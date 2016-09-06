@@ -73,6 +73,14 @@ class TravelWorkoutIndexItem extends React.Component {
             <li>{this.travelWorkout.date}</li>
           </label>
           <label>
+            <h2>Distance:</h2>
+            <li>{this.travelWorkout.route.distance}</li>
+          </label>
+          <label>
+            <h2>Duration:</h2>
+            <li>{this.travelWorkout.route.duration}</li>
+          </label>
+          <label className="travel-workout-index-notes">
             <h2>Notes:</h2>
             <li>{this.travelWorkout.notes}</li>
           </label>
@@ -85,7 +93,6 @@ class TravelWorkoutIndexItem extends React.Component {
       </div>
     );
   }
-
 }
 
 export default TravelWorkoutIndexItem;

@@ -1,0 +1,32 @@
+.static-workout-index-item-container {
+  width: 57%;
+  display: flex;
+  background: white;
+  justify-content: space-between;
+  margin: 20px;
+  max-height: 299px;
+}
+
+.static-workout-outer-exercise-list {
+
+}
+
+.static-workout-exercise-item {
+  display: flex;
+}
+
+.static-workout-exercise-item li {
+  padding: 0px 10px;
+  width: 50px;
+}
+
+.static-workout-exercise-headers {
+  display: flex;
+  justify-content: flex-end;
+  border: 1px solid black;
+}
+
+.static-workout-exercise-headers li {
+  padding: 10px;
+  width: 50px;
+}
