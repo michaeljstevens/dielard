@@ -6,6 +6,7 @@ import RouteReducer from '../reducers/route_reducer.js';
 import ExerciseReducer from '../reducers/exercise_reducer.js';
 import TravelWorkoutReducer from '../reducers/travel_workout_reducer.js';
 import StaticWorkoutReducer from '../reducers/static_workout_reducer.js';
+import WorkoutExerciseReducer from '../reducers/workout_exercise_reducer.js';
 
 const AppReducer = combineReducers({
   session: SessionReducer,
@@ -13,7 +14,8 @@ const AppReducer = combineReducers({
   routes: RouteReducer,
   exercises: ExerciseReducer,
   travelWorkouts: TravelWorkoutReducer,
-  staticWorkouts: StaticWorkoutReducer
+  staticWorkouts: StaticWorkoutReducer,
+  workoutExercises: WorkoutExerciseReducer
 });
 
 const RootReducer = (state, action) => {

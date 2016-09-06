@@ -9,6 +9,7 @@ root to: 'static_pages#root'
     resources :exercises, only: [:create, :destroy, :show, :index]
     resources :travel_workouts, only: [:create, :destroy, :show, :index]
     resources :static_workouts, only: [:create, :destroy, :show, :index]
+    resources :workout_exercises, only: [:create, :destroy, :show, :index]
   end
 
 end
