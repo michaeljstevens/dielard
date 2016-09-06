@@ -17,16 +17,39 @@ class StaticWorkoutForm extends React.Component {
     };
     this.updateState = this.updateState.bind(this);
     this.addExercise = this.addExercise.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.setCalories = this.setCalories.bind(this);
+    this.handleExercises = this.handleExercises.bind(this);
   }
 
   componentDidMount() {
     this.props.requestExercises();
   }
 
+  handleSubmit() {
+    this.setCalories();
+    this.handleExercises();
+    delete this.state.exercises;
+    this.props.createStaticWorkout(this.state);
+  }
+
   updateState (field) {
     return e => {
       this.setState({[field]: e.currentTarget.value});
     };
+  }
+
+  setCalories() {
+    const weightLbs = this.props.currentUser.weight;
+    const duration = this.state.duration;
+    const calories = (weightLbs * duration * .039);
+    this.state.calories = calories;
+    this.handleExercises();
+  }
+
+  handleExercises() {
+    //todo: add workoutexercises model, iterate over this exercises and
+    //create a new workout exercise for each
   }
 
   addExercise() {
@@ -79,18 +102,17 @@ class StaticWorkoutForm extends React.Component {
       });
     }
 
-
     return(
       <div className="static-workout-form-outer">
         <div className="static-workout-form-container">
-          <form className="static-workout-form">
+          <form className="static-workout-form" onSubmit={this.handleSubmit}>
             <label>
               <h2>Date:</h2>
               <input className="static-workout-date" type="date" value={this.state.date}
                 onChange={this.updateState("date")} />
             </label>
             <label>
-              <h2>Duration:</h2>
+              <h2>Duration(minutes):</h2>
               <input className="static-workout-duration" type="text" value={this.state.duration}
                 onChange={this.updateState("duration")} />
             </label>
