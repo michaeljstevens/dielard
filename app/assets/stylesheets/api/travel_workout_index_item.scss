@@ -1,15 +1,22 @@
 .travelWorkout-index-item {
   display: flex;
-  justify-content: center;
-  position: relative;
-  border: 1px solid black;
+  background: white;
+  justify-content: space-between;
+  width: 50%;
+  margin: 20px;
 }
 
 .workout-index-route {
-  display: flex;
-  justify-content: flex-end;
+  // display: flex;
+  // justify-content: flex-end;
 }
 
 .travel-workout-index-list {
-  position: absolute;
+  // position: absolute;
+}
+
+.feed-index-map {
+  width: 30vw;
+  height: 15vw;
+  border-radius: 10px;
 }
