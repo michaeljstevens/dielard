@@ -1,0 +1,40 @@
+.static-exercises-container h2 {
+  font-weight: bold;
+}
+
+.workout-exercise-item-container {
+  border: 1px solid black;
+}
+
+.workout-exercise-item-container h2 {
+  border: 1px solid black;
+  padding: 5px;
+  color: white;
+  background: black;
+  font-size: 18px;
+}
+
+.workout-exercise-input {
+  border: 1px solid black;
+  width: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.workout-exercise-item-container form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.workout-exercise-item-container label {
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.workout-exercise-submit {
+  padding: 7px;
+  color: white;
+  border: 1px solid black;
+  background: black;
+}

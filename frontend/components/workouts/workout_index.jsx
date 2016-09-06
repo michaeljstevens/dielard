@@ -1,5 +1,6 @@
 import React from 'react';
 import TravelWorkoutIndexItem from './travel_workout_index_item.jsx';
+import StaticWorkoutIndexItem from './static_workout_index_item.jsx';
 
 
 class WorkoutIndex extends React.Component {
@@ -9,34 +10,35 @@ class WorkoutIndex extends React.Component {
 
   componentDidMount() {
     this.props.requestTravelWorkouts();
-    this.props.requestRoutes();
+    this.props.requestStaticWorkouts();
   }
 
   render () {
 
     const travelWorkouts = this.props.travelWorkouts;
-    const routes = this.props.routes;
-    let currentRoute = null;
+    const staticWorkouts = this.props.staticWorkouts;
 
     let travelWorkoutList = [];
-    if(!!travelWorkouts && !!routes) {
-      const routeKeys = Object.keys(routes);
+    let staticWorkoutList = [];
+
+    if(!!travelWorkouts) {
       const keys = Object.keys(travelWorkouts);
       keys.forEach (key => {
-        routeKeys.forEach (routeKey => {
+        travelWorkoutList.push(<TravelWorkoutIndexItem travelWorkout={travelWorkouts[key]} key={key}/>);
+      });
+    }
 
-          if(parseInt(routes[routeKey].id) === travelWorkouts[key].route_id) {
-            currentRoute = routes[routeKey];
-          }
-        });
-        travelWorkoutList.push(<TravelWorkoutIndexItem travelWorkout={travelWorkouts[key]}
-          route={currentRoute} key={key}/>);
+    if(!!staticWorkouts) {
+      const keys = Object.keys(staticWorkouts);
+      keys.forEach (key => {
+        staticWorkoutList.push(<StaticWorkoutIndexItem staticWorkout={staticWorkouts[key]} key={key} />);
       });
     }
 
     return(
       <div className="workout-index-outer-div">
         {travelWorkoutList}
+        {staticWorkoutList}
       </div>
     );
   }

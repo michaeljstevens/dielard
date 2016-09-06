@@ -23,25 +23,35 @@ class WorkoutExerciseIndexItem extends React.Component {
   handleSubmit (e) {
     e.preventDefault();
     this.props.createWorkoutExercise(this.state);
+    e.currentTarget.style.background = "grey";
+    e.currentTarget.style.color = "white";
+    const children = Array.from(e.currentTarget.children);
+    children.forEach(child => {
+      child.children[0].style.border = "1px solid white";
+    });
+  }
+
+  handleRemove () {
+
   }
 
   render() {
     return(
-      <div>
+      <div className="workout-exercise-form">
         <form onSubmit={this.handleSubmit}>
           <label>
-            Reps
-            <input type="text" onChange={this.updateState("reps")} />
+            Sets
+            <input type="text" className="workout-exercise-input" onChange={this.updateState("sets")} />
           </label>
           <label>
-            Sets
-            <input type="text" onChange={this.updateState("sets")} />
+            Reps
+            <input type="text" className="workout-exercise-input" onChange={this.updateState("reps")} />
           </label>
           <label>
             Weight
-            <input type="text" onChange={this.updateState("weight")} />
+            <input type="text" className="workout-exercise-input" onChange={this.updateState("weight")} />
           </label>
-          <input type="submit" value="Add" />
+          <input className="workout-exercise-submit" type="submit" value="Add" />
         </form>
       </div>
     );

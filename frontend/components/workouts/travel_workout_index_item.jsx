@@ -17,7 +17,7 @@ class TravelWorkoutIndexItem extends React.Component {
           <li>{travelWorkout.calories}</li>
         </ul>
         <div className="workout-index-route">
-          <RouteIndexItem route={this.props.route} />
+          <RouteIndexItem route={travelWorkout.route} />
         </div>
       </div>
     );

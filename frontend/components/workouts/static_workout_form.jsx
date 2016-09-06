@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import WorkoutExerciseIndexItem from './workout_exercise_index_item.jsx';
+import {Link, hashHistory} from 'react-router';
 
 class StaticWorkoutForm extends React.Component {
   constructor(props) {
@@ -19,6 +20,7 @@ class StaticWorkoutForm extends React.Component {
     this.addExercise = this.addExercise.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.setCalories = this.setCalories.bind(this);
+    this.handleFinish = this.handleFinish.bind(this);
   }
 
   componentDidMount() {
@@ -32,6 +34,12 @@ class StaticWorkoutForm extends React.Component {
     delete this.state.exercises;
     this.props.createStaticWorkout(this.state);
     this.setState({exercises: exercises});
+  }
+
+  handleFinish(e) {
+    e.preventDefault();
+    this.props.removeStaticWorkout(this.props.staticWorkout);
+    hashHistory.push("/");
   }
 
   updateState (field) {
@@ -78,9 +86,12 @@ class StaticWorkoutForm extends React.Component {
     if (!!this.props.staticWorkout) {
       this.state.exercises.forEach(exercise => {
         myExercises.push(
-          <WorkoutExerciseIndexItem key={exercise.id}
-            exercise={exercise} staticWorkout={this.props.staticWorkout}
-            createWorkoutExercise={this.props.createWorkoutExercise} />
+          <div className="workout-exercise-item-container" key={exercise.id}>
+            <h2>{exercise.title}</h2>
+            <WorkoutExerciseIndexItem
+              exercise={exercise} staticWorkout={this.props.staticWorkout}
+              createWorkoutExercise={this.props.createWorkoutExercise} />
+          </div>
         );
       });
     }
@@ -95,14 +106,14 @@ class StaticWorkoutForm extends React.Component {
                 onChange={this.updateState("date")} />
             </label>
             <label>
-              <h2>Duration(minutes):</h2>
-              <input className="static-workout-duration" type="text" value={this.state.duration}
-                onChange={this.updateState("duration")} />
-            </label>
-            <label>
               <h2>Notes:</h2>
               <textarea className="static-workout-form-notes" value={this.state.notes}
                 onChange={this.updateState("notes")} />
+            </label>
+            <label>
+              <h2>Duration(minutes):</h2>
+              <input className="static-workout-duration" type="text" value={this.state.duration}
+                onChange={this.updateState("duration")} />
             </label>
             {this.props.staticWorkout ? <label className="exercise-dropdown-label"><h2>Add Exercises:</h2>
               <select className="static-workout-form-select"
@@ -111,9 +122,9 @@ class StaticWorkoutForm extends React.Component {
                 {allExercises}
               </select>
             </label> : null}
-            <div>
-            </div>
-            <input type="submit" className="static-workout-form-submit" value="Create" />
+            {this.props.staticWorkout ?
+              <input type="button" className="static-workout-form-submit" onClick={this.handleFinish} value="Done" /> :
+              <input type="submit" className="static-workout-form-submit" value="Create" />}
           </form>
         </div>
         <div className="static-exercises-container">
