@@ -16,6 +16,68 @@
   background: rgba(255, 255, 255, 0.95);
   display: flex;
   justify-content: center;
-  align-items: center;
   position: relative;
+  flex-wrap: wrap;
+}
+
+.static-workout-form input {
+  border: 1px solid black;
+  margin-right: 36px;
+}
+
+.static-workout-form textarea {
+  border: 1px solid black;
+  height: 92px;
+}
+
+.static-workout-form h2 {
+  margin-top: 20px;
+}
+
+.static-workout-exercise-item {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.static-exercises-container {
+  background: rgba(255, 255, 255, 0.95);
+  width: 50%;
+}
+
+.static-workout-exercise-item h3 {
+  font-size: 16px;
+  width: 119px;
+}
+
+.static-workout-exercise-item input {
+  border: 1px solid black;
+  width: 100px;
+}
+
+.static-workout-exercise-item label {
+  display: flex;
+  flex-direction: column;
+}
+
+.exercise-dropdown-label {
+  position: absolute;
+  bottom: 20px;
+  left: 62px;
+}
+
+.static-workout-form-submit {
+  position: absolute;
+  bottom: 20px;
+  padding: 5px;
+  background: black;
+  color: white;
+}
+
+.static-workout-form-submit:hover {
+  color: black;
+  background: lightgrey;
+  cursor: pointer;
 }

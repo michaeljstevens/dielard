@@ -60,14 +60,20 @@ class StaticWorkoutForm extends React.Component {
     if (this.state.exercises.length > 0) {
       this.state.exercises.forEach(exercise => {
         myExercises.push(
-          <div key={exercise.id}>
-            {exercise.title}
-            Reps
-            <input type="text" />
-            Sets
-            <input type="text" />
-            Weight
-            <input type="text" />
+          <div key={exercise.id} className="static-workout-exercise-item">
+            <h3>{exercise.title}</h3>
+            <label>
+              Reps
+              <input type="text" />
+            </label>
+            <label>
+              Sets
+              <input type="text" />
+            </label>
+            <label>
+              Weight
+              <input type="text" />
+            </label>
           </div>
         );
       });
@@ -83,22 +89,30 @@ class StaticWorkoutForm extends React.Component {
               <input className="static-workout-date" type="date" value={this.state.date}
                 onChange={this.updateState("date")} />
             </label>
-            <label><h2>Notes:</h2>
+            <label>
+              <h2>Duration:</h2>
+              <input className="static-workout-duration" type="text" value={this.state.duration}
+                onChange={this.updateState("duration")} />
+            </label>
+            <label>
+              <h2>Notes:</h2>
               <textarea className="static-workout-form-notes" value={this.state.notes}
                 onChange={this.updateState("notes")} />
             </label>
-            <label><h2>Exercises:</h2>
+            <label className="exercise-dropdown-label"><h2>Add Exercises:</h2>
               <select className="static-workout-form-select"
                 onChange={this.addExercise()}>
                 <option>Select Exercise</option>
                 {allExercises}
               </select>
             </label>
-            {myExercises}
             <div>
             </div>
             <input type="submit" className="static-workout-form-submit" value="Create" />
           </form>
+        </div>
+        <div className="static-exercises-container">
+          {myExercises}
         </div>
       </div>
     );
