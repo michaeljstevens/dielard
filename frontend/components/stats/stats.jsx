@@ -2,18 +2,23 @@ import React from 'react';
 import MuscleGroupsPieContainer from './muscle_groups_pie_container.js';
 import DistanceTraveledContainer from './distance_traveled_container.js';
 import CaloriesBurnedContainer from './calories_burned_container.js';
-import PoundsLiftedContainer from './pounds_lifted_container.js';
+import GaugesContainer from './gauges_container.js';
 
 class Stats extends React.Component {
 
   constructor(props) {
     super(props);
-    google.charts.load('current', {'packages':['corechart']});
+    google.charts.load('current', {'packages':['corechart', 'gauge']});
+  }
+
+  componentDidMount() {
+    this.props.requestTravelWorkouts();
+    this.props.requestStaticWorkouts();
   }
 
   render() {
     return(
-      <div>
+      <div className="stats_outer_div">
         <div>
           <MuscleGroupsPieContainer />
         </div>
@@ -24,7 +29,7 @@ class Stats extends React.Component {
           <CaloriesBurnedContainer />
         </div>
         <div>
-          <PoundsLiftedContainer />
+          <GaugesContainer/>
         </div>
       </div>
     );

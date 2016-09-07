@@ -10,13 +10,8 @@ const mapStateToProps = state => {
   });
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-  return ({
-    requestStaticWorkouts: () => dispatch(requestStaticWorkouts())
-  });
-};
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  null
 )(MuscleGroupsPie);

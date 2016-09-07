@@ -20,9 +20,6 @@ class DistanceTraveled extends React.Component {
     this.drawChart = this.drawChart.bind(this);
   }
 
-  componentDidMount() {
-    this.props.requestTravelWorkouts();
-  }
 
   drawChart() {
     // Create the data table.

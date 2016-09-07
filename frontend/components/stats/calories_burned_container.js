@@ -12,12 +12,7 @@ const mapStateToProps = state => {
   });
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  requestTravelWorkouts: () => dispatch(requestTravelWorkouts()),
-  requestStaticWorkouts: () => dispatch(requestStaticWorkouts())
-});
-
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  null
 )(CaloriesBurned);

@@ -1,15 +1,16 @@
 import { connect } from 'react-redux';
-import PoundsLifted from './pounds_lifted.jsx';
+import Gauges from './gauges.jsx';
 
 
 const mapStateToProps = state => {
   return ({
     currentUser: state.session.currentUser,
-    staticWorkouts: state.staticWorkouts.allStaticWorkouts
+    staticWorkouts: state.staticWorkouts.allStaticWorkouts,
+    travelWorkouts: state.travelWorkouts.allTravelWorkouts
   });
 };
 
 export default connect(
   mapStateToProps,
   null
-)(PoundsLifted);
+)(Gauges);

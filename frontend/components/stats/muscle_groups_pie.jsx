@@ -8,11 +8,6 @@ class MuscleGroupsPie extends React.Component {
     this.drawChart = this.drawChart.bind(this);
   }
 
-  componentDidMount() {
-    this.props.requestStaticWorkouts();
-    // google.charts.load('current', {'packages':['corechart']});
-  }
-
   drawChart() {
     // Create the data table.
     var data = new google.visualization.DataTable();

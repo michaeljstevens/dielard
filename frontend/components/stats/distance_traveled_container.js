@@ -10,11 +10,8 @@ const mapStateToProps = state => {
   });
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  requestTravelWorkouts: () => dispatch(requestTravelWorkouts())
-});
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  null
 )(DistanceTraveled);
