@@ -6,7 +6,7 @@ class StaticWorkoutIndexItem extends React.Component {
     this.staticWorkout = this.props.staticWorkout;
     this.weightLifted = 0;
     this.staticWorkout.workout_exercises.forEach(workout_exercise => {
-      this.weightLifted += workout_exercise.weight;
+      this.weightLifted += (workout_exercise.weight * workout_exercise.sets * workout_exercise.reps);
     });
     this.exercises = [];
   }
@@ -20,7 +20,7 @@ class StaticWorkoutIndexItem extends React.Component {
       workoutExercises.forEach(workEx => {
         this.exercises.push(
           <li>
-            <ul className="static-workout-exercise-item">
+            <ul className="static-workout-index-item">
               <li>
                 {workEx.exercise.title}
               </li>
@@ -42,7 +42,8 @@ class StaticWorkoutIndexItem extends React.Component {
 
     return(
       <div className="static-workout-index-item-container">
-        <ul>
+        <ul className="static-workout-summary-list">
+
           <label>
             <h2>Date:</h2>
             <li>{this.staticWorkout.date}</li>
@@ -56,16 +57,21 @@ class StaticWorkoutIndexItem extends React.Component {
             <li>{this.weightLifted}</li>
           </label>
           <label>
-            <h2>Notes:</h2>
-            <li>{this.staticWorkout.notes}</li>
-          </label>
-          <label>
             <h2>Calories Burned:</h2>
             <li>{this.staticWorkout.calories}</li>
           </label>
         </ul>
+        <ul className="static-notes">
+          <img src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1473029911/exercise-icon-32_i3pwzz.png"
+            className="static-workout-img"/>
+          <label>
+            <h2>Notes:</h2>
+            <li>{this.staticWorkout.notes}</li>
+          </label>
+        </ul>
         <ul className="static-workout-outer-exercise-list">
           <ul className="static-workout-exercise-headers">
+            <li>Exercise</li>
             <li>Sets</li>
             <li>Reps</li>
             <li>Weight</li>

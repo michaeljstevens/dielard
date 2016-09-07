@@ -4,29 +4,69 @@
   background: white;
   justify-content: space-between;
   margin: 20px;
-  max-height: 299px;
 }
 
 .static-workout-outer-exercise-list {
-
+  width: 53%;
+  background: black;
+  color: white;
 }
 
-.static-workout-exercise-item {
+.static-workout-index-item {
   display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid white;
+  border-right: 1px solid white;
+  min-height: 40px;
 }
 
-.static-workout-exercise-item li {
+.static-workout-index-item-container h2 {
+  font-weight: bold;
+}
+
+.static-workout-summary-list {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.static-workout-summary-list li {
+  padding: 10px;
+}
+
+
+.static-workout-index-item li {
   padding: 0px 10px;
   width: 50px;
+  border-left: 1px solid white;
+}
+
+.static-workout-index-item li:first-child {
+  border-left: 0px;
 }
 
 .static-workout-exercise-headers {
   display: flex;
-  justify-content: flex-end;
-  border: 1px solid black;
+  border: 1px solid white;
+  justify-content: space-around;
 }
 
 .static-workout-exercise-headers li {
   padding: 10px;
   width: 50px;
+  border-left: 1px solid white;
+}
+
+.static-workout-exercise-headers li:first-child {
+  border-left: 0px;
+}
+
+.static-workout-img {
+  display: block;
+  width: 91px;
+  height: auto;
+}
+.static-notes {
+  width: 158px;
 }

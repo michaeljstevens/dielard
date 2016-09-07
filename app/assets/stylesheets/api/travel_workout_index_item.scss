@@ -7,10 +7,6 @@
   max-height: 299px;
 }
 
-.workout-index-route {
-  // display: flex;
-  // justify-content: flex-end;
-}
 
 .travel-workout-index-list {
   padding: 20px;
@@ -23,8 +19,20 @@
   font-weight: bold;
 }
 
-.travel-workout-index-list li {
-  padding: 10px;
+.travel-notes {
+  width: 158px;
+  margin-top: 10px;
+}
+
+.travel-notes h2 {
+  font-weight: bold;
+}
+
+.travel-notes label {
+}
+
+.travel-workout-index-list label {
+ padding: 10px 0px;
 }
 
 
