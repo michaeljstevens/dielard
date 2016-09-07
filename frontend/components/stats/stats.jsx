@@ -8,7 +8,6 @@ class Stats extends React.Component {
 
   constructor(props) {
     super(props);
-    google.charts.load('current', {'packages':['corechart', 'gauge']});
   }
 
   componentDidMount() {
@@ -16,20 +15,21 @@ class Stats extends React.Component {
     this.props.requestStaticWorkouts();
   }
 
+
   render() {
     return(
       <div className="stats_outer_div">
-        <div>
+        <div className="muscle-group-pie">
           <MuscleGroupsPieContainer />
         </div>
-        <div>
+        <div className="gauges">
+          <GaugesContainer/>
+        </div>
+        <div className="distance-traveled">
           <DistanceTraveledContainer />
         </div>
-        <div>
+        <div className="calories-burned">
           <CaloriesBurnedContainer />
-        </div>
-        <div>
-          <GaugesContainer/>
         </div>
       </div>
     );

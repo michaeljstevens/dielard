@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
-import NavAddModal from './nav_add_modal.jsx';
+
 
 class Navbar extends React.Component {
 

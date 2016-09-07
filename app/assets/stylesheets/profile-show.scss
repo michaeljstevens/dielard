@@ -1,8 +1,16 @@
+.profile-show-outer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+}
+
 .profile-show {
   display: flex;
   justify-content: center;
   min-height: 369px;
   overflow: hidden;
+  width: 100%
 }
 
 .v-line {
@@ -19,6 +27,7 @@
   display: flex;
   flex-direction: row;
   margin-top: 50px;
+  min-width: 800px;
 }
 
 .left-content {

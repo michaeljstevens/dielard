@@ -6,7 +6,17 @@ class MuscleGroupsPie extends React.Component {
     super(props);
     this.pieData = [];
     this.drawChart = this.drawChart.bind(this);
+    this.renderChart = this.renderChart.bind(this);
+    this.renderChart(props);
   }
+
+  // componentDidMount() {
+  //   this.renderChart(this.props);
+  // }
+
+  // componentWillReceiveProps(newProps) {
+  //   this.renderChart(newProps);
+  // }
 
   drawChart() {
     // Create the data table.
@@ -17,8 +27,8 @@ class MuscleGroupsPie extends React.Component {
 
     // Set chart options
     var options = {'title':'Exercises by Body Part',
-                   'width':800,
-                   'height':600,
+                   'width':450,
+                   'height':'400',
                     pieHole: 0.4,};
 
     // Instantiate and draw our chart, passing in some options.
@@ -26,11 +36,11 @@ class MuscleGroupsPie extends React.Component {
     chart.draw(data, options);
   }
 
-  render() {
-    if (this.props.staticWorkouts){
+  renderChart(props) {
+    if (props.staticWorkouts){
       let that = this;
       let pieDataObj = {};
-      this.props.staticWorkouts.forEach(staticWorkout => {
+      props.staticWorkouts.forEach(staticWorkout => {
         staticWorkout.workout_exercises.forEach(workoutExercise => {
           let muscle_group = workoutExercise.exercise.muscle_group;
           pieDataObj[muscle_group] ? pieDataObj[muscle_group] += 1 : pieDataObj[muscle_group] = 1;
@@ -42,6 +52,10 @@ class MuscleGroupsPie extends React.Component {
       });
       google.charts.setOnLoadCallback(this.drawChart);
     }
+  }
+
+  render() {
+
     return(
       <div id="muscle_group_div"></div>
     );

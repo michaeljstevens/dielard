@@ -1,5 +1,6 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
+import StatsContainer from '../stats/stats_container.js';
 
 class UserProfileIndexItem extends React.Component {
   constructor(props) {
@@ -10,11 +11,11 @@ class UserProfileIndexItem extends React.Component {
   gotoEdit() {
     hashHistory.push(`/users/${this.props.currentUser.id}/edit`);
   }
+  // <img className="splash-image" src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1472691299/photo-1415394171664-b29caa4dca77_nujfnv.png" alt=""/>
 
   render() {
     return(
-      <div>
-        <img className="splash-image" src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1472691299/photo-1415394171664-b29caa4dca77_nujfnv.png" alt=""/>
+      <div className="profile-show-outer">
         <div className="profile-show">
           <div className="content">
             <div className="left-content">
@@ -46,6 +47,7 @@ class UserProfileIndexItem extends React.Component {
             </div>
           </div>
         </div>
+        <StatsContainer />
       </div>
     );
   }
