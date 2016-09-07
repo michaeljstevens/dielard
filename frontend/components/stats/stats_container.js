@@ -6,7 +6,9 @@ import {requestTravelWorkouts} from '../../actions/travel_workout_actions.js';
 
 const mapStateToProps = state => {
   return ({
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    staticWorkouts: state.staticWorkouts.allStaticWorkouts,
+    travelWorkouts: state.travelWorkouts.allTravelWorkouts
   });
 };
 

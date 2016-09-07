@@ -30,6 +30,7 @@ class DistanceTraveled extends React.Component {
   }
 
   renderChart(props) {
+    this.chartData = [['Activity', 'Miles', { role: "style"}]];
     if (props.travelWorkouts){
       const travelDistances = {};
       props.travelWorkouts.forEach(travelWorkout => {
@@ -62,7 +63,7 @@ class DistanceTraveled extends React.Component {
     var chart = new google.visualization.ColumnChart(document.getElementById('distance_traveled_div'));
        chart.draw(data, options);
     }
-    
+
   render() {
     return(
       <div id="distance_traveled_div" style={{width: "900px"}, {height: "500px"}}></div>

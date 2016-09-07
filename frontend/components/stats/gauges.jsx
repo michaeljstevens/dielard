@@ -17,6 +17,7 @@ class Gauges extends React.Component {
   }
 
   renderChart(props) {
+    this.chartData = [['Label', 'Value']];
     if (props.travelWorkouts && props.staticWorkouts){
 
       let totalTime = 0;

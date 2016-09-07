@@ -7,16 +7,15 @@ class MuscleGroupsPie extends React.Component {
     this.pieData = [];
     this.drawChart = this.drawChart.bind(this);
     this.renderChart = this.renderChart.bind(this);
-    this.renderChart(props);
   }
 
-  // componentDidMount() {
-  //   this.renderChart(this.props);
-  // }
+  componentDidMount() {
+    this.renderChart(this.props);
+  }
 
-  // componentWillReceiveProps(newProps) {
-  //   this.renderChart(newProps);
-  // }
+  componentWillReceiveProps(newProps) {
+    this.renderChart(newProps);
+  }
 
   drawChart() {
     // Create the data table.
@@ -37,6 +36,7 @@ class MuscleGroupsPie extends React.Component {
   }
 
   renderChart(props) {
+    this.pieData = [];
     if (props.staticWorkouts){
       let that = this;
       let pieDataObj = {};

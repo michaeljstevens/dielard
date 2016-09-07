@@ -31,6 +31,7 @@ class CaloriesBurned extends React.Component {
   }
 
   renderChart(props) {
+    this.chartData = [['Activity', 'K/Cal', { role: "style"}]];
     if (props.travelWorkouts && props.staticWorkouts){
       const caloriesData = {};
       caloriesData["Lift"] = 0;
