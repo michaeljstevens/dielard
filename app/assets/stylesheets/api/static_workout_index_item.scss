@@ -50,12 +50,18 @@
   display: flex;
   border: 1px solid white;
   justify-content: space-around;
+  min-height: 40px;
+  font-size: 18px;
 }
 
 .static-workout-exercise-headers li {
-  padding: 10px;
+  padding: 0px 10px;
   width: 50px;
   border-left: 1px solid white;
+}
+
+.static-workout label {
+ padding: 10px 0px;
 }
 
 .static-workout-exercise-headers li:first-child {
