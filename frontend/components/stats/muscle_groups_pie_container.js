@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Stats from './stats.jsx';
+import MuscleGroupsPie from './muscle_groups_pie.jsx';
 import {requestStaticWorkouts} from '../../actions/static_workout_actions.js';
 
 
@@ -19,4 +19,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Stats);
+)(MuscleGroupsPie);

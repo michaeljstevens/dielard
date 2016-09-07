@@ -1,3 +1,5 @@
+var AnyBarWebpackPlugin = require('anybar-webpack');
+
 module.exports = {
   entry: "./frontend/takeupless.jsx",
   output: {
@@ -16,6 +18,11 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+       new AnyBarWebpackPlugin({
+           enableNotifications: true
+       })
+   ],
   devtool: 'source-map',
   resolve: {
     extensions: ["", ".js", ".jsx" ]
