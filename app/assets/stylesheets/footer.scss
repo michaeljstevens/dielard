@@ -1,0 +1,24 @@
+.footer-outer-div {
+  background: black;
+  height: 30px;
+  display: flex;
+  color: white;
+  justify-content: flex-start;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+}
+
+.footer-outer-div img {
+  width: 29px;
+  margin-left: 20px;
+  margin-right: 50px;
+}
+
+.footer-outer-div p {
+  font-style: italic;
+  font-size: 14px;
+  color: grey;
+}

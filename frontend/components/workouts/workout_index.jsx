@@ -35,7 +35,7 @@ class WorkoutIndex extends React.Component {
     if (this.state.offset <= this.allWorkoutList.length - 10) {
       setTimeout( () => {
         this.setState({offset: this.state.offset += 10});
-      }, 500);
+      }, 0);
     }
   }
 
@@ -43,7 +43,7 @@ class WorkoutIndex extends React.Component {
     if (this.state.offset >= 10) {
       setTimeout( () => {
         this.setState({offset: this.state.offset -= 10});
-      }, 500);
+      }, 0);
     }
   }
 
@@ -114,6 +114,7 @@ class WorkoutIndex extends React.Component {
 
     currentWorkoutList = this.allWorkoutList.slice(this.state.offset, this.state.offset + 10);
 
+
     return(
       <div className="workout-index-outer-div">
         <select className="workout-index-select" value={this.state.workoutType}
@@ -126,8 +127,8 @@ class WorkoutIndex extends React.Component {
         </select>
         {currentWorkoutList}
         <div className="route-page-buttons">
-          <button className="route-next-page" onClick={this.increaseOffset}>Next Page</button>
-          <button className="route-prev-page" onClick={this.decreaseOffset}>Previous Page</button>
+          <img src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1473375546/prev_arrow_ikhyek.png" onClick={this.decreaseOffset} />
+          <img src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1473375546/next_arrow_a7elvn.png" onClick={this.increaseOffset} />
         </div>
       </div>
     );

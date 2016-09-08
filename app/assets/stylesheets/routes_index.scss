@@ -116,8 +116,18 @@
 }
 
 .route-page-buttons {
-  margin: 26px;
   display: flex;
-  justify-content: space-between;
-  width: auto;
+  margin-bottom: 50px;
+  width: 55%;
+  justify-content: flex-end;
+}
+
+.route-page-buttons img {
+  height: 50px;
+  width: 50px;
+}
+
+.route-page-buttons img:hover {
+  border-bottom: 1px solid white;
+  cursor: pointer;
 }

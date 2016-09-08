@@ -6,9 +6,12 @@ class ExerciseIndex extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      muscleGroup: "All"
+      muscleGroup: "All",
+      offset: 0
     };
     this.updateState = this.updateState.bind(this);
+    this.increaseOffset = this.increaseOffset.bind(this);
+    this.decreaseOffset = this.decreaseOffset.bind(this);
   }
 
   componentDidMount () {
@@ -21,23 +24,43 @@ class ExerciseIndex extends React.Component {
     };
   }
 
+  increaseOffset() {
+    if (this.state.offset <= this.exerciseItems.length - 10) {
+      setTimeout( () => {
+        this.setState({offset: this.state.offset += 10});
+      }, 0);
+    }
+  }
+
+  decreaseOffset() {
+    if (this.state.offset >= 10) {
+      setTimeout( () => {
+        this.setState({offset: this.state.offset -= 10});
+      }, 0);
+    }
+  }
+
   render () {
+    this.exerciseItems = [];
+    let currentExerciseList = [];
     let exercises = this.props.exercises;
-    let exerciseItems = [];
     if (exercises) {
       let keys = Object.keys(exercises);
       keys.forEach ( key => {
         if(this.state.muscleGroup === "All") {
-          exerciseItems.push(<ExerciseIndexItem exercise={exercises[key]} key={key}
+          this.exerciseItems.push(<ExerciseIndexItem exercise={exercises[key]} key={key}
             destroyExercise={this.props.destroyExercise}/>);
         } else {
           if(exercises[key].muscle_group === this.state.muscleGroup) {
-            exerciseItems.push(<ExerciseIndexItem exercise={exercises[key]} key={key}
+            this.exerciseItems.push(<ExerciseIndexItem exercise={exercises[key]} key={key}
               destroyExercise={this.props.destroyExercise}/>);
           }
         }
       });
+      currentExerciseList  = this.exerciseItems.slice(this.state.offset, this.state.offset + 10);
     }
+
+
     return (
       <div className="exercise-index-item-outer-div">
         <select className="exercise-index-select" value={this.state.muscleGroup}
@@ -53,7 +76,11 @@ class ExerciseIndex extends React.Component {
           <option value="Core">Core</option>
           <option value="Other">Other</option>
         </select>
-        {exerciseItems}
+        {currentExerciseList}
+        <div className="route-page-buttons">
+          <img src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1473375546/prev_arrow_ikhyek.png" onClick={this.decreaseOffset} />
+          <img src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1473375546/next_arrow_a7elvn.png" onClick={this.increaseOffset} />
+        </div>
       </div>
     );
   }

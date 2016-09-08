@@ -7,6 +7,7 @@ class TravelWorkoutIndexItem extends React.Component {
     this.calculateAndDisplayRoute = this.calculateAndDisplayRoute.bind(this);
     this.travelWorkout = this.props.travelWorkout;
     this.removeTravelWorkout = this.removeTravelWorkout.bind(this);
+
   }
 
   componentDidMount() {

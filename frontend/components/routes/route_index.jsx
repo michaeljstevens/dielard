@@ -31,7 +31,7 @@ class RouteIndex extends React.Component {
     if (this.state.offset <= this.props.routes.length - 10) {
       setTimeout( () => {
         this.setState({offset: this.state.offset += 10});
-      }, 500);
+      }, 0);
     }
   }
 
@@ -39,7 +39,7 @@ class RouteIndex extends React.Component {
     if (this.state.offset >= 10) {
       setTimeout( () => {
         this.setState({offset: this.state.offset -= 10});
-      }, 500);
+      }, 0);
     }
   }
 
@@ -73,8 +73,8 @@ class RouteIndex extends React.Component {
         </select>
         {routeItems}
         <div className="route-page-buttons">
-          <button className="route-next-page" onClick={this.increaseOffset}>Next Page</button>
-          <button className="route-prev-page" onClick={this.decreaseOffset}>Previous Page</button>
+          <img src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1473375546/prev_arrow_ikhyek.png" onClick={this.decreaseOffset} />
+          <img src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1473375546/next_arrow_a7elvn.png" onClick={this.increaseOffset} />
         </div>
       </div>
     );
