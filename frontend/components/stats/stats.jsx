@@ -51,20 +51,23 @@ class Stats extends React.Component {
       workoutToRender = null;
     }
 
+    // <h1>Last Workout</h1>
     return(
-      <div className="stats_outer_div">
+      <div className="stats-super">
         {workoutToRender}
-        <div className="muscle-group-pie">
-          <MuscleGroupsPieContainer />
-        </div>
-        <div className="gauges">
-          <GaugesContainer/>
-        </div>
-        <div className="distance-traveled">
-          <DistanceTraveledContainer />
-        </div>
-        <div className="calories-burned">
-          <CaloriesBurnedContainer />
+        <div className="stats_outer_div">
+          <div className="muscle-group-pie">
+            <MuscleGroupsPieContainer />
+          </div>
+          <div className="gauges">
+            <GaugesContainer/>
+          </div>
+          <div className="distance-traveled">
+            <DistanceTraveledContainer />
+          </div>
+          <div className="calories-burned">
+            <CaloriesBurnedContainer />
+          </div>
         </div>
       </div>
     );

@@ -77,7 +77,7 @@ class CaloriesBurned extends React.Component {
 
   render() {
     return(
-      <div id="calories_burned_div" style={{width: "900px"}, {height: "500px"}}></div>
+      <div id="calories_burned_div"></div>
     );
   }
 }

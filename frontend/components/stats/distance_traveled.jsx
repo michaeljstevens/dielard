@@ -66,7 +66,7 @@ class DistanceTraveled extends React.Component {
 
   render() {
     return(
-      <div id="distance_traveled_div" style={{width: "900px"}, {height: "500px"}}></div>
+      <div id="distance_traveled_div"></div>
     );
   }
 }

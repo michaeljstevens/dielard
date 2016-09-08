@@ -47,13 +47,13 @@ class AppRouter extends React.Component{
     return(
       <Router history={ hashHistory }>
         <Route path="/" component={ App }>
-          <IndexRoute component={ WorkoutIndexContainer } onEnter={this._ensureLoggedIn} />
-          <Route path="users/:id" component={ UserProfileIndexItemContainer } onEnter={this._ensureLoggedIn} />
+          <IndexRoute component={ UserProfileIndexItemContainer } onEnter={this._ensureLoggedIn} />
           <Route path="users/:id/edit" component={ UserProfileFormContainer } onEnter={this._ensureLoggedIn} />
           <Route path="users/:id/routes" component={ RouteIndexContainer } onEnter={this._ensureLoggedIn} />
           <Route path="users/:id/routes/new" component={ RouteFormContainer } onEnter={this._ensureLoggedIn} />
           <Route path="users/:id/exercises" component={ExerciseIndexContainer} onEnter={this._ensureLoggedIn} />
           <Route path="users/:id/exercises/new" component={ ExerciseFormContainer } onEnter={this._ensureLoggedIn} />
+          <Route path="users/:id/workouts" component={WorkoutIndexContainer} onEnter={this._ensureLoggedIn} />
           <Route path="users/:id/workouts/new" component={ WorkoutFormContainer } onEnter={this._ensureLoggedIn} />
           <Route path="users/:id/stats" component={ StatsContainer } onEnter={this._ensureLoggedIn} />
           <Route path="login" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn}/>

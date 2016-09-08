@@ -1,17 +1,21 @@
 .stats_outer_div {
   display: flex;
   flex-wrap: wrap;
-  width: 66%;
+  width: 57%;
   background: white;
   justify-content: center;
+  margin-top: -8px;
+  border-top: 1px solid black;
 }
 
-.muscle-group-pie {
 
+.muscle-group-pie {
+  border-bottom: 1px solid black;
 }
 
 .gauges {
   margin-top: 114px;
+  border-bottom: 1px solid black;
 }
 
 .distance-traveled {
@@ -20,4 +24,16 @@
 
 .calories-burned {
 
+}
+
+.stats-super {
+  width: 116%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.gauge-container {
+  display: flex;
 }

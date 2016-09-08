@@ -41,7 +41,8 @@ class Navbar extends React.Component {
       const newWorkoutUrl = `/users/${this.props.currentUser.id}/workouts/new`;
       this.routesUrl = `/users/${this.props.currentUser.id}/routes`;
       this.exercisesUrl = `/users/${this.props.currentUser.id}/exercises`;
-      let profileUrl = `/users/${this.props.currentUser.id}`;
+      this.workoutsUrl = `/users/${this.props.currentUser.id}/workouts`;
+      let profileUrl = `/users/${this.props.currentUser.id}/edit`;
       sessionButton = (
         <ul className="logout-profile">
           <li><button className="logout-button" onClick={this.handleLogout}>Log Out</button></li>
@@ -70,7 +71,8 @@ class Navbar extends React.Component {
     return(
       <div className="nav-header">
         <Link to="/" className="header-link"><h1>takeupless</h1></Link>
-        <Link to={this.routesUrl} className="header-options"><h2>my routes</h2></Link>
+        <Link to={this.workoutsUrl} className="header-options"><h2>my workouts</h2></Link>
+        <Link to={this.routesUrl} className="header-options-routes"><h2>my routes</h2></Link>
         <Link to={this.exercisesUrl} className="header-options-exercises"><h2>my exercises</h2></Link>
         <div>{sessionButton}</div>
       </div>
