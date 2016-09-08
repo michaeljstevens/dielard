@@ -1,7 +1,11 @@
 .update-inputs {
   display: flex;
-  flex-direction: column;
-  width: 400px;
+  flex-wrap: wrap;
+  background: white;
+  margin-bottom: 100px;
+  position: relative;
+  max-width: 539px;
+  border-radius: 5px;
 }
 
 .user-edit-header {
@@ -10,19 +14,35 @@
   margin-left: 61px;
 }
 
+.profile-form {
+  display: flex;
+  flex-direction: column;
+}
+
 
 
 .profile-form-box {
   display: flex;
-  justify-content: flex-start;
-  padding-left: 252px;
-  padding-top: 50px;
+  justify-content: center;
+  margin-top: 50px;
+  padding-top: 35px;
+  width: 66%;
+}
+
+.profile-form-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.8);
+  min-width: 100px;
+  min-height: 716px;
 }
 
 .update-input {
   margin: 0 auto;
   width: 200px;
   border: 1px lightgrey solid;
+  margin-left: 20px;
 }
 
 .update-select {
@@ -33,21 +53,25 @@
   height: 29px;
   padding: 5px;
   width: 200px;
+  margin-left: 20px;
+  margin-bottom: 20px;
 }
 
 .update-submit {
-  display:flex;
-  justify-content: flex-end;
-  width: 50px;
   border: 1px solid black;
-  margin-left: 268px;
-  padding: 10px;
-  margin-bottom: 100px;
+  height: 19px;
+  padding: 7px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  color: white;
+  background: black;
+  border-radius: 5px;
 }
 
 .update-submit:hover {
-  background: black;
-  color: white;
+  background: lightgrey;
+  color: black;
   cursor: pointer;
 }
 
@@ -71,7 +95,10 @@
 }
 
 .update-field {
-  position:relative;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-right: 47px;
 }
 
 .field-label {
@@ -82,10 +109,7 @@
 }
 
 .description {
-  height: 100px;
-  width: 300px;
-  margin-left: 20px;
-  padding: 10px;
+  height: 75px;
 }
 
 .edit-profile-picture {

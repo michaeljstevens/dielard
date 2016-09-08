@@ -90,79 +90,79 @@ class UserProfileForm extends React.Component {
     let linkUrl = `/users/${this.currentUser.id}`;
     return (
       <div className="profile-form">
-        <h1 className="user-edit-header">Edit Profile</h1>
-        <div className="h-line"></div>
-        <form onSubmit={this.handleSubmit} className="profile-form-box">
-          <br />
+        <div className="profile-form-content">
+          <form onSubmit={this.handleSubmit} className="profile-form-box">
+            <br />
 
-          <div className="profile-picture-parts">
-            <img src={this.state.profile_picture} className="edit-profile-picture" />
-            <img className="plus-profile-picture" onClick={this.upload} src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1472582322/plus_spuhvk.png" />
-          </div>
-          <br />
+            <div className="profile-picture-parts">
+              <img src={this.state.profile_picture} className="edit-profile-picture" />
+              <img className="plus-profile-picture" onClick={this.upload} src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1472582322/plus_spuhvk.png" />
+            </div>
+            <br />
 
-          <div className="update-inputs">
-            <div className="update-field">
-            <label className="field-label">Username</label>
-            <input type="text"
-              onChange={this.updateState("username")}
-              className="update-input" value={this.state.username} />
-            </div>
-            <br />
-            <div className="update-field">
-              <label className="field-label">Description:</label>
-              <textarea
-                onChange={this.updateState("description")}
-                className="update-input description" value={this.state.description} />
-            </div>
-            <br />
-            <div className="update-field">
-              <label className="field-label">Birthdate</label>
-              <input type="date"
-                value={this.state.birthdate}
-                onChange={this.updateState("birthdate")}
-                className="update-input" />
-            </div>
-            <br />
-            <div className="update-field">
-              <label className="field-label">Sex</label>
-              <select onChange={this.updateState("sex")} className="update-select" value={this.state.sex}>
-                <option value=""></option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-              </select>
-            </div>
-            <br />
-            <div className="update-field">
-              <label className="field-label">Height (inches)</label>
+            <div className="update-inputs">
+              <div className="update-field">
+              <label className="field-label">Username</label>
               <input type="text"
-                onChange={this.updateState("height")}
-                className="update-input" value={this.state.height} />
+                onChange={this.updateState("username")}
+                className="update-input" value={this.state.username} />
+              </div>
+              <br />
+              <div className="update-field">
+                <label className="field-label">Description:</label>
+                <textarea
+                  onChange={this.updateState("description")}
+                  className="update-input description" value={this.state.description} />
+              </div>
+              <br />
+              <div className="update-field">
+                <label className="field-label">Birthdate</label>
+                <input type="date"
+                  value={this.state.birthdate}
+                  onChange={this.updateState("birthdate")}
+                  className="update-input" />
+              </div>
+              <br />
+              <div className="update-field">
+                <label className="field-label">Sex</label>
+                <select onChange={this.updateState("sex")} className="update-select" value={this.state.sex}>
+                  <option value=""></option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+              </div>
+              <br />
+              <div className="update-field">
+                <label className="field-label">Height (inches)</label>
+                <input type="text"
+                  onChange={this.updateState("height")}
+                  className="update-input" value={this.state.height} />
+              </div>
+              <br />
+              <div className="update-field">
+                <label className="field-label">Weight (pounds)</label>
+                <input type="text"
+                  onChange={this.updateState("weight")}
+                  className="update-input" value={this.state.weight} />
+              </div>
+              <br />
+              <div className="update-field">
+                <label className="field-label">Activity Level</label>
+                <select onChange={this.updateState("activity_level")}
+                  className="update-select" value={this.state.activity_level}>
+                  <option value=""></option>
+                  <option value="None">None</option>
+                  <option value="Light">Light</option>
+                  <option value="Moderate">Moderate</option>
+                  <option value="High">High</option>
+                  <option value="Extreme">Extreme</option>
+                </select>
+              </div>
+              <br />
+              <input type="submit" className="update-submit" value="Update" />
             </div>
-            <br />
-            <div className="update-field">
-              <label className="field-label">Weight (pounds)</label>
-              <input type="text"
-                onChange={this.updateState("weight")}
-                className="update-input" value={this.state.weight} />
-            </div>
-            <br />
-            <div className="update-field">
-              <label className="field-label">Activity Level</label>
-              <select onChange={this.updateState("activity_level")}
-                className="update-select" value={this.state.activity_level}>
-                <option value=""></option>
-                <option value="None">None</option>
-                <option value="Light">Light</option>
-                <option value="Moderate">Moderate</option>
-                <option value="High">High</option>
-                <option value="Extreme">Extreme</option>
-              </select>
-            </div>
-            <br />
-            <input type="submit" className="update-submit" value="Update" />
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     );
   }
