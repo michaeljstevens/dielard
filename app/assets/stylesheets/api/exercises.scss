@@ -167,18 +167,19 @@
   margin-top: 10px;
 }
 
-.exercise-index-select-label{
-  position: absolute;
-  left: 26px;
-  font-size: 34px;
-  color: white;
-  top: 10px;
-}
 
 .exercise-index-select {
-  position: absolute;
-  left: 30px;
-  top: 59px;
-  width: 205px;
-  font-size: 60px;
+  margin: 25px;
+  border: 1px solid #111;
+  background: white;
+  width: 50%;
+  padding: 5px;
+  font-size: 25px;
+  border: 1px solid #ccc;
+  height: 54px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(http://res.cloudinary.com/dj6gqauyi/image/upload/v1473352382/down_arrow_qcwrte.png) 96% / 3% no-repeat;
+  background-color: white;
 }

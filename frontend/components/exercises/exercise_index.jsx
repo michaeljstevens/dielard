@@ -40,7 +40,6 @@ class ExerciseIndex extends React.Component {
     }
     return (
       <div className="exercise-index-item-outer-div">
-        <label className="exercise-index-select-label">Muscle Group</label>
         <select className="exercise-index-select" value={this.state.muscleGroup}
           onChange={this.updateState("muscleGroup")}>
           <option value="All">All</option>
