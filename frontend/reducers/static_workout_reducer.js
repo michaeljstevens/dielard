@@ -10,8 +10,11 @@ const StaticWorkoutReducer = function(state = {}, action){
       const staticWorkout = action.staticWorkout;
       return merge({}, state, {staticWorkout});
     case StaticWorkoutConstants.REMOVE_STATIC_WORKOUT:
+      const badStaticWorkout = action.staticWorkout;
       const nextState = merge({}, state);
-      delete nextState.staticWorkout;
+      nextState.allStaticWorkouts = nextState.allStaticWorkouts.filter(r => {
+        return r.id !== action.staticWorkout.id;
+      });
       return nextState;
     default:
       return state;

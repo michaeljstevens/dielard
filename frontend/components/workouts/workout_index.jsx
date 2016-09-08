@@ -61,7 +61,8 @@ class WorkoutIndex extends React.Component {
     if(travelWorkouts) {
       const keys = Object.keys(travelWorkouts);
       keys.forEach (key => {
-        travelWorkoutList.push(<TravelWorkoutIndexItem travelWorkout={travelWorkouts[key]} key={this.i}/>);
+        travelWorkoutList.push(<TravelWorkoutIndexItem travelWorkout={travelWorkouts[key]}
+          destroyTravelWorkout={this.props.destroyTravelWorkout} key={this.i}/>);
         this.i ++;
       });
     }
@@ -69,7 +70,8 @@ class WorkoutIndex extends React.Component {
     if(staticWorkouts) {
       const keys = Object.keys(staticWorkouts);
       keys.forEach (key => {
-        staticWorkoutList.push(<StaticWorkoutIndexItem staticWorkout={staticWorkouts[key]} key={this.i} />);
+        staticWorkoutList.push(<StaticWorkoutIndexItem staticWorkout={staticWorkouts[key]}
+          destroyStaticWorkout={this.props.destroyStaticWorkout} key={this.i} />);
         this.i ++;
       });
     }

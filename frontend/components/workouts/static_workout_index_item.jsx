@@ -9,6 +9,14 @@ class StaticWorkoutIndexItem extends React.Component {
       this.weightLifted += (workout_exercise.weight * workout_exercise.sets * workout_exercise.reps);
     });
     this.exercises = [];
+    this.removeStaticWorkout = this.removeStaticWorkout.bind(this);
+  }
+
+  removeStaticWorkout() {
+    if (this.props.destroyStaticWorkout) {
+      this.props.destroyStaticWorkout(this.props.staticWorkout.id);
+      this.setState();
+    }
   }
 
 
@@ -67,6 +75,7 @@ class StaticWorkoutIndexItem extends React.Component {
             <li>{this.staticWorkout.notes}</li>
           </label>
         </ul>
+        <button className="travel-workout-delete" onClick={this.removeStaticWorkout}>Delete</button>
         <ul className="static-workout-outer-exercise-list">
           <ul className="static-workout-exercise-headers">
             <li>Exercise</li>

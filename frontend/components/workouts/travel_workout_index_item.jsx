@@ -6,6 +6,7 @@ class TravelWorkoutIndexItem extends React.Component {
     this.setDirections = this.setDirections.bind(this);
     this.calculateAndDisplayRoute = this.calculateAndDisplayRoute.bind(this);
     this.travelWorkout = this.props.travelWorkout;
+    this.removeTravelWorkout = this.removeTravelWorkout.bind(this);
   }
 
   componentDidMount() {
@@ -16,6 +17,13 @@ class TravelWorkoutIndexItem extends React.Component {
     };
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
     this.setDirections();
+  }
+
+  removeTravelWorkout() {
+    if (this.props.destroyTravelWorkout) {
+      this.props.destroyTravelWorkout(this.props.travelWorkout.id);
+      this.setState();
+    }
   }
 
   setDirections() {
@@ -91,6 +99,7 @@ class TravelWorkoutIndexItem extends React.Component {
             <li>{this.travelWorkout.notes}</li>
           </label>
         </ul>
+        <button className="travel-workout-delete" onClick={this.removeTravelWorkout}>Delete</button>
         <div className="feed-index-map" ref="map"></div>
       </div>
     );
