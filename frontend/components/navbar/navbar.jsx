@@ -34,6 +34,7 @@ class Navbar extends React.Component {
   render () {
     this.routesUrl = "/";
     this.exercisesUrl = "/";
+    this.workoutsUrl = '/';
     let sessionButton;
     if (this.props.currentUser) {
       const newRouteUrl = `/users/${this.props.currentUser.id}/routes/new`;
