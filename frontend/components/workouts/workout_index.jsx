@@ -2,19 +2,33 @@ import React from 'react';
 import TravelWorkoutIndexItem from './travel_workout_index_item.jsx';
 import StaticWorkoutIndexItem from './static_workout_index_item.jsx';
 
+const RouteTypes = {
+  Walk: "WALKING",
+  Run: "RUNNING",
+  Bike: "BICYCLING"
+};
+
 
 class WorkoutIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {offset: 0};
+    this.state = {offset: 0, workoutType: "All"};
     this.i = 0;
     this.increaseOffset = this.increaseOffset.bind(this);
     this.decreaseOffset = this.decreaseOffset.bind(this);
+    this.updateState = this.updateState.bind(this);
+    this.allWorkoutList = [];
   }
 
   componentDidMount() {
     this.props.requestTravelWorkouts();
     this.props.requestStaticWorkouts();
+  }
+
+  updateState (field) {
+    return e => {
+      this.setState({[field]: e.currentTarget.value});
+    };
   }
 
   increaseOffset() {
@@ -44,7 +58,7 @@ class WorkoutIndex extends React.Component {
     let currentWorkoutList = [];
 
 
-    if(!!travelWorkouts) {
+    if(travelWorkouts) {
       const keys = Object.keys(travelWorkouts);
       keys.forEach (key => {
         travelWorkoutList.push(<TravelWorkoutIndexItem travelWorkout={travelWorkouts[key]} key={this.i}/>);
@@ -52,7 +66,7 @@ class WorkoutIndex extends React.Component {
       });
     }
 
-    if(!!staticWorkouts) {
+    if(staticWorkouts) {
       const keys = Object.keys(staticWorkouts);
       keys.forEach (key => {
         staticWorkoutList.push(<StaticWorkoutIndexItem staticWorkout={staticWorkouts[key]} key={this.i} />);
@@ -60,7 +74,7 @@ class WorkoutIndex extends React.Component {
       });
     }
 
-    if (!!travelWorkouts && !!staticWorkouts) {
+    if (travelWorkouts && staticWorkouts) {
 
       allWorkoutList = travelWorkoutList.concat(staticWorkoutList);
 
@@ -74,13 +88,40 @@ class WorkoutIndex extends React.Component {
           return -1;
         }
       });
-      this.allWorkoutList = allWorkoutList;
+
+      if (this.state.workoutType === "All")
+      {
+        this.allWorkoutList = allWorkoutList;
+      } else if (this.state.workoutType === "Lift") {
+        this.allWorkoutList = allWorkoutList.filter( workout => {
+          if(workout.props.staticWorkout) {
+            return true;
+          } else {
+            return false;
+          }
+        });
+      } else {
+        this.allWorkoutList = allWorkoutList.filter( workout => {
+          if (workout.props.travelWorkout && workout.props.travelWorkout.route.activity_type === RouteTypes[this.state.workoutType]) {
+            return true;
+          }
+        });
+      }
     }
 
-    currentWorkoutList = allWorkoutList.slice(this.state.offset, this.state.offset + 10);
+
+    currentWorkoutList = this.allWorkoutList.slice(this.state.offset, this.state.offset + 10);
 
     return(
       <div className="workout-index-outer-div">
+        <select className="workout-index-select" value={this.state.workoutType}
+          onChange={this.updateState("workoutType")}>
+          <option value="All">All</option>
+          <option value="Walk">Walk</option>
+          <option value="Run">Run</option>
+          <option value="Bike">Bike</option>
+          <option value="Lift">Lift</option>
+        </select>
         {currentWorkoutList}
         <div className="route-page-buttons">
           <button className="route-next-page" onClick={this.increaseOffset}>Next Page</button>

@@ -5,3 +5,19 @@
   background: rgba(0, 0, 0, 0.8);
   min-height: 716px;
 }
+
+.workout-index-select {
+  margin: 25px;
+  border: 1px solid #111;
+  background: white;
+  width: 57%;
+  padding: 5px;
+  font-size: 25px;
+  border: 1px solid #ccc;
+  height: 54px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(http://res.cloudinary.com/dj6gqauyi/image/upload/v1473352382/down_arrow_qcwrte.png) 96% / 3% no-repeat;
+  background-color: white;
+}

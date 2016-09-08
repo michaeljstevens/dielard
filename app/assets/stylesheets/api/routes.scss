@@ -96,6 +96,22 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
+.route-index-select {
+  margin: 25px;
+  border: 1px solid #111;
+  background: white;
+  width: 55%;
+  padding: 5px;
+  font-size: 25px;
+  border: 1px solid #ccc;
+  height: 54px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(http://res.cloudinary.com/dj6gqauyi/image/upload/v1473352382/down_arrow_qcwrte.png) 96% / 3% no-repeat;
+  background-color: white;
+}
+
 #pac-input {
   background-color: #fff;
   font-family: Roboto;
