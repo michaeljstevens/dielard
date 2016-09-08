@@ -44,9 +44,9 @@ class Stats extends React.Component {
     let workoutToRender;
 
     if(this.latestWorkoutType === "travel") {
-      workoutToRender = <TravelWorkoutIndexItem travelWorkout={this.latestWorkout}/>;
+      workoutToRender = <TravelWorkoutIndexItem pathName={this.props.pathName} travelWorkout={this.latestWorkout}/>;
     } else if (this.latestWorkoutType === "static") {
-      workoutToRender = <StaticWorkoutIndexItem staticWorkout={this.latestWorkout} />;
+      workoutToRender = <StaticWorkoutIndexItem pathName={this.props.pathName} staticWorkout={this.latestWorkout} />;
     } else {
       workoutToRender = null;
     }

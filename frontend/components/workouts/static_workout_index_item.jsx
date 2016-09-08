@@ -46,6 +46,7 @@ class StaticWorkoutIndexItem extends React.Component {
     }
 
 
+
     return(
       <div className="static-workout-index-item-container">
         <ul className="static-workout-summary-list">
@@ -75,7 +76,7 @@ class StaticWorkoutIndexItem extends React.Component {
             <li>{this.staticWorkout.notes}</li>
           </label>
         </ul>
-        <button className="travel-workout-delete" onClick={this.removeStaticWorkout}>Delete</button>
+        {this.props.pathName != "/" ? <button className="travel-workout-delete" onClick={this.removeStaticWorkout}>Delete</button> : null }
         <ul className="static-workout-outer-exercise-list">
           <ul className="static-workout-exercise-headers">
             <li>Exercise</li>

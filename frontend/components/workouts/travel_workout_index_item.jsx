@@ -99,7 +99,7 @@ class TravelWorkoutIndexItem extends React.Component {
             <li>{this.travelWorkout.notes}</li>
           </label>
         </ul>
-        <button className="travel-workout-delete" onClick={this.removeTravelWorkout}>Delete</button>
+        {this.props.pathName != "/" ? <button className="travel-workout-delete" onClick={this.removeTravelWorkout}>Delete</button> : null}
         <div className="feed-index-map" ref="map"></div>
       </div>
     );

@@ -47,7 +47,7 @@ class UserProfileIndexItem extends React.Component {
             </div>
           </div>
         </div>
-        <StatsContainer />
+        <StatsContainer pathName={this.props.location.pathname}/>
       </div>
     );
   }
