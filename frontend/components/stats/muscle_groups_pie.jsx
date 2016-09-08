@@ -28,7 +28,8 @@ class MuscleGroupsPie extends React.Component {
     var options = {'title':'Exercises by Body Part',
                    'width':450,
                    'height':'400',
-                    pieHole: 0.4,};
+                    pieHole: 0.4
+                  };
 
     // Instantiate and draw our chart, passing in some options.
     var chart = new google.visualization.PieChart(document.getElementById('muscle_group_div'));

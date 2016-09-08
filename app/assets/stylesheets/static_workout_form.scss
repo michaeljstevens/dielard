@@ -16,8 +16,8 @@
   background: rgba(255, 255, 255, 0.95);
   display: flex;
   justify-content: space-around;
+  padding-top: 35px;
   position: relative;
-  flex-wrap: wrap;
 }
 
 .static-workout-form input {
@@ -26,12 +26,17 @@
 
 .static-workout-form textarea {
   border: 1px solid black;
-  height: 92px;
+  border: 1px solid black;
+  height: 111px;
+  width: 200px;
 }
 
 .static-workout-form h2 {
-  margin-top: 20px;
   font-weight: bold;
+}
+
+.static-workout-duration {
+  width: 198px;
 }
 
 .static-workout-exercise-item {
@@ -66,15 +71,15 @@
 .exercise-dropdown-label {
   position: absolute;
   bottom: 20px;
-  left: 62px;
+  left: 25px;
 }
 
 .static-workout-form-submit {
   margin-right: 0px;
   position: absolute;
-  bottom: 5px;
-  right: 5px;
-  padding: 5px;
+  bottom: 10px;
+  right: 10px;
+  padding: 4px;
   background: black;
   color: white;
 }

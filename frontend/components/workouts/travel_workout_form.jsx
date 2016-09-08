@@ -92,15 +92,15 @@ class TravelWorkoutForm extends React.Component {
         <div className="travel-workout-form-container">
           <form className="travel-workout-form" onSubmit={this.handleSubmit}>
             <label>
-              <h2>Date:</h2>
+              <h2>Date</h2>
               <input className="travel-workout-date" type="date" value={this.state.date}
                 onChange={this.updateState("date")} />
             </label>
-            <label><h2>Notes:</h2>
+            <label><h2>Notes</h2>
               <textarea className="travel-workout-form-notes" value={this.state.notes}
                 onChange={this.updateState("notes")} />
             </label>
-            <label><h2>Route:</h2>
+            <label><h2>Route</h2>
               <select className="travel-workout-form-select" value={this.state.route}
                 onChange={this.updateState("route_id")}>
                 <option>Select Route</option>

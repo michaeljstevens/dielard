@@ -14,8 +14,8 @@
   margin-top: 20px;
   background: rgba(255, 255, 255, 0.95);
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
+  padding-top: 35px;
   position: relative;
 }
 
@@ -30,17 +30,18 @@
 }
 
 .travel-workout-form label input {
-  margin: 20px;
+
   border: 1px solid black;
 }
 
 .travel-workout-form textarea {
   border: 1px solid black;
-  margin: 20px;
+  height: 111px;
+  width: 200px;
 }
 
 .travel-workout-form select {
-  margin: 20px;
+  width: 200px;
 }
 
 .travel-workout-route {

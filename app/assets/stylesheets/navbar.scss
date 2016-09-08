@@ -23,7 +23,7 @@
   justify-content: space-between;
   height: 60px;
   position: relative;
-  min-width: 850px;
+  min-width: 911px;
 }
 
 .header-profile-picture {
@@ -40,12 +40,10 @@
 }
 
 
-.header-link {
-  display: flex;
-  align-items: center;
-  padding-left: 20px;
-  font-size: 35px;
-  color: white;
+.header-link-img {
+  width: 36%;
+  margin-left: 10px;
+  margin-top: -5px;
 }
 
 .header-options {
@@ -55,7 +53,7 @@
   color: white;
   justify-content: flex-start;
   position: absolute;
-  left: 226px;
+  left: 327px;
   top: 19px;
 }
 
@@ -66,7 +64,7 @@
   color: white;
   justify-content: flex-start;
   position: absolute;
-  left: 468px;
+  left: 585px;
   top: 19px;
 }
 
@@ -77,7 +75,7 @@
   color: white;
   justify-content: flex-start;
   position: absolute;
-  left: 361px;
+  left: 468px;
   top: 19px;
 }
 

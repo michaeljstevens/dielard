@@ -101,17 +101,17 @@ class StaticWorkoutForm extends React.Component {
         <div className="static-workout-form-container">
           <form className="static-workout-form" onSubmit={this.handleSubmit}>
             <label>
-              <h2>Date:</h2>
+              <h2>Date</h2>
               <input className="static-workout-date" type="date" value={this.state.date}
                 onChange={this.updateState("date")} />
             </label>
             <label>
-              <h2>Notes:</h2>
+              <h2>Notes</h2>
               <textarea className="static-workout-form-notes" value={this.state.notes}
                 onChange={this.updateState("notes")} />
             </label>
             <label>
-              <h2>Duration(minutes):</h2>
+              <h2>Duration(minutes)</h2>
               <input className="static-workout-duration" type="text" value={this.state.duration}
                 onChange={this.updateState("duration")} />
             </label>
