@@ -47,19 +47,19 @@ class Navbar extends React.Component {
       sessionButton = (
         <ul className="logout-profile">
           <li><button className="logout-button" onClick={this.handleLogout}>Log Out</button></li>
+          <div>
+            <img className="plus" onClick={this.displayAddDropdown}
+              src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1472582322/plus_spuhvk.png" />
+            <ul style={this.state.style} className="nav-add-ul">
+              <li onClick={this.clickLink.bind(this, newWorkoutUrl)}>New Workout</li>
+              <li onClick={this.clickLink.bind(this, newRouteUrl)}>New Route</li>
+              <li onClick={this.clickLink.bind(this, newExerciseUrl)}>New Exercise</li>
+            </ul>
+          </div>
           <li><Link to={profileUrl}><img className="header-profile-picture"
             src={this.props.currentUser.profile_picture}
             alt="" /></Link></li>
           <li>
-            <div>
-              <img className="plus" onClick={this.displayAddDropdown}
-                src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1472582322/plus_spuhvk.png" />
-              <ul style={this.state.style} className="nav-add-ul">
-                <li onClick={this.clickLink.bind(this, newWorkoutUrl)}>New Workout</li>
-                <li onClick={this.clickLink.bind(this, newRouteUrl)}>New Route</li>
-                <li onClick={this.clickLink.bind(this, newExerciseUrl)}>New Exercise</li>
-              </ul>
-            </div>
           </li>
         </ul>
       );

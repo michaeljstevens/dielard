@@ -12,6 +12,16 @@ class RouteFormModal extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.openModal = this.openModal.bind(this);
+    this.submitDisabled = true;
+    this.submitStyle = {
+      border: "1px solid black",
+      position: "absolute",
+      bottom: "14px",
+      right: "15px",
+      padding: "6px",
+      background: "lightgrey",
+      color: "white"
+    };
   }
 
   updateState (field){
@@ -27,7 +37,7 @@ class RouteFormModal extends React.Component {
   }
 
   closeModal (){
-    this.setState({ modalOpen: false });
+    this.setState({ modalOpen: false, title: "", description: "" });
   }
 
   openModal (){
@@ -39,6 +49,35 @@ class RouteFormModal extends React.Component {
   }
 
   render (){
+
+    if(this.state.title && this.state.description) {
+      this.submitDisabled = false;
+    } else {
+      this.submitDisabled = true;
+    }
+
+    if (!this.submitDisabled) {
+      this.submitStyle = {
+        border: "1px solid black",
+        position: "absolute",
+        bottom: "14px",
+        right: "15px",
+        padding: "6px",
+        background: "black",
+        color: "white"
+      };
+    } else {
+      this.submitStyle = {
+        border: "1px solid black",
+        position: "absolute",
+        bottom: "14px",
+        right: "15px",
+        padding: "6px",
+        background: "lightgrey",
+        color: "white"
+      };
+    }
+
     return(
       <div>
         <button className="route-modal-button" onClick={this.openModal}>
@@ -67,7 +106,7 @@ class RouteFormModal extends React.Component {
               <li>{this.props.state.duration}</li>
               <br />
             </ul>
-            <input type="submit" className="route-modal-submit" value="Submit"/>
+            <input type="submit" disabled={this.submitDisabled} style={this.submitStyle} className="route-modal-submit" value="Submit"/>
           </form>
         </Modal>
       </div>

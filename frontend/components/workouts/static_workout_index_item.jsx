@@ -16,25 +16,23 @@ class StaticWorkoutIndexItem extends React.Component {
   render() {
 
     const workoutExercises = this.staticWorkout.workout_exercises;
-    if(!!workoutExercises) {
+    if(workoutExercises) {
       workoutExercises.forEach(workEx => {
         this.exercises.push(
-          <li>
-            <ul className="static-workout-index-item">
-              <li>
-                {workEx.exercise.title}
-              </li>
-              <li>
-                {workEx.sets}
-              </li>
-              <li>
-                {workEx.reps}
-              </li>
-              <li>
-                {workEx.weight}
-              </li>
-            </ul>
-          </li>
+          <ul className="static-workout-index-item">
+            <li>
+              {workEx.exercise.title}
+            </li>
+            <li>
+              {workEx.sets}
+            </li>
+            <li>
+              {workEx.reps}
+            </li>
+            <li>
+              {workEx.weight}
+            </li>
+          </ul>
         );
       });
     }

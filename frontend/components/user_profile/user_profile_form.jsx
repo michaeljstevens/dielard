@@ -83,7 +83,7 @@ class UserProfileForm extends React.Component {
     const user = this.state;
     this.props.updateUser({user});
     const userURL = `/users/${this.state.id}`;
-    hashHistory.push(userURL);
+    hashHistory.push("/");
   }
 
   render() {

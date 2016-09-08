@@ -21,9 +21,9 @@ class DistanceTraveled extends React.Component {
     this.renderChart = this.renderChart.bind(this);
   }
 
-  // componentDidMount() {
-  //   this.renderChart(this.props);
-  // }
+  componentDidMount() {
+    this.renderChart(this.props);
+  }
 
   componentWillReceiveProps(newProps) {
     this.renderChart(newProps);
@@ -32,15 +32,18 @@ class DistanceTraveled extends React.Component {
   renderChart(props) {
     this.chartData = [['Activity', 'Miles', { role: "style"}]];
     if (props.travelWorkouts){
+      let totalDistance = 0;
       const travelDistances = {};
       props.travelWorkouts.forEach(travelWorkout => {
         let activity_type = travelWorkout.route.activity_type;
         let distance = parseFloat(travelWorkout.route.distance);
-        travelDistances[activity_type] ? travelDistances[activity_type] += distance : travelDistances[activity_type] = distance
+        travelDistances[activity_type] ? travelDistances[activity_type] += distance : travelDistances[activity_type] = distance;
+        totalDistance += distance;
       });
       Object.keys(travelDistances).forEach(key => {
         this.chartData.push([ActivityConstants[key], travelDistances[key], ActivityColors[key]]);
       });
+      this.chartData.push(["Total", totalDistance, "red"]);
       google.charts.setOnLoadCallback(this.drawChart);
     }
   }

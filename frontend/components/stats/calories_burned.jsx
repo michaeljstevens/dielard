@@ -22,9 +22,9 @@ class CaloriesBurned extends React.Component {
     this.renderChart = this.renderChart.bind(this);
   }
 
-  // componentDidMount() {
-  //   this.renderChart(this.props);
-  // }
+  componentDidMount() {
+    this.renderChart(this.props);
+  }
 
   componentWillReceiveProps(newProps) {
     this.renderChart(newProps);

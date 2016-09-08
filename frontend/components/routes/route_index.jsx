@@ -33,7 +33,7 @@ class RouteIndex extends React.Component {
   render() {
     let routes = this.props.routes;
     let routeItems = [];
-    if (!!routes) {
+    if (routes) {
       let keys = Object.keys(routes).slice(this.state.offset, this.state.offset + 10);
       keys.forEach (key => {
         routeItems.push(<RouteIndexItem route={routes[key]} key={key} destroyRoute={this.props.destroyRoute} />);

@@ -4,6 +4,7 @@
   background: white;
   justify-content: space-between;
   margin: 20px;
+  border-radius: 5px;
 }
 
 .static-workout-outer-exercise-list {
@@ -12,12 +13,31 @@
   color: white;
 }
 
+.static-workout-outer-exercise-list li {
+  width: 25%;
+}
+
 .static-workout-index-item {
   display: flex;
   justify-content: space-around;
   border-bottom: 1px solid white;
   border-right: 1px solid white;
   min-height: 40px;
+  border-left: 1px solid black;
+}
+
+.static-workout-index-item li {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: solid 1px white;
+  text-align: center;
+  padding: 5px;
+}
+
+.static-workout-index-item li:last-child {
+  border-right: 0px;
 }
 
 .static-workout-index-item-container h2 {
@@ -31,41 +51,41 @@
   flex-wrap: wrap;
 }
 
-.static-workout-summary-list li {
-  padding: 10px;
+.static-workout-summary-list label {
+  padding: 10px 0px;
 }
 
 
-.static-workout-index-item li {
-  padding: 0px 10px;
-  width: 50px;
-  border-left: 1px solid white;
-}
-
-.static-workout-index-item li:first-child {
+.static-workout-index-item li:last-child {
   border-left: 0px;
 }
 
 .static-workout-exercise-headers {
   display: flex;
-  border: 1px solid white;
+  border-top: 1px solid white;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+  border-left: 1px solid black;
   justify-content: space-around;
   min-height: 40px;
   font-size: 18px;
 }
 
 .static-workout-exercise-headers li {
-  padding: 0px 10px;
-  width: 50px;
-  border-left: 1px solid white;
+  width: 25%;
+  border-right: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.static-workout-exercise-headers li:last-child {
+  border-right: 0px;
 }
 
 .static-workout label {
- padding: 10px 0px;
-}
-
-.static-workout-exercise-headers li:first-child {
-  border-left: 0px;
+  padding: 10px 0px;
 }
 
 .static-workout-img {

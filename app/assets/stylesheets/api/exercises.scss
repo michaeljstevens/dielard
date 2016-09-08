@@ -86,6 +86,7 @@
   background: rgba(0, 0, 0, 0.8);
   min-height: 720px;
   position: relative;
+  min-width: 1000px;
 }
 
 .exercise-index-item-container {
@@ -164,4 +165,20 @@
   height: 80%;
   border: 1px solid black;
   margin-top: 10px;
+}
+
+.exercise-index-select-label{
+  position: absolute;
+  left: 26px;
+  font-size: 34px;
+  color: white;
+  top: 10px;
+}
+
+.exercise-index-select {
+  position: absolute;
+  left: 30px;
+  top: 59px;
+  width: 205px;
+  font-size: 60px;
 }

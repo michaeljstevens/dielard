@@ -11,7 +11,7 @@ const RouteFormModalStyle = {
   content : {
     position        : 'fixed',
     top             : '100px',
-    left            : '200px',
+    left            : '600px',
     right           : '200px',
     bottom          : '100px',
     border          : '1px solid #ccc',
