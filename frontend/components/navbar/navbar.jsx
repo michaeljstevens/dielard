@@ -14,6 +14,18 @@ class Navbar extends React.Component {
     this.handleLogout = this.handleLogout.bind(this);
   }
 
+  componentDidMount () {
+    const el = document.getElementById("drop-down");
+    const plus = document.getElementById("plus-id");
+
+    window.addEventListener("click", (e) => {
+
+      if (e.target !== el && e.target !== plus) {
+        this.setState({style: {display: 'none'}});
+      }
+    });
+  }
+
   clickLink(loc) {
     this.setState({style: {display: 'none'}});
     hashHistory.push(loc);
@@ -48,9 +60,9 @@ class Navbar extends React.Component {
         <ul className="logout-profile">
           <li><button className="logout-button" onClick={this.handleLogout}>Log Out</button></li>
           <div>
-            <img className="plus" onClick={this.displayAddDropdown}
+            <img className="plus" id="plus-id" onClick={this.displayAddDropdown}
               src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1472582322/plus_spuhvk.png" />
-            <ul style={this.state.style} className="nav-add-ul">
+            <ul style={this.state.style} id="drop-down" className="nav-add-ul">
               <li onClick={this.clickLink.bind(this, newWorkoutUrl)}>New Workout</li>
               <li onClick={this.clickLink.bind(this, newRouteUrl)}>New Route</li>
               <li onClick={this.clickLink.bind(this, newExerciseUrl)}>New Exercise</li>

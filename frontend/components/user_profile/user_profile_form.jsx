@@ -50,7 +50,6 @@ class UserProfileForm extends React.Component {
           const url = `http://res.cloudinary.com/dj6gqauyi/image/upload/w_${w},h_${h},c_crop,g_face,r_max/w_200/${image[0].path}`;
           that.setState({profile_picture: url});
         }
-        console.log(that.state);
       }
     );
   }
