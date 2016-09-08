@@ -115,7 +115,7 @@ class StaticWorkoutForm extends React.Component {
               <input className="static-workout-duration" type="text" value={this.state.duration}
                 onChange={this.updateState("duration")} />
             </label>
-            {this.props.staticWorkout ? <label className="exercise-dropdown-label"><h2>Add Exercises:</h2>
+            {this.props.staticWorkout ? <label className="exercise-dropdown-label"><h2>Add Exercises</h2>
               <select className="static-workout-form-select"
                 onChange={this.addExercise()} value="">
                 <option>Select Exercise</option>

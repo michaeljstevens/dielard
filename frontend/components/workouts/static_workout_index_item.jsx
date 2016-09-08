@@ -43,19 +43,19 @@ class StaticWorkoutIndexItem extends React.Component {
         <ul className="static-workout-summary-list">
 
           <label>
-            <h2>Date:</h2>
+            <h2>Date</h2>
             <li>{this.staticWorkout.date}</li>
           </label>
           <label>
-            <h2>Duration:</h2>
+            <h2>Duration</h2>
             <li>{this.staticWorkout.duration}</li>
           </label>
           <label>
-            <h2>Total Weight Lifted:</h2>
+            <h2>Total Weight Lifted</h2>
             <li>{this.weightLifted}</li>
           </label>
           <label>
-            <h2>Calories Burned:</h2>
+            <h2>Calories Burned</h2>
             <li>{this.staticWorkout.calories}</li>
           </label>
         </ul>
@@ -63,7 +63,7 @@ class StaticWorkoutIndexItem extends React.Component {
           <img src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1473029911/exercise-icon-32_i3pwzz.png"
             className="static-workout-img"/>
           <label>
-            <h2>Notes:</h2>
+            <h2>Notes</h2>
             <li>{this.staticWorkout.notes}</li>
           </label>
         </ul>

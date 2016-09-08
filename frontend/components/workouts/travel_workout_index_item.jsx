@@ -68,26 +68,26 @@ class TravelWorkoutIndexItem extends React.Component {
       <div className="travelWorkout-index-item">
         <ul className="travel-workout-index-list">
           <label>
-            <h2>Date:</h2>
+            <h2>Date</h2>
             <li>{this.travelWorkout.date}</li>
           </label>
           <label>
-            <h2>Distance:</h2>
+            <h2>Distance</h2>
             <li>{this.travelWorkout.route.distance}</li>
           </label>
           <label>
-            <h2>Duration:</h2>
+            <h2>Duration</h2>
             <li>{this.travelWorkout.route.duration}</li>
           </label>
           <label>
-            <h2>Calories Burned:</h2>
+            <h2>Calories Burned</h2>
             <li>{this.travelWorkout.calories}</li>
           </label>
         </ul>
         <ul className="travel-notes">
           <label>
             <li><img className="route-activity-img" src={activity_type} /></li>
-            <h2>Notes:</h2>
+            <h2>Notes</h2>
             <li>{this.travelWorkout.notes}</li>
           </label>
         </ul>

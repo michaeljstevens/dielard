@@ -72,9 +72,9 @@ class Navbar extends React.Component {
     return(
       <div className="nav-header">
         <Link to="/"><img className="header-link-img" src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1473357234/logo_ucucfj.png" /></Link>
-        <Link to={this.workoutsUrl} className="header-options"><h2>my workouts</h2></Link>
-        <Link to={this.routesUrl} className="header-options-routes"><h2>my routes</h2></Link>
-        <Link to={this.exercisesUrl} className="header-options-exercises"><h2>my exercises</h2></Link>
+        {this.props.currentUser ? <Link to={this.workoutsUrl} className="header-options"><h2>my workouts</h2></Link> : null}
+        {this.props.currentUser ? <Link to={this.routesUrl} className="header-options-routes"><h2>my routes</h2></Link> : null}
+        {this.props.currentUser ? <Link to={this.exercisesUrl} className="header-options-exercises"><h2>my exercises</h2></Link> : null}
         <div>{sessionButton}</div>
       </div>
     );
