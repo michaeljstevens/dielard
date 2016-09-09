@@ -23,7 +23,7 @@ class TravelWorkoutIndexItem extends React.Component {
   removeTravelWorkout() {
     if (this.props.destroyTravelWorkout) {
       this.props.destroyTravelWorkout(this.props.travelWorkout.id);
-      this.setState();
+      this.forceUpdate();
     }
   }
 

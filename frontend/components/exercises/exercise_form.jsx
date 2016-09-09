@@ -11,7 +11,13 @@ class ExerciseForm extends React.Component {
       description: "",
       muscle_group: ""
     };
-
+    this.submitDisabled = true;
+    this.submitStyle = {
+      position: "absolute",
+      padding: "4px",
+      background: "black",
+      color: "white",
+    };
     this.updateState = this.updateState.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -31,10 +37,34 @@ class ExerciseForm extends React.Component {
       description: "",
       muscle_group: ""
     });
+    hashHistory.push(`/users/${currentUser.id}/exercises`)
   }
 
 
   render () {
+
+    if (this.state.title && this.state.description && this.state.muscle_group) {
+      this.submitDisabled = false;
+    } else {
+      this.submitDisabled = true;
+    }
+
+    if (!this.submitDisabled) {
+      this.submitStyle = {
+        position: "absolute",
+        padding: "4px",
+        background: "black",
+        color: "white",
+      };
+    } else {
+      this.submitStyle = {
+        position: "absolute",
+        padding: "4px",
+        background: "grey",
+        color: "white",
+      };
+    }
+
     return (
       <div className="exercise-form-outer">
         <div className="exercise-form-container">
@@ -60,7 +90,8 @@ class ExerciseForm extends React.Component {
               <option value="Core">Core</option>
               <option value="Other">Other</option>
             </select>
-            <input type="submit" className="exercise-form-submit" value="Create" />
+            <input type="submit" disabled={this.submitDisabled}
+              style={this.submitStyle} className="exercise-form-submit" value="Create" />
           </form>
         </div>
         <img className="splash-image" src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1472984342/photo-1466761366829-84fd59a22e0b_xqcq1x.jpg" alt=""/>

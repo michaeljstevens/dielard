@@ -50,11 +50,13 @@
   position: absolute;
   bottom: -58px;
   right: 12px;
+  border-radius: 5px;
 }
 
 .exercise-form-submit:hover {
   background: black;
   color: white;
+  cursor: pointer;
 }
 
 .exercise-form-outer {

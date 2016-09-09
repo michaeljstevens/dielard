@@ -10,7 +10,6 @@ const RouteReducer = function(state = {}, action){
       const route = action.route;
       return merge({}, state, {route});
     case RouteConstants.REMOVE_ROUTE:
-      console.log(action.route);
       const badRoute = action.route;
       const nextState = merge({}, state);
       nextState.allRoutes = nextState.allRoutes.filter(r => {

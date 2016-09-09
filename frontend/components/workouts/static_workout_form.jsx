@@ -74,10 +74,6 @@ class StaticWorkoutForm extends React.Component {
 
   render() {
 
-    if(this.state.duration) {
-
-    }
-
     const allExercises = [];
     const myExercises = [];
 
@@ -102,6 +98,32 @@ class StaticWorkoutForm extends React.Component {
           </div>
         );
       });
+    }
+
+    if (this.state.date && this.state.duration) {
+      this.submitDisabled = false;
+    } else {
+      this.submitDisabled = true;
+    }
+
+    if (!this.submitDisabled) {
+      this.submitStyle = {
+        position: "absolute",
+        bottom: "10px",
+        right: "10px",
+        padding: "4px",
+        background: "black",
+        color: "white",
+      };
+    } else {
+      this.submitStyle = {
+        position: "absolute",
+        bottom: "10px",
+        right: "10px",
+        padding: "4px",
+        background: "grey",
+        color: "white",
+      };
     }
 
     return(
@@ -132,7 +154,8 @@ class StaticWorkoutForm extends React.Component {
             </label> : null}
             {this.props.staticWorkout ?
               <input type="button" className="static-workout-form-submit" onClick={this.handleFinish} value="Done" /> :
-              <input type="submit" className="static-workout-form-submit" value="Create" />}
+              <input type="submit" disabled={this.submitDisabled}
+                style={this.submitStyle} className="static-workout-form-submit" value="Create" />}
           </form>
         </div>
         <div className="static-exercises-container">

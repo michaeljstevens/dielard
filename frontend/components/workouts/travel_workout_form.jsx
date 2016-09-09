@@ -17,6 +17,15 @@ class TravelWorkoutForm extends React.Component {
     this.updateState = this.updateState.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.getCalories = this.getCalories.bind(this);
+    this.submitDisabled = true;
+    this.submitStyle = {
+      position: "absolute",
+      bottom: "10px",
+      right: "10px",
+      padding: "4px",
+      background: "black",
+      color: "white",
+    };
   }
 
   componentDidMount () {
@@ -87,6 +96,32 @@ class TravelWorkoutForm extends React.Component {
       });
     }
 
+    if(this.state.date && this.state.route_id) {
+      this.submitDisabled = false;
+    } else {
+      this.submitDisabled = true;
+    }
+
+    if (!this.submitDisabled) {
+      this.submitStyle = {
+        position: "absolute",
+        bottom: "10px",
+        right: "10px",
+        padding: "4px",
+        background: "black",
+        color: "white",
+      };
+    } else {
+      this.submitStyle = {
+        position: "absolute",
+        bottom: "10px",
+        right: "10px",
+        padding: "4px",
+        background: "grey",
+        color: "white",
+      };
+    }
+
     return(
       <div className="travel-workout-form-outer">
         <div className="travel-workout-form-container">
@@ -107,7 +142,8 @@ class TravelWorkoutForm extends React.Component {
                 {allRoutes}
               </select>
             </label>
-            <input type="submit" className="travel-workout-form-submit" value="Create" />
+            <input type="submit" disabled={this.submitDisabled} style={this.submitStyle}
+              className="travel-workout-form-submit" value="Create" />
           </form>
         </div>
         <div className="travel-workout-route">

@@ -32,6 +32,11 @@ class UserProfileForm extends React.Component {
     this.setCalories = this.setCalories.bind(this);
     this.calculateBmr = this.calculateBmr.bind(this);
     this.years = this.years.bind(this);
+    this.submitDisabled = true;
+    this.submitStyle = {
+      background: "black",
+      color: "white"
+    };
   }
 
   updateState(field){
@@ -54,7 +59,7 @@ class UserProfileForm extends React.Component {
           } else if (w >= 3000) {
             w = 2000;
           }
-// 1080x720
+
           if (h >= 4000) {
             h = 2200;
           } else if (h >= 3000 ){
@@ -108,6 +113,25 @@ class UserProfileForm extends React.Component {
   }
 
   render() {
+
+    if(this.state.username) {
+      this.submitDisabled = false;
+    } else {
+      this.submitDisabled = true;
+    }
+
+    if (!this.submitDisabled) {
+      this.submitStyle = {
+        background: "black",
+        color: "white"
+      };
+    } else {
+      this.submitStyle = {
+        background: "grey",
+        color: "white"
+      };
+    }
+
     let linkUrl = `/users/${this.currentUser.id}`;
     return (
       <div className="profile-form">
@@ -180,7 +204,8 @@ class UserProfileForm extends React.Component {
                 </select>
               </div>
               <br />
-              <input type="submit" className="update-submit" value="Update" />
+              <input type="submit" className="update-submit" disabled={this.submitDisabled} style={this.submitStyle}
+                value="Update" />
             </div>
           </form>
         </div>
