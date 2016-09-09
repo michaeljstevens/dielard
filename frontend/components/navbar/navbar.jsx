@@ -12,19 +12,48 @@ class Navbar extends React.Component {
     this.clickLink = this.clickLink.bind(this);
     this.displayAddDropdown = this.displayAddDropdown.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
+    this.eventListenerFunc = this.eventListenerFunc.bind(this);
+    this.hasListener = false;
   }
 
   componentDidMount () {
+    if(this.props.currentUser) {
+      const el = document.getElementById("drop-down");
+      const plus = document.getElementById("plus-id");
+
+      if (el && plus && !this.hasListener) {
+        window.addEventListener("click", this.eventListenerFunc, true);
+        this.hasListener = true;
+      }
+    }
+  }
+
+  eventListenerFunc(e) {
     const el = document.getElementById("drop-down");
     const plus = document.getElementById("plus-id");
 
-    window.addEventListener("click", (e) => {
-
-      if (e.target !== el && e.target !== plus) {
-        this.setState({style: {display: 'none'}});
-      }
-    });
+    if (e.target !== el && e.target !== plus) {
+      this.setState({style: {display: 'none'}});
+    }
   }
+
+  componentDidUpdate () {
+
+    const el = document.getElementById("drop-down");
+    const plus = document.getElementById("plus-id");
+
+    if(this.props.currentUser) {
+      if (el && plus && !this.hasListener) {
+        window.addEventListener("click", this.eventListenerFunc, true);
+        this.hasListener = true;
+      }
+    } else {
+      window.removeEventListener("click", this.eventListenerFunc, true);
+      this.hasListener = false;
+    }
+  }
+
+
 
   clickLink(loc) {
     this.setState({style: {display: 'none'}});
@@ -43,7 +72,16 @@ class Navbar extends React.Component {
     this.props.logout();
   }
 
+  checkClickHandler () {
+
+  }
+
   render () {
+
+    if(this.props.currentUser) {
+      this.checkClickHandler();
+    }
+
     this.routesUrl = "/";
     this.exercisesUrl = "/";
     this.workoutsUrl = '/';
@@ -76,6 +114,7 @@ class Navbar extends React.Component {
         </ul>
       );
     } else {
+      let style = {display: 'hidden'};
       sessionButton = (<ul className="login-signup">
         <li><Link to="/login" onClick = {this.props.clearErrors} className="current">Login</Link></li>
         <li><Link to="/signup" onClick = {this.props.clearErrors} className="current">Sign up</Link></li>

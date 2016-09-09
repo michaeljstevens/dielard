@@ -11,17 +11,17 @@ class UserProfileIndexItem extends React.Component {
   gotoEdit() {
     hashHistory.push(`/users/${this.props.currentUser.id}/edit`);
   }
-  // <img className="splash-image" src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1472691299/photo-1415394171664-b29caa4dca77_nujfnv.png" alt=""/>
 
   render() {
     return(
       <div className="profile-show-outer">
+        <img className="splash-image" src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1473397322/photo-1440614260594-46a6c82e8f4c_zdfcug.jpg" alt=""/>
         <div className="profile-show">
           <div className="content">
             <div className="left-content">
-              <img src={this.props.currentUser.profile_picture} className="profile-picture" />
-              <h1 className="usershow-header">{this.props.currentUser.username}</h1>
-              <h2 className="usershow-description">{this.props.currentUser.description}</h2>
+              {this.props.currentUser ? <img src={this.props.currentUser.profile_picture} className="profile-picture" /> : null}
+              {this.props.currentUser ? <h1 className="usershow-header">{this.props.currentUser.username}</h1> : null}
+              {this.props.currentUser ? <h2 className="usershow-description">{this.props.currentUser.description}</h2> : null}
               <button type="button" className="goto-edit-button" onClick={this.gotoEdit}>
                 Update Profile
               </button>
@@ -37,12 +37,12 @@ class UserProfileIndexItem extends React.Component {
               </ul>
               <div className="v-line"></div>
               <ul className="user-display-info">
-                <li>{this.props.currentUser.birthdate}</li>
-                <li>{this.props.currentUser.sex}</li>
-                <li>{this.props.currentUser.height}</li>
-                <li>{this.props.currentUser.weight}</li>
-                <li>{this.props.currentUser.activity_level}</li>
-                <li>{this.props.currentUser.daily_calories}</li>
+                {this.props.currentUser ? <li>{this.props.currentUser.birthdate}</li> : null}
+                {this.props.currentUser ? <li>{this.props.currentUser.sex}</li> : null}
+                {this.props.currentUser ? <li>{this.props.currentUser.height}</li> : null}
+                {this.props.currentUser ? <li>{this.props.currentUser.weight}</li> : null}
+                {this.props.currentUser ? <li>{this.props.currentUser.activity_level}</li> : null}
+                {this.props.currentUser ? <li>{this.props.currentUser.daily_calories}</li> : null}
               </ul>
             </div>
           </div>

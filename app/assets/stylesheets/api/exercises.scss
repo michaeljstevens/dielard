@@ -122,8 +122,8 @@
   width: 100%;
   max-width: 115px;
   height: auto;
-  margin-bottom: 10px;
   margin-right: 36px;
+  margin-top: 21px;
 }
 
 .exercise-index-title {
@@ -151,9 +151,10 @@
   border: 1px solid black;
   padding: 5px;
   right: 5px;
-  bottom: 5px;
   background: black;
   color: white;
+  border-radius: 5px;
+  top: 5px;
 }
 
 .delete-exercise:hover {

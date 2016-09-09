@@ -71,7 +71,7 @@ class CaloriesBurned extends React.Component {
       };
 
     // Instantiate and draw our chart, passing in some options.
-    var chart = new google.visualization.BarChart(document.getElementById('calories_burned_div'));
+    var chart = new google.visualization.ColumnChart(document.getElementById('calories_burned_div'));
        chart.draw(data, options);
     }
 

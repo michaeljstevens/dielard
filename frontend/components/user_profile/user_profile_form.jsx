@@ -45,8 +45,30 @@ class UserProfileForm extends React.Component {
       window.cloudinary_options,
       function(error, image) {
         if (error === null) {
-          const w = image[0].width >= 3000 ? 1800 : 1200;
-          const h = image[0].height >= 3000 ? 1800 : 1200;
+
+          let w = image[0].width;
+          let h = image[0].height;
+
+          if (w >= 4000) {
+            w = 2200;
+          } else if (w >= 3000) {
+            w = 2000;
+          }
+// 1080x720
+          if (h >= 4000) {
+            h = 2200;
+          } else if (h >= 3000 ){
+            h = 2000;
+          }
+
+          if (w > h) {
+            w = h;
+          }
+
+          if (h > w) {
+            h = w;
+          }
+
           const url = `http://res.cloudinary.com/dj6gqauyi/image/upload/w_${w},h_${h},c_crop,g_face,r_max/w_200/${image[0].path}`;
           that.setState({profile_picture: url});
         }
