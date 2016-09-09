@@ -2,6 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import RouteFormModalStyle from './route_form_model_style.js';
 import {merge} from 'lodash';
+import {hashHistory} from 'react-router';
 
 class RouteFormModal extends React.Component {
 
@@ -34,6 +35,7 @@ class RouteFormModal extends React.Component {
     this.props.state["description"] = this.state.description;
     this.props.dispatch(this.props.state);
     this.closeModal();
+    hashHistory.push(`/users/${this.props.currentUser.id}/routes`);
   }
 
   closeModal (){
