@@ -21,4 +21,5 @@ class Route < ActiveRecord::Base
   validates :user_id, :title, :description, presence: true
 
   belongs_to :user
+  has_many :travel_workouts, dependent: :destroy
 end

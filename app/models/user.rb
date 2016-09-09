@@ -24,7 +24,11 @@ class User < ActiveRecord::Base
   validates :username, :session_token, uniqueness: true
   validates :password, length: {minimum: 6}, allow_nil: :true
 
-  has_many :routes
+  has_many :routes, dependent: :destroy
+
+  has_many :static_workouts, dependent: :destroy
+  has_many :travel_workouts, dependent: :destroy
+  has_many :exercises, dependent: :destroy
 
   after_initialize :ensure_session_token, :calculate_tdee
 

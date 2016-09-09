@@ -10,12 +10,13 @@ class StaticWorkoutIndexItem extends React.Component {
     });
     this.exercises = [];
     this.removeStaticWorkout = this.removeStaticWorkout.bind(this);
+    this.i = 0;
   }
 
   removeStaticWorkout() {
     if (this.props.destroyStaticWorkout) {
       this.props.destroyStaticWorkout(this.props.staticWorkout.id);
-      this.setState();
+      this.forceUpdate();
     }
   }
 
@@ -27,7 +28,7 @@ class StaticWorkoutIndexItem extends React.Component {
     if(workoutExercises) {
       workoutExercises.forEach(workEx => {
         this.exercises.push(
-          <ul className="static-workout-index-item">
+          <ul key={this.i}className="static-workout-index-item">
             <li>
               {workEx.exercise.title}
             </li>
@@ -42,6 +43,7 @@ class StaticWorkoutIndexItem extends React.Component {
             </li>
           </ul>
         );
+        this.i ++;
       });
     }
 

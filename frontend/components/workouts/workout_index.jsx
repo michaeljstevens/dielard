@@ -79,7 +79,7 @@ class WorkoutIndex extends React.Component {
     if (travelWorkouts && staticWorkouts) {
 
       allWorkoutList = travelWorkoutList.concat(staticWorkoutList);
-
+  
       allWorkoutList.sort( (a,b) => {
         const date1 = a.props.travelWorkout ? a.props.travelWorkout.date : a.props.staticWorkout.date;
         const date2 = b.props.travelWorkout ? b.props.travelWorkout.date : b.props.staticWorkout.date;
