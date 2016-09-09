@@ -22,6 +22,9 @@ class StaticWorkoutForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.setCalories = this.setCalories.bind(this);
     this.handleFinish = this.handleFinish.bind(this);
+    if(this.props.staticWorkout) {
+      this.props.removeStaticWorkout(this.props.staticWorkout);
+    }
   }
 
   componentDidMount() {
@@ -39,7 +42,6 @@ class StaticWorkoutForm extends React.Component {
 
   handleFinish(e) {
     e.preventDefault();
-    this.props.removeStaticWorkout(this.props.staticWorkout);
     hashHistory.push("/");
   }
 
@@ -89,7 +91,7 @@ class StaticWorkoutForm extends React.Component {
     }
 
     if (this.props.staticWorkout) {
-  
+
       this.state.exercises.forEach(exercise => {
         myExercises.push(
           <div className="workout-exercise-item-container" key={exercise.id}>
