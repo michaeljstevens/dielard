@@ -16,6 +16,7 @@ class StaticWorkoutForm extends React.Component {
       notes: "",
       exercises: []
     };
+    this.submitDisabled = true;
     this.updateState = this.updateState.bind(this);
     this.addExercise = this.addExercise.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -71,10 +72,14 @@ class StaticWorkoutForm extends React.Component {
 
   render() {
 
+    if(this.state.duration) {
+
+    }
+
     const allExercises = [];
     const myExercises = [];
 
-    if(!!this.props.exercises) {
+    if(this.props.exercises) {
       const exerciseKeys = Object.keys(this.props.exercises);
       let that = this;
       exerciseKeys.forEach(key => {
@@ -83,7 +88,8 @@ class StaticWorkoutForm extends React.Component {
       });
     }
 
-    if (!!this.props.staticWorkout) {
+    if (this.props.staticWorkout) {
+  
       this.state.exercises.forEach(exercise => {
         myExercises.push(
           <div className="workout-exercise-item-container" key={exercise.id}>
