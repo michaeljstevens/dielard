@@ -30,12 +30,13 @@ module StravaCloneApp
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
+
+    Dynopoker.configure do |config|
+      config.address = 'http://wakemydyno.com'
+      #  config.enable = false # default is true
+      #  config.poke_frequency = 123 # default is 1800s (30min)
+    end
+
     config.active_record.raise_in_transactional_callbacks = true
   end
-end
-
-Dynopoker.configure do |config|
-    config.address = 'http://wakemydyno.com'
-#  config.enable = false # default is true
-#  config.poke_frequency = 123 # default is 1800s (30min)
 end
