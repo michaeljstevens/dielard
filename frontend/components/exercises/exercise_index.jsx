@@ -57,6 +57,7 @@ class ExerciseIndex extends React.Component {
           }
         }
       });
+      this.exerciseItems.reverse();
       currentExerciseList  = this.exerciseItems.slice(this.state.offset, this.state.offset + 10);
     }
 

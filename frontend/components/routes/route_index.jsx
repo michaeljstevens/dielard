@@ -21,6 +21,10 @@ class RouteIndex extends React.Component {
     this.props.requestRoutes();
   }
 
+  componentWillReceiveProps(newProps) {
+    newProps.routes.reverse();
+  }
+
   updateState (field) {
     return e => {
       this.setState({[field]: e.currentTarget.value});

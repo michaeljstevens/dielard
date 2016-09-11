@@ -361,7 +361,7 @@ Exercise.create(
   TravelWorkout.create(
     user_id: 1,
     route_id: 5,
-    date: "Thu, 13 Oct 2016",
+    date: "Thu, 09 Sep 2016",
     calories: 287,
     notes: "Solid 5k run. Got a little winded by the end but no big deal."
   )
