@@ -55,7 +55,7 @@
   justify-content: flex-start;
   position: absolute;
   left: 327px;
-  top: 19px;
+  height: 100%;
   padding-left: 5px;
 }
 
@@ -71,7 +71,7 @@
   justify-content: flex-start;
   position: absolute;
   left: 585px;
-  top: 19px;
+  height: 100%;
   padding-left: 5px;
 }
 
@@ -87,7 +87,7 @@
   justify-content: flex-start;
   position: absolute;
   left: 468px;
-  top: 19px;
+  height: 100%;
   padding-left: 5px;
 }
 
@@ -102,10 +102,11 @@
 
 .logout-button {
   color: white;
-  margin: 11px;
+  margin-top: -2px;
   margin-right: 27px;
   cursor: pointer;
   padding-left: 5px;
+  height: 100%
 }
 
 .logout-button:hover {
