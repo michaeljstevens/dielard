@@ -37,7 +37,7 @@ class ExerciseForm extends React.Component {
       description: "",
       muscle_group: ""
     });
-    hashHistory.push(`/users/${currentUser.id}/exercises`)
+    hashHistory.push(`/users/${currentUser.id}/exercises`);
   }
 
 

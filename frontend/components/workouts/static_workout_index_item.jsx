@@ -26,6 +26,7 @@ class StaticWorkoutIndexItem extends React.Component {
 
     const workoutExercises = this.staticWorkout.workout_exercises;
     if(workoutExercises) {
+      this.exercises = [];
       workoutExercises.forEach(workEx => {
         this.exercises.push(
           <ul key={this.i}className="static-workout-index-item">
@@ -46,8 +47,6 @@ class StaticWorkoutIndexItem extends React.Component {
         this.i ++;
       });
     }
-
-
 
     return(
       <div className="static-workout-index-item-container">
