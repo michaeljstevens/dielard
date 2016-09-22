@@ -21,6 +21,12 @@ class RouteIndex extends React.Component {
     this.props.requestRoutes();
   }
 
+  componentWillReceiveProps(props) {
+    if(props.routes) {
+      props.routes.reverse();
+    }
+  }
+
   updateState (field) {
     return e => {
       this.setState({[field]: e.currentTarget.value});
@@ -56,7 +62,6 @@ class RouteIndex extends React.Component {
     }
     let routeItems = [];
     if (routes) {
-      routes.reverse();
       let keys = Object.keys(routes).slice(this.state.offset, this.state.offset + 10);
       keys.forEach (key => {
         routeItems.push(<RouteIndexItem route={routes[key]} key={key} destroyRoute={this.props.destroyRoute} />);
