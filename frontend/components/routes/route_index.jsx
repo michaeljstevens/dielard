@@ -1,5 +1,6 @@
 import React from 'react';
 import RouteIndexItem from './route_index_item.jsx';
+import {merge} from 'lodash';
 
 const RouteTypes = {
   Walk: "WALKING",
@@ -15,16 +16,11 @@ class RouteIndex extends React.Component {
     this.increaseOffset = this.increaseOffset.bind(this);
     this.decreaseOffset = this.decreaseOffset.bind(this);
     this.updateState = this.updateState.bind(this);
+    this.reversed = false;
   }
 
   componentDidMount() {
     this.props.requestRoutes();
-  }
-
-  componentWillReceiveProps(props) {
-    if(props.routes) {
-      props.routes.reverse();
-    }
   }
 
   updateState (field) {
@@ -50,23 +46,26 @@ class RouteIndex extends React.Component {
   }
 
   render() {
-    let routes = [];
-    if (this.state.routeType === "All") {
-      routes = this.props.routes;
-    } else {
-      this.props.routes.forEach(route => {
-        if(route.activity_type === RouteTypes[this.state.routeType]) {
-          routes.push(route);
+
+    this.routeItems = [];
+    let currentRouteList = [];
+    let routes = this.props.routes;
+    if (routes) {
+      let keys = Object.keys(routes);
+      keys.forEach ( key => {
+        if(this.state.routeType === "All") {
+          this.routeItems.push(<RouteIndexItem route={routes[key]} key={key}
+            destroyRoute={this.props.destroyRoute}/>);
+        } else {
+          if(routes[key].routeType === RouteTypes[this.state.routetype]) {
+            this.routeItems.push(<RouteIndexItem route={routes[key]} key={key}
+              destroyRoute={this.props.destroyRoute}/>);
+          }
         }
       });
     }
-    let routeItems = [];
-    if (routes) {
-      let keys = Object.keys(routes).slice(this.state.offset, this.state.offset + 10);
-      keys.forEach (key => {
-        routeItems.push(<RouteIndexItem route={routes[key]} key={key} destroyRoute={this.props.destroyRoute} />);
-      });
-    }
+    this.routeItems.reverse();
+    currentRouteList  = this.routeItems.slice(this.state.offset, this.state.offset + 10);
 
     return(
       <div className="route-list-outer-div">
@@ -77,7 +76,7 @@ class RouteIndex extends React.Component {
           <option value="Run">Run</option>
           <option value="Bike">Bike</option>
         </select>
-        {routeItems}
+        {currentRouteList}
         <div className="route-page-buttons">
           <img src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1473375546/prev_arrow_ikhyek.png" onClick={this.decreaseOffset} />
           <img src="http://res.cloudinary.com/dj6gqauyi/image/upload/v1473375546/next_arrow_a7elvn.png" onClick={this.increaseOffset} />
