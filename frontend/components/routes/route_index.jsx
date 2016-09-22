@@ -21,10 +21,6 @@ class RouteIndex extends React.Component {
     this.props.requestRoutes();
   }
 
-  componentWillReceiveProps(newProps) {
-    newProps.routes.reverse();
-  }
-
   updateState (field) {
     return e => {
       this.setState({[field]: e.currentTarget.value});
@@ -65,6 +61,8 @@ class RouteIndex extends React.Component {
         routeItems.push(<RouteIndexItem route={routes[key]} key={key} destroyRoute={this.props.destroyRoute} />);
       });
     }
+    
+    routeItems.reverse();
 
     return(
       <div className="route-list-outer-div">
