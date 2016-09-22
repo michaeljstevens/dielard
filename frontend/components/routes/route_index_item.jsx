@@ -18,6 +18,7 @@ class RouteIndexItem extends React.Component {
     };
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
     this.setDirections();
+
   }
 
   setDirections() {
@@ -30,8 +31,21 @@ class RouteIndexItem extends React.Component {
     this.directionsService = new google.maps.DirectionsService;
     this.directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
 
-    this.directionsDisplay.setMap(this.map);
-    this.calculateAndDisplayRoute(this.directionsService, this.directionsDisplay);
+    if(!this.props.route.appcoords) {
+      this.directionsDisplay.setMap(this.map);
+      this.calculateAndDisplayRoute(this.directionsService, this.directionsDisplay);
+    } else {
+      //draw polyline
+      const appRoute = new google.maps.Polyline({
+
+          path: this.props.route.appcoords,
+          geodesic: true,
+          strokeColor: '#FF0000',
+          strokeOpacity: 1.0,
+          strokeWeight: 2
+        });
+        appRoute.setMap(this.map);
+    }
   }
 
   calculateAndDisplayRoute(directionsService, directionsDisplay) {
@@ -61,7 +75,6 @@ class RouteIndexItem extends React.Component {
   }
 
   render() {
-
     const route = this.props.route;
     let activity_type = "";
     if(route.activity_type === "WALKING") {

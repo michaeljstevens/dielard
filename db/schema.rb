@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160906003346) do
+ActiveRecord::Schema.define(version: 20160922072735) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,11 +35,12 @@ ActiveRecord::Schema.define(version: 20160906003346) do
     t.datetime "updated_at",    null: false
     t.string   "distance",      null: false
     t.string   "duration",      null: false
-    t.float    "start_lat",     null: false
-    t.float    "start_lng",     null: false
-    t.float    "end_lat",       null: false
-    t.float    "end_lng",       null: false
+    t.float    "start_lat"
+    t.float    "start_lng"
+    t.float    "end_lat"
+    t.float    "end_lng"
     t.string   "activity_type"
+    t.json     "appcoords"
   end
 
   add_index "routes", ["user_id"], name: "index_routes_on_user_id", using: :btree

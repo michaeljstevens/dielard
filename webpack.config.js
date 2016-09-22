@@ -16,17 +16,15 @@ module.exports = {
           presets: ['es2015', 'react']
         }
       }
-    ]
+    ],
+    plugins: [
+      new AnyBarWebpackPlugin({
+        enableNotifications: true
+      })
+    ],
   },
   devtool: 'source-map',
   resolve: {
     extensions: ["", ".js", ".jsx" ]
   }
 };
-
-
-// plugins: [
-//   new AnyBarWebpackPlugin({
-//     enableNotifications: true
-//   })
-// ],
