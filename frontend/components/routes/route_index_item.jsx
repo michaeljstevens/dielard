@@ -46,7 +46,7 @@ class RouteIndexItem extends React.Component {
         });
         this.map.setCenter(coords[Math.round(coords.length/2)]);
         appRoute.setMap(this.map);
-        let zoomLevel = Math.round(15.1527 - 0.381679 * parseInt(this.props.route.distance));
+        let zoomLevel = Math.round(15.1527 - 0.381679 * parseInt(this.props.route.distance)) - 1;
         this.map.setZoom(zoomLevel);
         new google.maps.Marker({
           position: coords[0],

@@ -52,7 +52,8 @@ class TravelWorkoutIndexItem extends React.Component {
         });
         this.map.setCenter(coords[Math.round(coords.length/2)]);
         appRoute.setMap(this.map);
-        let zoomLevel = Math.round(15.1527 - 0.381679 * parseInt(this.travelWorkout.route.distance));
+        let zoomLevel = Math.round(15.1527 - 0.381679 * parseInt(this.travelWorkout.route.distance)) - 1;
+        console.log(zoomLevel);
         this.map.setZoom(zoomLevel);
         new google.maps.Marker({
           position: coords[0],
