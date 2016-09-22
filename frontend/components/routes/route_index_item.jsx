@@ -51,7 +51,7 @@ class RouteIndexItem extends React.Component {
         new google.maps.Marker({
           position: coords[0],
           map: this.map,
-          label: "A"
+          label: "A",
         });
         new google.maps.Marker({
           position: coords[coords.length -1],
@@ -106,6 +106,7 @@ class RouteIndexItem extends React.Component {
         <ul className="route-list-ul">
           <li><img className="route-activity-img" src={activity_type} /></li>
           <li className="route-list-item-title">{route.title}</li>
+          {this.props.route.appcoords ? <li className="route-list-item">(created with takeupless App)</li> : null }
           <li className="route-list-item">{route.description}</li>
           <li className="route-list-item">{route.distance}</li>
           <li className="route-list-item">{route.duration}</li>

@@ -37,8 +37,34 @@ class TravelWorkoutIndexItem extends React.Component {
     this.directionsService = new google.maps.DirectionsService;
     this.directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
 
-    this.directionsDisplay.setMap(this.map);
-    this.calculateAndDisplayRoute(this.directionsService, this.directionsDisplay);
+    if(!this.travelWorkout.route.appcoords) {
+      this.directionsDisplay.setMap(this.map);
+      this.calculateAndDisplayRoute(this.directionsService, this.directionsDisplay);
+    } else {
+      //draw polyline
+      let coords = this.travelWorkout.route.appcoords;
+      const appRoute = new google.maps.Polyline({
+          path: coords,
+          geodesic: true,
+          strokeColor: '#ff3333',
+          strokeOpacity: 0.9,
+          strokeWeight: 5
+        });
+        this.map.setCenter(coords[Math.round(coords.length/2)]);
+        appRoute.setMap(this.map);
+        let zoomLevel = Math.round(15.1527 - 0.381679 * parseInt(this.travelWorkout.route.distance));
+        this.map.setZoom(zoomLevel);
+        new google.maps.Marker({
+          position: coords[0],
+          map: this.map,
+          label: "A",
+        });
+        new google.maps.Marker({
+          position: coords[coords.length -1],
+          map: this.map,
+          label: "B"
+        });
+    }
   }
 
   calculateAndDisplayRoute(directionsService, directionsDisplay) {
