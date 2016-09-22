@@ -78,7 +78,7 @@ class TravelWorkoutForm extends React.Component {
     };
     setTimeout(() => {
       hashHistory.push("/");
-    }, 1000);
+    }, 500);
   }
 
   render () {
