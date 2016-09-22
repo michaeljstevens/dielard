@@ -54,6 +54,7 @@ class RouteIndex extends React.Component {
         }
       });
     }
+    routes.reverse();
     let routeItems = [];
     if (routes) {
       let keys = Object.keys(routes).slice(this.state.offset, this.state.offset + 10);
@@ -61,8 +62,6 @@ class RouteIndex extends React.Component {
         routeItems.push(<RouteIndexItem route={routes[key]} key={key} destroyRoute={this.props.destroyRoute} />);
       });
     }
-    
-    routeItems.reverse();
 
     return(
       <div className="route-list-outer-div">
