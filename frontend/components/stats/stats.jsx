@@ -15,6 +15,7 @@ class Stats extends React.Component {
   }
 
   componentDidMount() {
+    setTimeout(() => {}, 1000);
     this.props.requestTravelWorkouts();
     this.props.requestStaticWorkouts();
   }

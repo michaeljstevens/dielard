@@ -7,6 +7,7 @@ class UserProfileIndexItem extends React.Component {
     super(props);
     this.gotoEdit = this.gotoEdit.bind(this);
   }
+  
 
   gotoEdit() {
     hashHistory.push(`/users/${this.props.currentUser.id}/edit`);
