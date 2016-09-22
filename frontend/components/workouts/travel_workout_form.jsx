@@ -76,9 +76,7 @@ class TravelWorkoutForm extends React.Component {
       notes: "",
       calories: null
     };
-    setTimeout(() => {
-      hashHistory.push("/");
-    }, 1000);
+    hashHistory.push("/");
   }
 
   render () {

@@ -40,18 +40,29 @@ class Stats extends React.Component {
 
 
   render() {
+    debugger
 
     let workoutToRender;
 
-    if(this.latestWorkoutType === "travel") {
-      workoutToRender = <TravelWorkoutIndexItem pathName={this.props.pathName} travelWorkout={this.latestWorkout}/>;
-    } else if (this.latestWorkoutType === "static") {
-      workoutToRender = <StaticWorkoutIndexItem pathName={this.props.pathName} staticWorkout={this.latestWorkout} />;
+    if(this.props.staticWorkout || this.props.travelWorkout) {
+
+      if (this.props.staticWorkout) {
+        workoutToRender = <StaticWorkoutIndexItem pathName={this.props.pathName} staticWorkout={this.props.staticWorkout} />;
+      }
+
+      if (this.props.travelWorkout) {
+        workoutToRender = <TravelWorkoutIndexItem pathName={this.props.pathName} travelWorkout={this.props.travelWorkout}/>;
+      }
     } else {
-      workoutToRender = null;
+      if(this.latestWorkoutType === "travel") {
+        workoutToRender = <TravelWorkoutIndexItem pathName={this.props.pathName} travelWorkout={this.latestWorkout}/>;
+      } else if (this.latestWorkoutType === "static") {
+        workoutToRender = <StaticWorkoutIndexItem pathName={this.props.pathName} staticWorkout={this.latestWorkout} />;
+      } else {
+        workoutToRender = null;
+      }
     }
 
-    // <h1>Last Workout</h1>
     return(
       <div className="stats-super">
         {workoutToRender}

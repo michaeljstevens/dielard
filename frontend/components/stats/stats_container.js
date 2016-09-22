@@ -8,7 +8,9 @@ const mapStateToProps = state => {
   return ({
     currentUser: state.session.currentUser,
     staticWorkouts: state.staticWorkouts.allStaticWorkouts,
-    travelWorkouts: state.travelWorkouts.allTravelWorkouts
+    travelWorkouts: state.travelWorkouts.allTravelWorkouts,
+    staticWorkout: state.staticWorkouts.staticWorkout,
+    travelWorkout: state.travelWorkouts.travelWorkout
   });
 };
 
