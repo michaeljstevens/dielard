@@ -40,8 +40,6 @@ class Stats extends React.Component {
 
 
   render() {
-    debugger
-
     let workoutToRender;
 
     if(this.props.staticWorkout || this.props.travelWorkout) {

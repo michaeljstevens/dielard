@@ -15,6 +15,7 @@ const TravelWorkoutReducer = function(state = {}, action){
       nextState.allTravelWorkouts = nextState.allTravelWorkouts.filter(r => {
         return r.id !== action.travelWorkout.id;
       });
+      delete nextState.travelWorkout;
       return nextState;
     default:
       return state;
