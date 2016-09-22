@@ -36,15 +36,28 @@ class RouteIndexItem extends React.Component {
       this.calculateAndDisplayRoute(this.directionsService, this.directionsDisplay);
     } else {
       //draw polyline
+      let coords = this.props.route.appcoords;
       const appRoute = new google.maps.Polyline({
-
-          path: this.props.route.appcoords,
+          path: coords,
           geodesic: true,
-          strokeColor: '#FF0000',
-          strokeOpacity: 1.0,
-          strokeWeight: 2
+          strokeColor: '#ff3333',
+          strokeOpacity: 0.9,
+          strokeWeight: 5
         });
+        this.map.setCenter(coords[Math.round(coords.length/2)]);
         appRoute.setMap(this.map);
+        let zoomLevel = Math.round(15.1527 - 0.381679 * parseInt(this.props.route.distance));
+        this.map.setZoom(zoomLevel);
+        new google.maps.Marker({
+          position: coords[0],
+          map: this.map,
+          label: "A"
+        });
+        new google.maps.Marker({
+          position: coords[coords.length -1],
+          map: this.map,
+          label: "B"
+        });
     }
   }
 
